@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .submit-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Post a Job</h1>
+        <form action="/post-job" method="POST">
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" name="job_title" placeholder="Enter job title" required>
+            </div>
+            <div class="form-group">
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" name="company_name" placeholder="Enter company name" required>
+            </div>
+            <div class="form-group">
+                <label for="job-description">Job Description</label>
+                <textarea id="job-description" name="job_description" placeholder="Describe the job role" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="job-location">Location</label>
+                <input type="text" id="job-location" name="job_location" placeholder="Enter job location" required>
+            </div>
+            <div class="form-group">
+                <label for="job-type">Job Type</label>
+                <select id="job-type" name="job_type" required>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
+                    <option value="internship">Internship</option>
+                    <option value="freelance">Freelance</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-button">Post Job</button>
+        </form>
+    </div>
+
+</body>
+</html>

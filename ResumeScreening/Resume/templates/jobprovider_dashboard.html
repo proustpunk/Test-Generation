@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Provider Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4a4a4a;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 15px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-outline-danger {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #ff4d4d;
+            color: #fff;
+        }
+
+        .job-item {
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .job-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-item h5 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .job-item p {
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .job-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .form-control {
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #868e96;
+        }
+
+        .empty-state p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 15px;
+            }
+
+            .card-header {
+                font-size: 18px;
+            }
+
+            .job-item h5 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+ 
+<div class="dashboard container">
+    <div class="row">
+        <!-- Post a Job Section -->
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">Post a Job</div>
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data" id="jobForm">
+                        {% csrf_token %}
+
+                        <div class="form-group mb-3">
+                            <label for="{{ form.job_title.id_for_label }}" class="form-label">Job Title</label>
+                            {{ form.job_title }}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="{{ form.job_description_file.id_for_label }}" class="form-label">Job Description</label>
+                            {{ form.job_description_file }}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="{{ form.job_requirements.id_for_label }}" class="form-label">Job Requirements</label>
+                            {{ form.job_requirements }}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="{{ form.salary_range.id_for_label }}" class="form-label">Salary Range</label>
+                            {{ form.salary_range }}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="{{ form.job_location.id_for_label }}" class="form-label">Job Location</label>
+                            {{ form.job_location }}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="jobPostForm">Post Job</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Posted Jobs Section -->
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">Your Posted Jobs</div>
+                <div class="card-body">
+                    {% if posted_jobs %}
+                        {% for job in posted_jobs %}
+                            <div class="job-item">
+                                <h5>{{ job.job_title }}</h5>
+                                <p><strong>Location:</strong> {{ job.job_location }}</p>
+                                <p><strong>Salary:</strong> {{ job.salary_range }}</p>
+                                <div class="job-actions">
+                                    <a href="{% url 'ranking' job.id %}" class="btn btn-sm btn-outline-primary">Applicants</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-state">
+                            <img src="https://via.placeholder.com/150" alt="No jobs" class="mb-3">
+                            <p>No jobs posted yet. Use the "Post a Job" form to get started.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+document.getElementById("jobPostForm").addEventListener("click", function (event) {
+    event.preventDefault(); 
+    const userConfirmed = confirm("Do you wish to submit this form?"); // Popup confirmation
+
+    if (userConfirmed) {
+        document.getElementById("jobForm").submit(); 
+    }
+});
+});
+</script>
+
+</body>
+</html>

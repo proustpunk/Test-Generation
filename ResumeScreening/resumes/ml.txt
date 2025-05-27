@@ -1,0 +1,44 @@
+[Your Name]
+[Your Address] | [Your Phone Number] | [Your Email] | [LinkedIn/GitHub/Portfolio Link]
+
+Professional Summary
+Brief statement (2–3 lines) highlighting your ML expertise, technical skills, and achievements.
+
+Example:
+Machine Learning Engineer with 3+ years of experience developing scalable ML models for predictive analytics and natural language processing. Proficient in Python, TensorFlow, and deploying models in production environments.
+
+Technical Skills
+Programming Languages: Python, R, Java, SQL
+ML/DL Frameworks: TensorFlow, PyTorch, Keras, Scikit-learn
+NLP Tools: NLTK, SpaCy, Gensim, FastText
+Big Data Tools: Hadoop, Spark
+Databases: MySQL, MongoDB, PostgreSQL
+Cloud Platforms: AWS (SageMaker, Lambda), GCP, Azure
+Tools: Docker, Kubernetes, Git, Jupyter Notebooks
+Education
+[Degree] in [Major]
+[University Name], [Location] — [Year of Graduation]
+
+Relevant coursework: Machine Learning, Data Mining, Deep Learning, Artificial Intelligence
+Projects: Built a recommendation system using collaborative filtering.
+Work Experience
+Machine Learning Engineer | [Company Name], [Location] — [Start Date] to [End Date]
+
+Developed and deployed NLP models to classify customer feedback with 92% accuracy.
+Implemented a recommendation engine that increased user engagement by 25%.
+Optimized data pipelines with Spark, reducing processing time by 40%.
+Data Scientist Intern | [Company Name], [Location] — [Start Date] to [End Date]
+
+Analyzed large datasets using Python (pandas, NumPy) to extract actionable insights.
+Created predictive models for sales forecasting with XGBoost, improving forecast accuracy by 15%.
+Projects
+Resume Analyzer Web Application (Django, Python, Word2Vec, FastText)
+
+Developed a web app that classifies and ranks resumes based on job descriptions using SVM and cosine similarity.
+Implemented lemmatization and vectorization for efficient text processing.
+Image Classification with CNNs (TensorFlow, Keras)
+
+Built and trained convolutional neural networks achieving 95% accuracy on CIFAR-10 dataset.
+Certifications
+TensorFlow Developer Certificate — [Year]
+AWS Certified Machine Learning – Specialty — [Year]

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .form-container {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #6a11cb;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: #6a11cb;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            transition: background 0.3s ease-in-out;
+            border-radius: 6px;
+        }
+
+        .btn-primary:hover {
+            background: #5a0eb3;
+        }
+
+        .form-text {
+            font-size: 0.9rem;
+            color: #6a11cb;
+        }
+
+        .text-danger {
+            font-size: 0.875rem;
+            color: #e74c3c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 25px;
+                max-width: 100%;
+            }
+
+            .form-container h2 {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            .form-group label,
+            .form-group input,
+            .form-group textarea {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Register as Job Seeker</h2>
+        <form method="POST" enctype="multipart/form-data" id="formID" novalidate>
+            {% csrf_token %}
+
+            <div class="form-group">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <small class="text-danger">{{ form.username.errors|striptags }}</small>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <small class="text-danger">{{ form.password.errors|striptags }}</small>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <small class="text-danger">{{ form.email.errors|striptags }}</small>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.resume.label_tag }}
+                {{ form.resume }}
+                {% if form.resume.errors %}
+                    <small class="text-danger">{{ form.resume.errors|striptags }}</small>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.skills.label_tag }}
+                {{ form.skills }}
+                {% if form.skills.errors %}
+                    <small class="text-danger">{{ form.skills.errors|striptags }}</small>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.bio.label_tag }}
+                {{ form.bio }}
+                {% if form.bio.errors %}
+                    <small class="text-danger">{{ form.bio.errors|striptags }}</small>
+                {% endif %}
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="postID">Register</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("postID").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the form from submitting automatically
+    
+        const userConfirmed = confirm("Do you wish to submit this form?"); // Popup confirmation
+    
+        if (userConfirmed) {
+            document.getElementById("formID").submit(); // Submit the form if confirmed
+        }
+    });
+    });
+    </script>
+</body>
+
+</html>

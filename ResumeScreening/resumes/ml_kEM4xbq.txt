@@ -1,0 +1,1 @@
+there is a examination registration system. First we login using DOB and a password, then we go to our profile. there is a section called exam form. we click. that exam form is for the current semester or for failed semesters. we apply for those. we receive a pdf file which we download and print it for further processing and bill payment and validation. create SRS for this

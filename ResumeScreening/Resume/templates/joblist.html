@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .job-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .job-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #5a67d8;
+        }
+
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #434cbd;
+        }
+
+        .job-description {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        .btn-view-more {
+            background-color: #5a67d8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-view-more:hover {
+            background-color: #434cbd;
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .job-location {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5a67d8;
+            margin-top: 5px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header {
+            background-color: #5a67d8;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar-links li {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .sidebar-links li a {
+            color: #434cbd;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .sidebar-links li a:hover {
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <h2 class="mb-3">Welcome!</h2>
+        <p>Explore job opportunities tailored to your skills and interests.</p>
+    </div>
+
+    <div class="row">
+        <!-- Sidebar for Job Seeker -->
+        <div class="col-lg-3">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h4>Dashboard</h4>
+                </div>
+                <ul class="sidebar-links">
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Job Applications</a></li>
+                    <li><a href="#">Saved Jobs</a></li>
+                    <li><a href="#">Job Alerts</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Job Listings Section -->
+        <div class="col-lg-9">
+            <h3 class="text-center mb-4">Available Job Listings</h3>
+
+            <div class="row">
+                {% for job in jobs %}
+                <div class="col-md-4">
+                    <div class="job-card">
+                        <h3 class="job-title">{{ job.job_title }}</h3>
+                        <p class="company-name">{{ job.company_name }}</p>
+                        <p class="job-description">{{ job.description|truncatewords:40 }}</p> <!-- Truncate description to 40 words -->
+                        <p class="job-location">Location: {{ job.job_location }}</p>
+                        <p class="job-date">Posted on: {{ job.posted_at|date:"F j, Y" }}</p>
+                        <a href="{%url 'jobdetails' job.id %}" class="btn-view-more">View More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

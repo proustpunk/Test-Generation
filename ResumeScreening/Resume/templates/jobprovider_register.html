@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Provider Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid #e3e3e3;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40;
+            font-weight: 600;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group .text-danger {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .form-footer a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design for small screens */
+        @media (max-width: 576px) {
+            .container {
+                margin-top: 30px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-container h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Job Provider Registration</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_company_name">Company Name</label>
+                    {{ form.company_name }}
+                    {% if form.company_name.errors %}
+                    <div class="text-danger">
+                        {% for error in form.company_name.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                    <div class="text-danger">
+                        {% for error in form.username.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                    <div class="text-danger">
+                        {% for error in form.password.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_company_description">Company Description</label>
+                    {{ form.company_description }}
+                    {% if form.company_description.errors %}
+                    <div class="text-danger">
+                        {% for error in form.company_description.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_bio">Short Bio</label>
+                    {{ form.bio }}
+                    {% if form.bio.errors %}
+                    <div class="text-danger">
+                        {% for error in form.bio.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

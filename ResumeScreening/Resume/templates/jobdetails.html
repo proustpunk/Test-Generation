@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }} - Job Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .header {
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #2c3e50;
+        }
+
+        .job-detail {
+            margin-bottom: 15px;
+        }
+
+        .job-detail strong {
+            color: #555;
+        }
+
+        .apply-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .apply-section button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .apply-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .already-applied {
+            color: #ff6b6b;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .apply-section button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+    <script>
+        function confirmApplication(event) {
+            const userConfirmed = confirm("Are you sure you want to apply for this job?");
+            if (!userConfirmed) {
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ job.title }}</h1>
+        </div>
+
+        <div class="job-detail">
+            <p><strong>Company:</strong> {{ job.company_name }}</p>
+        </div>
+        <div class="job-detail">
+            <p><strong>Location:</strong> {{ job.job_location }}</p>
+        </div>
+        <div class="job-detail">
+            <p><strong>Salary:</strong> {{ job.salary_range }}</p>
+        </div>
+        <div class="job-detail">
+            <p><strong>Description:</strong></p>
+            <p>{{ job.job_requirements }}</p>
+        </div>
+
+        <div class="apply-section">
+            {% if has_applied %}
+                <p class="already-applied">You had already applied for this job.</p>
+            {% else %}
+                <form action="{% url 'apply' job.id %}" method="post" onsubmit="confirmApplication(event)">
+                    {% csrf_token %}
+                    <button type="submit">Apply Now</button>
+                </form>
+            {% endif %}
+            <a href="{% url 'joblist' %}" class="back-link">Back to Job List</a>
+        </div>
+    </div>
+</body>
+</html>

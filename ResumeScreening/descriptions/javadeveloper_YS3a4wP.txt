@@ -1,0 +1,34 @@
+Job Title: Java Developer
+Location: Remote / [Your Company Location]
+Job Type: Full-Time
+Job Overview
+We are looking for a skilled Java Developer to join our growing team. The ideal candidate will have a passion for developing scalable applications and solving complex problems. As a Java Developer, you will work on both front-end and back-end development tasks, ensuring high performance and responsiveness of our software products.
+Key Responsibilities
+•	Design, develop, and maintain Java applications with a focus on performance and scalability.
+•	Collaborate with cross-functional teams to analyze and gather software requirements.
+•	Write efficient, reusable, and reliable Java code adhering to best practices.
+•	Debug and resolve technical issues as they arise.
+•	Implement security and data protection measures.
+•	Develop and maintain code quality, organization, and automation.
+•	Perform unit testing and code reviews to ensure high-quality output.
+Qualifications
+•	Education: Bachelor's degree in Computer Science, Engineering, or a related field.
+•	Experience: 2+ years of experience as a Java Developer or similar role.
+Technical Skills
+•	Strong knowledge of Java programming language and Java-based frameworks (e.g., Spring, Hibernate).
+•	Experience with RESTful APIs and web services.
+•	Proficient in database technologies such as MySQL, Oracle, or MongoDB.
+•	Knowledge of front-end technologies (e.g., HTML, CSS, JavaScript) is a plus.
+•	Familiarity with version control systems (e.g., Git).
+•	Understanding of DevOps practices and tools is desirable.
+Preferred Skills
+•	Experience with cloud platforms (e.g., AWS, Google Cloud, or Azure).
+•	Familiarity with microservices architecture.
+•	Knowledge of Agile methodologies.
+What We Offer
+•	Competitive salary and benefits package
+•	Flexible working hours
+•	Opportunity to work with a collaborative team on innovative projects
+•	Professional development and growth opportunities
+________________________________________
+To Apply: Please submit your resume and a cover letter detailing your relevant experience.
