@@ -17,7 +17,7 @@ class JobSeekerRegistrationForm(forms.ModelForm):
     resume = forms.FileField(required=True)
     class Meta:
         model = JobSeekerRegister
-        fields = ['resume', 'skills', 'bio', 'processed_text', 'vector', 'prediction']
+        fields = ['resume', 'skills', 'bio', 'processed_text', 'vector', 'prediction','profile_pics']
 
     def clean_password(self):
         password = self.cleaned_data.get('password')
@@ -52,7 +52,9 @@ class JobSeekerRegistrationForm(forms.ModelForm):
             user=user,
             resume=self.cleaned_data['resume'],
             skills=self.cleaned_data['skills'],
-            bio=self.cleaned_data['bio']
+            bio=self.cleaned_data['bio'],
+            profile_pics=self.cleaned_data.get('profile_pics')
+
         )
         if commit:
             user.save()

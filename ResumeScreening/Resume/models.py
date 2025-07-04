@@ -48,7 +48,7 @@ class JobSeekerRegister(models.Model):
     resume = models.FileField(upload_to='resumes/', blank=True, null=True)
     skills = models.TextField()
     bio = models.TextField(blank=True, null=True)
-
+    profile_pics = models.ImageField(upload_to='profile_pics/', null=True) #profile_pics variable points to profilee_pics directory. the directory itself isnt accessed.
 
     processed_text = models.TextField(blank=True, null=True)
     vector = models.JSONField(blank=True, null=True)
@@ -70,3 +70,65 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+
+class Question(models.Model):
+
+    QUESTION_TYPES = [
+        ('objective', 'Objective'),
+        ('mcq', 'MCQ'),
+        ('subjective', 'Subjective'),
+        ('code','Code'),
+    ]
+
+    DIFFICULTY_LEVEL = [
+        ('basic','Basic'),
+        ('intermediate','Intermediate'),
+        ('hard','Hard'),
+    ]
+
+    CATEGORY_CHOICES = [
+        ('frontend', 'Frontend'),
+        ('backend', 'Backend'),
+        ('datascience', 'Data Science'),
+        ('software developer', 'Software Developer'),
+    ]
+
+
+    question_text = models.TextField()
+    question_type = models.CharField(max_length=20, choices=QUESTION_TYPES)
+    difficulty = models.CharField(max_length=20, choices=DIFFICULTY_LEVEL)
+    category = models.CharField(max_length=20,choices=CATEGORY_CHOICES)
+
+    option_a = models.CharField(max_length=255, blank=True, null=True)
+    option_b = models.CharField(max_length=255, blank=True, null=True)
+    option_c = models.CharField(max_length=255, blank=True, null=True)
+    option_d = models.CharField(max_length=255, blank=True, null=True)
+
+    correct_answer = models.CharField(
+        max_length=10, 
+        blank=True, 
+        null=True,
+        
+    )
+
+    reference_answer = models.TextField(blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+
+
+class Answer(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+    selected_option = models.CharField(max_length=10, blank=True, null=True)
+
+    written_answer = models.TextField(blank=True, null=True)
+
+    score = models.FloatField(blank=True, null=True)
+
+    submitted_at = models.DateTimeField(auto_now_add=True)

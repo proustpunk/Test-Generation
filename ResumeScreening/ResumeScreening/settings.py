@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 import os
 
-MEDIA_URL = '//'
-MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -142,4 +142,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dazaiosamuuu36@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'bxrx fifv oijd zlcn'

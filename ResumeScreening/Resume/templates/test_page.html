@@ -1,0 +1,25 @@
+<html>
+<body>
+<form method="POST" action="{%url 'submit_test' %}">
+  {% csrf_token %}
+  {% for question in questions %}
+    <div>
+      <p><strong>Q{{ forloop.counter }}:</strong> {{ question.question_text }}</p>
+
+      {% if question.question_type == 'objective' or question.question_type == 'mcq' %}
+        <label><input type="checkbox" name="q{{ question.id }}" value="A"> {{ question.option_a }}</label><br>
+        <label><input type="checkbox" name="q{{ question.id }}" value="B"> {{ question.option_b }}</label><br> <!-- name is key that is sent onto the action=submit text which then is used to check against the datbase -->
+
+        <label><input type="checkbox" name="q{{ question.id }}" value="C"> {{ question.option_c }}</label><br>
+        <label><input type="checkbox" name="q{{ question.id }}" value="D"> {{ question.option_d }}</label><br>
+
+      {% elif question.question_type == 'subjective' or question.question_type == 'code' %}
+        <textarea name="q{{ question.id }}" rows="4" cols="60"></textarea>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button type="submit">Submit Answers</button>
+</form>
+</body>
+</html>

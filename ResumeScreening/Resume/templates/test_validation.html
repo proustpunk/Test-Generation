@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webcam Capture</title>
+</head>
+
+
+<body>
+<div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <video id="video" width="640" height="480" autoplay></video>
+    <br>
+    <button id="snap">Capture Photo</button>
+    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+    <script>
+            const resultDiv = document.getElementById('result');
+
+        // 1. CSRF token helper (needed by Django for POST)
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (const cookie of cookies) {
+                    const trimmed = cookie.trim();
+                    if (trimmed.startsWith(name + '=')) {
+                        cookieValue = decodeURIComponent(trimmed.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        const csrftoken = getCookie('csrftoken');
+        const postUrl = "{% url 'test-validation' uidb64=uidb64 token=token job_id=job.id %}";
+
+        // 2. Setup DOM elements
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snapButton = document.getElementById('snap');
+
+        // 3. Access webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing webcam:", err);
+            });
+
+        // 4. Take snapshot and send to backend
+        snapButton.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.style.display = 'block';  // Reveal the canvas
+            const dataURL = canvas.toDataURL('image/jpeg'); // base64 encoded image
+      
+            fetch(postUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken,
+                },
+                body: JSON.stringify({ image: dataURL })
+            })
+            .then(response => response.json())
+            .then(data => {
+                 console.log(data)
+                 if (data.match === true) {
+        resultDiv.textContent = '✅ Face matched!';
+        resultDiv.style.color = 'green';
+    } else if (data.match === false) {
+        resultDiv.textContent = '❌ Face did NOT match.';
+        resultDiv.style.color = 'red';
+    } else if (data.error) {
+        resultDiv.textContent = '⚠️ Error: ' + data.error;
+        resultDiv.style.color = 'orange';
+    }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+    {% if target_photo %}
+    <h3>Uploaded Photo to Compare:</h3>
+    <img src="{{ target_photo.profile_pics.url }}" width="200" />
+{% else %}
+    <p>No uploaded photo found.</p>
+{% endif %}
+
+</body>
+</html>
