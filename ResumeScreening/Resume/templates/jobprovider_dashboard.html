@@ -180,6 +180,8 @@
                                 <p><strong>Location:</strong> {{ job.job_location }}</p>
                                 <p><strong>Salary:</strong> {{ job.salary_range }}</p>
                                 <div class="job-actions">
+                                    <a href="{% url 'candidates_for_job' job.id %}" class="btn btn-sm btn-outline-success">Test Taken</a>
+
                                     <a href="{% url 'ranking' job.id %}" class="btn btn-sm btn-outline-primary">Applicants</a>
                                 </div>
                             </div>

@@ -6,6 +6,14 @@ from .validatee import validate_password
 
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+
+
+CATEGORY_CHOICES = [
+        ('frontend', 'Frontend'),
+        ('backend', 'Backend'),
+        ('datascience', 'Data Science'),
+        ('software developer', 'Software Developer'),
+    ]
 class JobSeekerRegistrationForm(forms.ModelForm):
     username = forms.CharField(max_length=150, required=True)
     password = forms.CharField(
@@ -117,13 +125,16 @@ class JobProviderRegistrationForm(forms.ModelForm):
             job_provider.save()
         return user,job_provider
     
+ 
 
 class JobPostForm(forms.ModelForm):
+      
+        
     class Meta:
         model = Job
         fields = ['job_title', 'job_requirements', 'salary_range', 'job_location','job_description_file','processed_description','description_vector']
 
-    job_title = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter job title'}))
+    job_title = forms.ChoiceField(choices=CATEGORY_CHOICES,widget=forms.Select(attrs={"class": "form-control"}))
     job_requirements = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'List the required qualifications', 'rows': 5}))
     salary_range = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter salary range'}))
     company_logo = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control-file'}))

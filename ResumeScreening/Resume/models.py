@@ -2,8 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
-
-
+from .embeddings import embed_text
     
 
 
@@ -72,6 +71,7 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+from .utils import generate_reference
 
 class Question(models.Model):
 
@@ -93,6 +93,7 @@ class Question(models.Model):
         ('backend', 'Backend'),
         ('datascience', 'Data Science'),
         ('software developer', 'Software Developer'),
+        
     ]
 
 
@@ -113,9 +114,27 @@ class Question(models.Model):
         
     )
 
+    test_cases = models.JSONField(blank=True,null=True)
     reference_answer = models.TextField(blank=True, null=True)
+    reference_vector = models.JSONField(blank=True, null=True) #all-MiniLM-L6-v2 (SentenceTransformers) is tiny, fast on CPU, and gives high-quality semantic vectors for matching.
 
-    created_at = models.DateTimeField(auto_now_add=True)
+#Embedding dim = 384 → small storage (~1.5 KB per vector), fast math.
+
+    def save(self, *args, **kwargs):
+        print("save called")
+        
+# Test
+        print(generate_reference("What is the capital of France?"))
+        if not self.reference_answer and self.question_type=='subjective':
+            prompt = f"Question:{self.question_text}\nGenerate a reference answer, about 5 sentence."
+            self.reference_answer = generate_reference(prompt)
+            print("call utils called")
+
+            emb = embed_text(self.reference_answer)  # returns normalized np.array
+            self.reference_vector = emb.tolist()     
+        super().save(*args, **kwargs)
+
+    created_at = models.DateTimeField(auto_now_add=True, blank=True,null=True)
 
 
 
@@ -132,3 +151,24 @@ class Answer(models.Model):
     score = models.FloatField(blank=True, null=True)
 
     submitted_at = models.DateTimeField(auto_now_add=True)
+class Candidate(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    answers = models.ManyToManyField(Answer)
+    total_score = models.FloatField(default=0)
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.job.job_title}"
+
+
+
+
+class CandidateLog(models.Model):
+    candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE, related_name="logs") #django creates a relation automatically but if we want to customize a name for it, its related name
+    suspicious = models.BooleanField(default=False)
+    flags = models.JSONField(default=dict)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Log for Candidate {self.candidate.id} at {self.created_at}"

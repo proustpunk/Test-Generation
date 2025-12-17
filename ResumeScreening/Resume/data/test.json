@@ -1,0 +1,20 @@
+[
+    {
+        "question_text": "Explain the concept of immutability in Python and describe why it matters when designing software systems.",
+        "question_type": "subjective",
+        "difficulty": "intermediate",
+        "category": "software developer"
+    },
+    {
+        "question_text": "Implement a function that checks whether a string contains balanced parentheses. Print 'YES' if balanced, otherwise print 'NO'.",
+        "question_type": "code",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "test_cases": [
+            { "input": "(()())", "expected_output": "YES" },
+            { "input": "((())", "expected_output": "NO" },
+            { "input": "())(()", "expected_output": "NO" },
+            { "input": "", "expected_output": "YES" }
+        ]
+    }
+]

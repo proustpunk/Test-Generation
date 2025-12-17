@@ -1,0 +1,26 @@
+Job Description: Software Engineer
+Job Title: Software Engineer
+Company Name: Vertex Technologies
+Location: Austin, TX
+Job Type: Full-Time
+Salary Range: $100,000 - $130,000/year
+
+Job Summary:
+Vertex Technologies is looking for a talented Software Engineer to contribute to the development of high-performance applications and tools. As a member of our engineering team, you will design, code, and deliver software solutions that meet our clients' needs while adhering to best practices and industry standards.
+
+Responsibilities:
+
+Design, develop, test, and maintain software applications using Java, Python, or JavaScript.
+Collaborate with product managers and designers to gather and refine technical requirements.
+Write clean, efficient, and well-documented code following software development best practices.
+Debug and resolve software issues in a timely manner.
+Implement and maintain APIs and web services for seamless application integration.
+Participate in code reviews to maintain high code quality and ensure adherence to standards.
+Qualifications:
+
+Bachelor’s degree in Computer Science, Software Engineering, or a related field.
+3+ years of experience in software development with expertise in one or more programming languages (Java, Python, or JavaScript).
+Familiarity with frameworks such as Spring Boot, Django, or React.js.
+Solid understanding of data structures, algorithms, and object-oriented design principles.
+Experience with version control systems like Git and development tools such as JIRA or Trello.
+Strong interpersonal skills and ability to work in a collaborative environment.

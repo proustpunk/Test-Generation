@@ -1,94 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Webcam Capture</title>
+  <meta charset="UTF-8">
+  <title>Face Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    video {
+      width: 100%;
+      max-height: 340px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
+
+    .dot.green { background-color: #28a745; }
+    .dot.red { background-color: #dc3545; }
+    .dot.gray { background-color: #6c757d; }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #snap {
+      background-color: #0078d4;
+      color: white;
+    }
+
+    #snap:disabled {
+      background-color: #a4c5eb;
+      cursor: not-allowed;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    canvas {
+      margin-top: 15px;
+      width: 100%;
+      max-height: 320px;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+    }
+
+    img.preview {
+      margin-top: 15px;
+      max-width: 200px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .status-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
-
 <body>
-<div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+<div class="container">
+  <h2>Camera & Face Verification</h2>
 
-    <video id="video" width="640" height="480" autoplay></video>
-    <br>
-    <button id="snap">Capture Photo</button>
-    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
-    <script>
-            const resultDiv = document.getElementById('result');
+  <video id="video" autoplay playsinline></video>
 
-        // 1. CSRF token helper (needed by Django for POST)
-        function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                const cookies = document.cookie.split(';');
-                for (const cookie of cookies) {
-                    const trimmed = cookie.trim();
-                    if (trimmed.startsWith(name + '=')) {
-                        cookieValue = decodeURIComponent(trimmed.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
+  <div class="status-row">
+    <div class="status">Camera: <span id="camera-indicator"><span class="dot gray"></span></span></div>
+    <div class="status">Mic: <span id="mic-indicator"><span class="dot gray"></span></span></div>
+  </div>
 
-        const csrftoken = getCookie('csrftoken');
-        const postUrl = "{% url 'test-validation' uidb64=uidb64 token=token job_id=job.id %}";
+  <button id="snap" disabled>I'm Ready – Match Face</button>
+  <div id="result"></div>
 
-        // 2. Setup DOM elements
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const snapButton = document.getElementById('snap');
+  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 
-        // 3. Access webcam
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
-            })
-            .catch(err => {
-                console.error("Error accessing webcam:", err);
-            });
-
-        // 4. Take snapshot and send to backend
-        snapButton.addEventListener('click', () => {
-            const context = canvas.getContext('2d');
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            canvas.style.display = 'block';  // Reveal the canvas
-            const dataURL = canvas.toDataURL('image/jpeg'); // base64 encoded image
-      
-            fetch(postUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': csrftoken,
-                },
-                body: JSON.stringify({ image: dataURL })
-            })
-            .then(response => response.json())
-            .then(data => {
-                 console.log(data)
-                 if (data.match === true) {
-        resultDiv.textContent = '✅ Face matched!';
-        resultDiv.style.color = 'green';
-    } else if (data.match === false) {
-        resultDiv.textContent = '❌ Face did NOT match.';
-        resultDiv.style.color = 'red';
-    } else if (data.error) {
-        resultDiv.textContent = '⚠️ Error: ' + data.error;
-        resultDiv.style.color = 'orange';
-    }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
-
+  <!-- Optional: show the user's uploaded photo -->
+  <div id="uploaded-photo-preview">
+    <!-- This part will be handled by Django -->
     {% if target_photo %}
-    <h3>Uploaded Photo to Compare:</h3>
-    <img src="{{ target_photo.profile_pics.url }}" width="200" />
-{% else %}
-    <p>No uploaded photo found.</p>
-{% endif %}
+      <h4>Uploaded Profile Picture:</h4>
+      <img class="preview" src="{{ target_photo.profile_pics.url }}" alt="Uploaded Photo" />
+    {% else %}
+      <p>No uploaded photo found.</p>
+    {% endif %}
+  </div>
+</div>
+
+<form id="start-test-form" action="{% url 'start-test' uidb64=uidb64 token=token job_id=job.id %}" method="POST" style="display: none;">
+    {% csrf_token %}
+    <button type="submit" id="start-test">Enter Test</button>
+</form>
+
+<script>
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const snapButton = document.getElementById('snap');
+  const resultDiv = document.getElementById('result');
+
+  const cameraIndicator = document.querySelector('#camera-indicator .dot');
+  const micIndicator = document.querySelector('#mic-indicator .dot');
+
+  let cameraWorking = false;
+  let micWorking = false;
+
+  // CSRF helper
+  function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (const cookie of cookies) {
+              const trimmed = cookie.trim();
+              if (trimmed.startsWith(name + '=')) {
+                  cookieValue = decodeURIComponent(trimmed.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+
+  const csrftoken = getCookie('csrftoken');
+  const postUrl = "{% url 'test-validation' uidb64=uidb64 token=token job_id=job.id %}";
+
+  // Try to get video stream
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+        video.srcObject = stream;
+        cameraWorking = true;
+        cameraIndicator.classList.remove('gray', 'red');
+        cameraIndicator.classList.add('green');
+        enableSnapIfReady();
+    })
+    .catch(err => {
+        console.error("Camera access error:", err);
+        cameraIndicator.classList.remove('gray');
+        cameraIndicator.classList.add('red');
+    });
+
+  // Try to get audio stream (mic)
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+        micWorking = true;
+        micIndicator.classList.remove('gray', 'red');
+        micIndicator.classList.add('green');
+        enableSnapIfReady();
+    })
+    .catch(err => {
+        console.error("Mic access error:", err);
+        micIndicator.classList.remove('gray');
+        micIndicator.classList.add('red');
+    });
+
+  // Enable button only if both camera and mic are working
+  function enableSnapIfReady() {
+    if (cameraWorking && micWorking) {
+      snapButton.disabled = false;
+    }
+  }
+
+  // Take snapshot and send to server
+  snapButton.addEventListener('click', () => {
+      const context = canvas.getContext('2d');
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.style.display = 'block';
+
+      const dataURL = canvas.toDataURL('image/jpeg');
+
+      fetch(postUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': csrftoken,
+          },
+          body: JSON.stringify({ image: dataURL })
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.match === true) {
+              resultDiv.textContent = '✅ Face matched!';
+              resultDiv.style.color = 'green';
+
+              const startTestForm = document.getElementById('start-test-form');
+              startTestForm.style.display = 'block';
+          } else if (data.match === false) {
+              resultDiv.textContent = '❌ Face did NOT match.';
+              resultDiv.style.color = 'red';
+          } else if (data.error) {
+              resultDiv.textContent = '⚠️ Error: ' + data.error;
+              resultDiv.style.color = 'orange';
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+  });
+</script>
 
 </body>
 </html>

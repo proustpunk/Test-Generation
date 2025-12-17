@@ -52,6 +52,8 @@
                         <th>Name</th>
                         <th>Prediction</th>
                         <th>Cosine Similarity Score</th>
+                        <th>Keyword Stuffing Flag</th>
+                        <th>AI generated Flag</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,6 +63,21 @@
                             <td>{{ item.user }}</td>
                             <td>{{ item.prediction }}</td>
                             <td>{{ item.cosine_similarity_score }}</td>
+                           <td>
+  {% if item.is_suspicious %} 
+    <span class="badge badge-danger">Keyword Stuffing Detected</span>
+  {% else %}
+    <span class="badge badge-success">Pass</span>
+  {% endif %}
+</td>
+
+<td>
+  {% if item.is_suspicious_ai %}
+    <span class="badge badge-warning text-dark">Likely AI Generated Resume</span>
+  {% else %}
+    <span class="badge badge-success">Pass</span>
+  {% endif %}
+</td>
                         </tr>
                     {% endfor %}
                 </tbody>

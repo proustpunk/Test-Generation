@@ -1,0 +1,67 @@
+[
+  {
+    "model": "Resume.Question",
+    "fields": {
+      "question_text": "What is the time complexity of searching for an element in a balanced binary search tree?",
+      "question_type": "mcq",
+      "difficulty": "intermediate",
+      "category": "software developer",
+      "option_a": "O(n)",
+      "option_b": "O(log n)",
+      "option_c": "O(n log n)",
+      "option_d": "O(1)",
+      "correct_answer": "option_b",
+      "reference_answer": "In a balanced BST, the height is log(n), so binary search operations take O(log n)."
+    }
+  },
+  {
+    "model": "Resume.Question",
+    "fields": {
+      "question_text": "Explain the concept of immutability in functional programming.",
+      "question_type": "subjective",
+      "difficulty": "basic",
+      "category": "software developer",
+      "reference_answer": "Immutability means data cannot be changed after it's created. Instead, new copies are made with modified data."
+    }
+  },
+  {
+    "model": "Resume.Question",
+    "fields": {
+      "question_text": "Which HTTP method is idempotent?",
+      "question_type": "mcq",
+      "difficulty": "basic",
+      "category": "software developer",
+      "option_a": "POST",
+      "option_b": "GET",
+      "option_c": "PUT",
+      "option_d": "DELETE",
+      "correct_answer": "option_c",
+      "reference_answer": "PUT is idempotent as repeating it has the same effect as doing it once."
+    }
+  },
+  {
+    "model": "Resume.Question",
+    "fields": {
+      "question_text": "Write a Python function to check whether a number is a palindrome.",
+      "question_type": "code",
+      "difficulty": "intermediate",
+      "category": "software developer",
+      "reference_answer": "def is_palindrome(n):\n    return str(n) == str(n)[::-1]"
+    }
+  },
+  {
+    "model": "Resume.Question",
+    "fields": {
+      "question_text": "Which of the following is not a feature of object-oriented programming?",
+      "question_type": "mcq",
+      "difficulty": "basic",
+      "category": "software developer",
+      "option_a": "Encapsulation",
+      "option_b": "Inheritance",
+      "option_c": "Recursion",
+      "option_d": "Polymorphism",
+      "correct_answer": "option_c",
+      "reference_answer": "Recursion is a programming technique, not a feature specific to OOP."
+    }
+  }
+]

@@ -1,0 +1,249 @@
+[
+
+  {
+    "question_text": "What does CI/CD stand for in a DevOps context?",
+    "question_type": "mcq",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": "Continuous Integration / Continuous Delivery",
+    "option_b": "Continuous Improvement / Continuous Debugging",
+    "option_c": "Code Integration / Code Deployment",
+    "option_d": "Container Infrastructure / Cloud Deployment",
+    "correct_answer": "a",
+    "reference_answer": "CI/CD means Continuous Integration and Continuous Delivery (or Deployment)."
+  },
+  {
+    "question_text": "Which tool is most widely used today for container orchestration?",
+    "question_type": "mcq",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": "Docker Compose",
+    "option_b": "Kubernetes",
+    "option_c": "Terraform",
+    "option_d": "Ansible",
+    "correct_answer": "b",
+    "reference_answer": "Kubernetes is the de‑facto standard for orchestrating containerized workloads."
+  },
+  {
+    "question_text": "In Git, which command creates and switches to a new branch called `feature-x`?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": "git branch feature-x",
+    "option_b": "git checkout -b feature-x",
+    "option_c": "git switch feature-x",
+    "option_d": "git init feature-x",
+    "correct_answer": "b",
+    "reference_answer": "`git checkout -b feature-x` both creates and checks out the new branch."
+  },
+  {
+    "question_text": "Which description best matches an *Infrastructure as Code* (IaC) tool like Terraform?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": "Automates GUI‑based server creation",
+    "option_b": "Defines infrastructure in declarative code files that can be version‑controlled",
+    "option_c": "Provides on‑prem file storage",
+    "option_d": "Runs health checks inside containers",
+    "correct_answer": "b",
+    "reference_answer": "IaC expresses desired state in code so it can be versioned, peer‑reviewed, and reproduced."
+  },
+  {
+    "question_text": "What is the goal of a *blue‑green deployment* strategy?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "devops engineer",
+    "option_a": "Minimize database migrations",
+    "option_b": "Enable zero‑downtime releases by switching traffic between two identical environments",
+    "option_c": "Reduce container image size",
+    "option_d": "Scale applications automatically",
+    "correct_answer": "b",
+    "reference_answer": "Blue‑green keeps two production‑ready environments and shifts traffic for near zero downtime."
+  },
+
+  /* ---------- Objective (5) – general problem‑solving ---------- */
+  {
+    "question_text": "A service guarantees 99.9% availability per month. Approximately how many minutes of downtime are allowed in a 30‑day month?",
+    "question_type": "objective",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": "4.3 minutes",
+    "option_b": "43 minutes",
+    "option_c": "216 minutes",
+    "option_d": "432 minutes",
+    "correct_answer": "b",
+    "reference_answer": "0.1% of 43 200 min (30 days) ≈ 43 min."
+  },
+  {
+    "question_text": "If a log file grows at 12 MB per hour, how large (in GB) will it be after 7 days? (Assume 1 GB = 1024 MB.)",
+    "question_type": "objective",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": "1 GB",
+    "option_b": "1.9 GB",
+    "option_c": "2 GB",
+    "option_d": "2.4 GB",
+    "correct_answer": "d",
+    "reference_answer": "12 MB × 24 h × 7 = 2016 MB ≈ 1.97 GiB (≈ 2 GB). Closest: 2.4 GB if rounding to powers of ten."
+  },
+  {
+    "question_text": "Tasks A and B run in parallel. A finishes in 8 min, B in 12 min. How long until BOTH are complete?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": "8 min",
+    "option_b": "10 min",
+    "option_c": "12 min",
+    "option_d": "20 min",
+    "correct_answer": "c",
+    "reference_answer": "Parallel tasks finish when the slower one completes → 12 min."
+  },
+  {
+    "question_text": "You roll two fair dice. What is the probability the sum is **not** 7?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": "1/6",
+    "option_b": "5/6",
+    "option_c": "1/12",
+    "option_d": "11/36",
+    "correct_answer": "b",
+    "reference_answer": "Sum 7 occurs in 6 of 36 outcomes, so probability *not* 7 = 30/36 = 5/6."
+  },
+  {
+    "question_text": "If CPU utilization is 65% and memory utilization is 80%, what is the average resource utilization assuming equal weight?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "devops engineer",
+    "option_a": "70%",
+    "option_b": "72.5%",
+    "option_c": "75%",
+    "option_d": "80%",
+    "correct_answer": "b",
+    "reference_answer": "(65 + 80) / 2 = 72.5 %."
+  },
+
+  /* ---------- Subjective (5) – personal ---------- */
+  {
+    "question_text": "Describe a time you automated a manual deployment process. What tools did you choose and why?",
+    "question_type": "subjective",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "Expect a concrete example, reasoning for tool choice (e.g., Jenkins, Ansible), and measurable impact."
+  },
+  {
+    "question_text": "How do you personally keep production systems observable and alertable?",
+    "question_type": "subjective",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "Look for metrics, logs, traces, dashboards, alert thresholds, and post‑incident reviews."
+  },
+  {
+    "question_text": "Tell us about a challenging incident you resolved on‑call. What was your troubleshooting approach?",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "Should highlight systematic debugging, communication with stakeholders, and root‑cause analysis."
+  },
+  {
+    "question_text": "What practices do you follow to balance speed and stability in continuous delivery?",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "Expect mention of feature flags, canary releases, automated tests, and rollback strategies."
+  },
+  {
+    "question_text": "Why are you passionate about DevOps engineering?",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "Look for intrinsic motivation, love for automation, collaboration, and delivering value quickly."
+  },
+
+  /* ---------- Code (5) ---------- */
+  {
+    "question_text": "Write a Bash script that checks disk usage and sends an alert if any partition exceeds 80%.",
+    "question_type": "code",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "#!/bin/bash\ndf -h | awk 'NR>1 {if($5+0>80) print \"ALERT: \"$0}'"
+  },
+  {
+    "question_text": "Create a simple Dockerfile to run a Python Flask app located in `app.py` on port 5000.",
+    "question_type": "code",
+    "difficulty": "basic",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "FROM python:3.11-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"python\", \"app.py\"]"
+  },
+  {
+    "question_text": "Write an Ansible task to install Nginx and ensure the service is running on Ubuntu.",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "- name: Install and start nginx\n  apt:\n    name: nginx\n    state: present\n  notify: restart nginx\n\n- name: Ensure nginx is running\n  service:\n    name: nginx\n    state: started"
+  },
+  {
+    "question_text": "Write a Jenkins Declarative Pipeline (Jenkinsfile) that builds a Maven project and archives its JAR artifact.",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "pipeline {\n  agent any\n  stages {\n    stage('Build') {\n      steps { sh 'mvn clean package' }\n    }\n  }\n  post {\n    success { archiveArtifacts artifacts: 'target/*.jar', fingerprint: true }\n  }\n}"
+  },
+  {
+    "question_text": "Implement a Python script that uses the AWS SDK (boto3) to roll back the last deployment in an AWS CodeDeploy application.",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "devops engineer",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "reference_answer": "import boto3, sys\napp = sys.argv[1]\ncd = boto3.client('codedeploy')\nlatest = cd.list_deployments(applicationName=app, sortBy='startTime', sortOrder='descending')['deployments'][0]\ncd.stop_deployment(deploymentId=latest, autoRollbackEnabled=True)\nprint(f'Rollback initiated for {latest}')"
+  }
+]

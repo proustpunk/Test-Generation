@@ -13,7 +13,15 @@ from gensim.models import Word2Vec
 #from gensim.models.fasttext import FastText
 
 import joblib
+import requests
 from .svm_with_labels import SVMWithLabels
+
+
+from .models import JobSeekerRegister
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+
 
 lemmatizer = WordNetLemmatizer()
 stemmer = PorterStemmer()
@@ -40,7 +48,19 @@ def clean_text(text):
     text = text.lower()
     return text
 
+jobseekers = JobSeekerRegister.objects.all()
 
+corpus = []
+for seeker in jobseekers:
+    resume_file_path = seeker.resume.path
+    if seeker.resume and os.path.exists(seeker.resume.path):
+  
+        with open(resume_file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            text = f.read()
+            cleaned_text = clean_text(text) 
+            corpus.append(cleaned_text)
+    vectorizer = TfidfVectorizer()
+    vectorizer.fit(corpus)
 
 def handle_pdf(file_path):
     text = ""
@@ -121,3 +141,86 @@ def process_file_description(file_instance):
     file_instance.description_vector = resume_vector.tolist()           
    
     file_instance.save() 
+
+
+
+def stuffing_check(text):
+    target_resume = text
+    vector = vectorizer.transform([target_resume])
+    scores = vector.toarray()[0]
+    words = vectorizer.get_feature_names_out()
+
+
+    stuffed_words = []
+
+    for i in range(len(scores)):
+        if scores[i] > 0.1:
+            stuffed_words.append((words[i], scores[i]))
+    print(len(stuffed_words))
+    is_suspicious = len(stuffed_words) > 1
+
+    return is_suspicious
+        
+
+import torch
+from transformers import GPT2Tokenizer, GPT2LMHeadModel
+
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+model = GPT2LMHeadModel.from_pretrained("gpt2")
+model.eval()
+
+
+def calculate_perplexity(text):
+    tokens = tokenizer.encode(text, return_tensors='pt', truncation=True, max_length=512)
+    with torch.no_grad():
+        outputs = model(tokens, labels=tokens)
+        loss = outputs.loss
+    return torch.exp(loss).item()
+
+
+def is_ai_written_resume(text, perplexity_threshold=40):
+    try:
+        perplexity = calculate_perplexity(text)
+        return perplexity < perplexity_threshold  #low is AI
+    except Exception as e:
+        print(f"Perplexity check error: {e}")
+        return False
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+# Load the model once globally
+tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
+
+def generate_reference(question_text):
+
+    prompt =( f"""You are an intelligent, professional candidate answering interview-style subjective questions. 
+Speak as a thoughtful human with professional tone: be concise, clear, and reasoned. 
+Include relevant technical terms naturally (do not force jargon). Do not repeat the question. 
+Give a short plan or rationale and a final one-sentence takeaway.
+
+Example 1:
+Q: What would you do if you were the CEO of a mid-size tech startup facing slowing growth?
+A: I would start by diagnosing the slowdown through customer feedback and product analytics to identify the weakest retention and acquisition points. I would convene leadership to prioritize product improvements that directly address those friction points and reallocate marketing budget toward channels with proven ROI. I would invest in a small, cross-functional squad to ship one high-impact experiment within 60 days and measure lift with A/B tests. I would also focus on talent retention by clarifying goals and supporting managers to remove blockers. Takeaway: prioritize measurable experiments that improve customer retention while aligning the team around clear, short-term targets.
+
+Example 2:
+Q: How do you approach learning a new programming language when starting a project?
+A: I identify the language’s idioms and standard libraries relevant to the problem, then scaffold a small prototype that exercises the language’s strengths. I read the official style guide and implement unit tests as I build to surface pitfalls early. I allocate time for one focused refactor after the prototype to adopt best practices and improve maintainability. I also consult one or two high-quality open-source examples to learn idiomatic patterns. Takeaway: learn by building a focused, test-backed prototype and refactor with idioms in mind.
+
+Now answer the question below following the same voice, structure, and constraints:
+
+Question: {question_text}
+"""
+)
+
+    
+    inputs = tokenizer(prompt, return_tensors="pt")
+    
+    output_ids = model.generate(
+        **inputs,
+        max_new_tokens=200,
+        temperature=0.0,  # controls randomness
+        do_sample=False,   # enables variability
+        top_p=0.9         # nucleus sampling
+    )
+    
+    return tokenizer.decode(output_ids[0], skip_special_tokens=True)

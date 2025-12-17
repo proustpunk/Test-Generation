@@ -1,17 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
-
-from .cosine import update_cosine
+import os
+from .cosine import cosine_similarity,update_cosine
 from .forms import JobSeekerRegistrationForm, JobSeekerLoginForm,JobProviderRegistrationForm,JobProviderLoginForm
 from django.contrib.auth import authenticate, login
-from .models import Answer, Job, JobSeekerRegister, UserProfile,Question
+from .models import CandidateLog,Answer, Job, JobSeekerRegister, UserProfile,Question
 
 from .forms import JobPostForm
 from django.contrib import messages
 from .authentication import send_verification_email
 
 from django.contrib.auth.decorators import login_required
-
+from .embeddings import embed_text
 
 from django.core.mail import send_mail
 from django.utils.http import urlsafe_base64_encode
@@ -19,6 +19,17 @@ from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.conf import settings
+
+from .utils import stuffing_check, clean_text, is_ai_written_resume
+
+
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import json
+
+
+
+
 
 def TopJob(request):
     top_jobs = Job.objects.order_by('-application_count')[:3]
@@ -170,7 +181,18 @@ def ranking(request, job_id):
             return redirect('jobprovider_dashboard')
 
         data = JobSeekerRegister.objects.filter(job_description=job).order_by('-cosine_similarity_score')
-       
+        
+        for single_data in data:
+            resume_file = single_data.resume
+
+            if resume_file and os.path.exists(resume_file.path):
+                with open(resume_file.path, 'r', encoding='utf-8', errors='ignore') as f:
+                    text = f.read()
+                    cleaned_text = clean_text(text)
+                    single_data.is_suspicious = stuffing_check(cleaned_text)
+                    single_data.is_suspicious_ai = is_ai_written_resume(cleaned_text)
+            else:
+                single_data.is_suspicious = False 
         return render(request, 'ranking.html', {'data': data, 'job': job})
     else:
         messages.error(request, "No job description selected.")
@@ -246,7 +268,7 @@ def verify_email(request, uidb64, token):
 
 def send_email_to_seekers(request, job_id):
 
-  
+   #pass in email, name everything of the user
 
     job = get_object_or_404(Job, id=job_id)
 
@@ -267,8 +289,7 @@ def send_email_to_seekers(request, job_id):
 
         current_site = get_current_site(request)
         domain = current_site.domain
-
-        test_link = f"http://{domain}/test-validation/{uid}/{token}/{job.id}/"
+        test_link = f"http://{domain}/test-validation/{uid}/{token}/{job.id}"
         send_mail(
 
             subject=f"Test Invitation for {job.job_title}",
@@ -335,6 +356,7 @@ def test_validation(request, uidb64, token, job_id):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
         user = get_user_model().objects.get(pk=uid)
+        print (user)
     except Exception:
         return JsonResponse({'match': False, 'error': 'Invalid user link.'}) if request.method == 'POST' else HttpResponseBadRequest("Invalid link.")
 
@@ -404,16 +426,54 @@ def start_test(request, uidb64, token, job_id):
 
     job = get_object_or_404(Job, id=job_id)
 
+    candidate = Candidate.objects.create(user=user, job=job)
+    candidate_id = candidate.id
+
    #category=job.job_title
-    questions = Question.objects.filter(difficulty='intermediate').order_by('?')[:1]
+    questions_subjective = Question.objects.filter(category=job.job_title, question_type='subjective', difficulty='intermediate').order_by('?')[:5]
+    questions_objective = Question.objects.filter(category=job.job_title,question_type='objective', difficulty='intermediate').order_by('?')[:8]
+    questions_mcq = Question.objects.filter(category=job.job_title, question_type='mcq', difficulty='intermediate').order_by('?')[:8]
 
-    return render(request, 'test_page.html', {'job': job, 'user': user,'questions':questions})
+    questions_code = Question.objects.filter(category=job.job_title, question_type='code', difficulty='intermediate').order_by('?')[:4]
 
+
+    questions = list(questions_subjective) + list(questions_objective) + list(questions_mcq) + list(questions_code)
+
+    return render(request, 'test_page.html', {
+        'job': job,
+        'user': user,
+        'questions': questions,
+        'uidb64': uidb64,
+        'token': token,        
+        'candidate_id': candidate_id,
+    })
+
+import subprocess, uuid, os, json, tempfile
+from .models import Candidate
+from django.contrib.auth.models import User
 
 
 def submit_test(request):
+
+    #decode the email id everyting and send it to variable as context to the url of the provider page and show it in container in well managed way with suspicitious activity log
     if request.method == "POST":
 
+        uidb64 = request.POST.get("uidb64")
+        job_id = request.POST.get("job_id")
+
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = User.objects.get(pk=uid)
+        job = Job.objects.get(id=job_id)
+
+        cid = request.POST.get("candidate_id")
+        candidate = Candidate.objects.get(id=cid)
+
+      
+        if candidate.total_score is None:
+            candidate.total_score = 0
+
+
+        total_score = 0
         for key,value in request.POST.items():
             if key.startswith('q'):
                 qid = key[1:]
@@ -422,7 +482,7 @@ def submit_test(request):
                     question = Question.objects.get(id=qid)
 
                     answer = Answer.objects.create(
-                        user = request.user,
+                        user=user,
                         question=question,
                         selected_option=value if question.question_type in ['mcq', 'objective'] else None,
                         written_answer=value if question.question_type in ['subjective', 'code'] else None,
@@ -431,22 +491,113 @@ def submit_test(request):
 
                     
                     if question.question_type in ['mcq', 'objective']:
-                        if value.strip().upper() == question.correct_answer.strip().upper():
-                            answer.score += 1  
-                        else:
-                            answer.score = 0  
+                        if question.correct_answer and value:
+                            if value.strip().upper() == question.correct_answer.strip().upper():
+                             answer.score += 1  
+                            else:
+                             answer.score += 0  
+                    
+                    answer.save()
+
+                    if question.question_type == "subjective":
+                        ref_emb = question.reference_vector
+                        ans_emb = embed_text(answer.written_answer)
+                        similarity = cosine_similarity(ref_emb,ans_emb)
+                        answer.score += round(similarity*10,2) 
                         answer.save()
 
-                    #if question.question_type in ['subjective']:
-                        #cosine_similarity (written_answer, question.reference answer)   
-                        #cosine_similarity *= 10
 
+                    elif question.question_type=="code":
+                        test_cases = question.test_cases or []
+                        all_passed = True
+
+
+                        filename = f"{uuid.uuid4().hex}.py"
+                        filepath = os.path.abspath(filename)
+
+                        with open(filepath, "w") as f:
+                            f.write(value)
+
+                        
+                        for case in test_cases:
+                            input_data = case.get("input", "") + "\n"
+                            expected_output = case.get("expected_output", "")
+
+                            try:
+                                result = subprocess.run([
+                                    "docker", "run", "--rm",
+                                    "-v", f"{filepath}:/app/code.py",
+                                    "python:3.9", "python", "/app/code.py"
+                                ],
+                                input=input_data,
+                                capture_output=True,
+                                text=True,
+                                timeout=5
+                                )
+
+                                output = result.stdout.strip()
+
+                                if output != str(expected_output):
+                                    all_passed = False
+                                    break
+
+                            except subprocess.TimeoutExpired:
+                                all_passed=False
+                                break
+
+                        if os.path.exists(filepath):
+                             os.remove(filepath)
+
+                        # Scoring
+                        if all_passed:
+                            answer.score = 10
+                        else:
+                            answer.score = 0
+                        answer.save()
+
+                    candidate.answers.add(answer)
+                    total_score += answer.score
+
+
+                            
                 except Question.DoesNotExist:
                     continue
 
-        return redirect('homepage')
+        candidate.total_score = total_score
+        candidate.save()
+
+        return redirect('test_submitted', job_id=job.id)
 
     return HttpResponse("Invalid access.")
 
 
+def test_submitted(request,job_id):
+    job = Job.objects.get(id=job_id)
+    return render(request,'test_submitted.html',{'job': job})
 
+
+
+def candidates_for_job(request, job_id):
+    job = get_object_or_404(Job, id=job_id)
+    candidates = Candidate.objects.filter(job=job)
+    return render(request, 'candidates_for_job.html', {'job': job, 'candidates': candidates})
+
+
+@csrf_exempt
+def log_activity(request):
+
+    data = json.loads(request.body)
+    cid = data.get("candidate_id")
+    flags = data.get("flags")
+    suspicious = data.get("suspicious")
+
+    candidate = Candidate.objects.get(id=cid)
+
+    CandidateLog.objects.create(
+        candidate = candidate,
+        flags = flags,
+        suspicious = suspicious
+    )
+
+
+    return JsonResponse({"status": "ok"})
