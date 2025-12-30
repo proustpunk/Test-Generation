@@ -1,161 +1,151 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Face Verification</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f4f6f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
+    :root { --accent:#6f42c1; --accent-2:#0d6efd; }
+    @keyframes bgShift { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+
+    html,body{height:100%;margin:0;font-family:"Segoe UI",sans-serif;}
+    body{
+      background: linear-gradient(120deg,#081026 0%,#0b1220 40%,#18102b 100%);
+      background-size:400% 400%; animation:bgShift 18s ease infinite;
+      padding:28px; color:#fff; display:flex; align-items:center; justify-content:center;
     }
 
-    .container {
-      background-color: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
-    }
+    .panel{ width:100%; max-width:920px; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border-radius:12px; padding:18px; box-shadow:0 12px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.04); }
 
-    h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
+    header.verify-head{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px;}
+    .brand{display:flex; align-items:center; gap:12px;}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
+    .title{font-weight:700;font-size:1.05rem;}
+    .subtitle{font-size:0.85rem;color:rgba(255,255,255,0.85);margin-top:2px;}
 
-    video {
-      width: 100%;
-      max-height: 340px;
-      border-radius: 10px;
-      border: 2px solid #ccc;
-      margin-bottom: 10px;
-    }
+    .profile-block{display:flex;align-items:center;gap:10px;}
+    .profile-thumb{width:64px;height:64px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);background:#fff;}
+    .profile-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 
-    .status-row {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
+    .grid{display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start;}
+    @media (max-width:980px){.grid{grid-template-columns:1fr;}}
 
-    .status {
-      font-weight: bold;
-    }
+    .camera-card{background:rgba(255,255,255,0.02);border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.03);}
+    video#video{width:100%;height:360px;background:#000;border-radius:8px;object-fit:cover;display:block;border:1px solid rgba(255,255,255,0.03);}
 
-    .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin-left: 8px;
-    }
+    .status-row{display:flex;gap:12px;margin-top:8px;align-items:center;flex-wrap:wrap;}
+    .status{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;font-weight:600;font-size:0.9rem;color:#e6f0ff;display:flex;align-items:center;gap:8px;}
+    .dot{width:10px;height:10px;border-radius:50%;background:#6c757d;display:inline-block;}
+    .dot.green{background:#28a745;} .dot.red{background:#dc3545;}
 
-    .dot.green { background-color: #28a745; }
-    .dot.red { background-color: #dc3545; }
-    .dot.gray { background-color: #6c757d; }
+    .controls{margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:10px 14px;border-radius:8px;font-weight:700;color:white;}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#eaf2ff;padding:8px 12px;border-radius:8px;}
 
-    button {
-      padding: 12px 20px;
-      margin: 10px 5px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+    .countdown{font-weight:800;font-size:1.6rem;margin-left:8px;color:#fff;min-width:36px;text-align:center;display:none;}
+    .small-note{font-size:0.86rem;color:rgba(255,255,255,0.8);margin-top:8px;}
 
-    #snap {
-      background-color: #0078d4;
-      color: white;
-    }
+    .side-panel{background:rgba(255,255,255,0.02);border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.03);}
+    .side-panel h4{margin-top:0;margin-bottom:8px;color:#fff;}
+    .result{margin-top:10px;font-size:1rem;font-weight:700;min-height:28px;color:#fff;}
 
-    #snap:disabled {
-      background-color: #a4c5eb;
-      cursor: not-allowed;
-    }
+    canvas{display:none;}
+    .preview-wrap{margin-top:12px;text-align:center;color:rgba(255,255,255,0.9);}
 
-    #result {
-      margin-top: 10px;
-      font-weight: 500;
-    }
-
-    canvas {
-      margin-top: 15px;
-      width: 100%;
-      max-height: 320px;
-      border-radius: 10px;
-      border: 1px solid #aaa;
-    }
-
-    img.preview {
-      margin-top: 15px;
-      max-width: 200px;
-      border-radius: 6px;
-    }
-
-    @media (max-width: 600px) {
-      .status-row {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+    @media (max-width:520px){ video#video{height:260px;} .profile-thumb{width:52px;height:52px;} }
   </style>
 </head>
-
 <body>
-<div class="container">
-  <h2>Camera & Face Verification</h2>
+  <div class="panel" role="main">
+    <header class="verify-head">
+      <div class="brand">
+        <div class="logo">NCE</div>
+        <div>
+          <div class="title">Identity Verification</div>
+          <div class="subtitle">Match live camera with the profile picture from your application</div>
+        </div>
+      </div>
 
-  <video id="video" autoplay playsinline></video>
+      <div class="profile-block">
+        <div class="profile-thumb">
+          {% if target_photo and target_photo.profile_pics %}
+            <img src="{{ target_photo.profile_pics.url }}" alt="Profile thumbnail" />
+          {% else %}
+            <img src="{% static 'images/placeholder-profile.jpg' %}" alt="Profile thumbnail" />
+          {% endif %}
+        </div>
+        <div style="text-align:right;">
+          <div style="font-weight:700">{% if applicant_name %}{{ applicant_name }}{% else %}Applicant{% endif %}</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.85)">{% if applicant_position %}Applied for: {{ applicant_position }}{% endif %}</div>
+        </div>
+      </div>
+    </header>
 
-  <div class="status-row">
-    <div class="status">Camera: <span id="camera-indicator"><span class="dot gray"></span></span></div>
-    <div class="status">Mic: <span id="mic-indicator"><span class="dot gray"></span></span></div>
+    <div class="grid">
+      <!-- left: camera -->
+      <section class="camera-card" aria-labelledby="camera-heading">
+        <h2 id="camera-heading" style="display:none">Camera verification</h2>
+        <video id="video" autoplay playsinline muted></video>
+
+        <div class="status-row" role="status" aria-live="polite">
+          <div class="status">Camera: <span id="camera-indicator"><span class="dot"></span></span></div>
+          <div class="status">Mic: <span id="mic-indicator"><span class="dot"></span></span></div>
+          <div class="status">Ready: <span id="ready-indicator"><span class="dot"></span></span></div>
+        </div>
+
+        <div class="controls">
+          <!-- VISIBLE "I'm Ready" MATCH button -->
+          <button id="snap" class="btn-primary" disabled>I'm Ready — Match Face</button>
+
+          <!-- Retake button is hidden until needed -->
+          <button id="retake" class="btn-ghost" style="display:none;">Retake</button>
+
+          <!-- Enter Test button is visible but DISABLED until verification succeeds -->
+          <form id="start-test-form" action="{% url 'start-test' uidb64=uidb64 token=token job_id=job.id %}" method="POST" style="display:inline-block; margin:0;">
+            {% csrf_token %}
+            <button type="submit" id="enter-test" class="btn-primary" disabled style="opacity:0.6;">Enter Test</button>
+          </form>
+
+          <div id="countdown" class="countdown" aria-hidden="true"></div>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+
+        <canvas id="canvas" width="640" height="480"></canvas>
+
+        <div class="preview-wrap">
+          <div style="font-size:0.92rem;color:rgba(255,255,255,0.85)">Uploaded profile picture (reference)</div>
+          {% if target_photo and target_photo.profile_pics %}
+            <img class="preview" src="{{ target_photo.profile_pics.url }}" alt="Uploaded Photo" style="max-width:140px;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.04);" />
+          {% endif %}
+        </div>
+      </section>
+
+      <!-- right: guidance -->
+      <aside class="side-panel" aria-labelledby="how-heading">
+        <h4 id="how-heading">How this works</h4>
+        <ol>
+          <li>Allow camera & microphone access when prompted.</li>
+          <li>Click <strong>I'm Ready — Match Face</strong>. A 3-second countdown will capture a frame.</li>
+          <li>If matched you may proceed by clicking <strong>Enter Test</strong>.</li>
+        </ol>
+
+        <div style="margin-top:10px;"><strong>Tips</strong>
+          <ul><li>Face the camera in good light and remove hats/sunglasses.</li><li>Hold still during capture.</li></ul>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div id="enter-note" class="small-note">The Enter Test button is enabled only after successful match.</div>
+        </div>
+      </aside>
+    </div>
   </div>
-
-  <button id="snap" disabled>I'm Ready – Match Face</button>
-  <div id="result"></div>
-
-  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
-
-  <!-- Optional: show the user's uploaded photo -->
-  <div id="uploaded-photo-preview">
-    <!-- This part will be handled by Django -->
-    {% if target_photo %}
-      <h4>Uploaded Profile Picture:</h4>
-      <img class="preview" src="{{ target_photo.profile_pics.url }}" alt="Uploaded Photo" />
-    {% else %}
-      <p>No uploaded photo found.</p>
-    {% endif %}
-  </div>
-</div>
-
-<form id="start-test-form" action="{% url 'start-test' uidb64=uidb64 token=token job_id=job.id %}" method="POST" style="display: none;">
-    {% csrf_token %}
-    <button type="submit" id="start-test">Enter Test</button>
-</form>
 
 <script>
-  const video = document.getElementById('video');
-  const canvas = document.getElementById('canvas');
-  const snapButton = document.getElementById('snap');
-  const resultDiv = document.getElementById('result');
-
-  const cameraIndicator = document.querySelector('#camera-indicator .dot');
-  const micIndicator = document.querySelector('#mic-indicator .dot');
-
-  let cameraWorking = false;
-  let micWorking = false;
-
-  // CSRF helper
+  // CSRF helper (same as your working code)
   function getCookie(name) {
       let cookieValue = null;
       if (document.cookie && document.cookie !== '') {
@@ -170,83 +160,147 @@
       }
       return cookieValue;
   }
-
   const csrftoken = getCookie('csrftoken');
+
+  // DOM refs
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const snapButton = document.getElementById('snap');
+  const retakeButton = document.getElementById('retake');
+  const enterTestBtn = document.getElementById('enter-test');
+  const resultDiv = document.getElementById('result');
+  const countdownEl = document.getElementById('countdown');
+
+  const cameraIndicator = document.querySelector('#camera-indicator .dot');
+  const micIndicator = document.querySelector('#mic-indicator .dot');
+  const readyIndicator = document.querySelector('#ready-indicator .dot');
+
+  let cameraWorking = false;
+  let micWorking = false;
+
+  // server validation URL - ensure these args are provided in context
   const postUrl = "{% url 'test-validation' uidb64=uidb64 token=token job_id=job.id %}";
 
-  // Try to get video stream
+  function setDot(el, state) {
+    el.className = 'dot';
+    if (state === 'green') el.classList.add('green');
+    else if (state === 'red') el.classList.add('red');
+  }
+
+  // request camera + mic
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(stream => {
-        video.srcObject = stream;
-        cameraWorking = true;
-        cameraIndicator.classList.remove('gray', 'red');
-        cameraIndicator.classList.add('green');
-        enableSnapIfReady();
+      try { video.srcObject = stream; } catch (e) { video.src = window.URL.createObjectURL(stream); }
+      cameraWorking = true;
+      setDot(cameraIndicator, 'green');
+      enableSnapIfReady();
     })
     .catch(err => {
-        console.error("Camera access error:", err);
-        cameraIndicator.classList.remove('gray');
-        cameraIndicator.classList.add('red');
+      console.error("Camera access error:", err);
+      setDot(cameraIndicator, 'red');
     });
 
-  // Try to get audio stream (mic)
   navigator.mediaDevices.getUserMedia({ audio: true })
     .then(stream => {
-        micWorking = true;
-        micIndicator.classList.remove('gray', 'red');
-        micIndicator.classList.add('green');
-        enableSnapIfReady();
+      micWorking = true;
+      setDot(micIndicator, 'green');
+      enableSnapIfReady();
     })
     .catch(err => {
-        console.error("Mic access error:", err);
-        micIndicator.classList.remove('gray');
-        micIndicator.classList.add('red');
+      console.error("Mic access error:", err);
+      setDot(micIndicator, 'red');
     });
 
-  // Enable button only if both camera and mic are working
   function enableSnapIfReady() {
     if (cameraWorking && micWorking) {
       snapButton.disabled = false;
+      setDot(readyIndicator, 'green');
+    } else {
+      snapButton.disabled = true;
+      readyIndicator.className = 'dot';
     }
   }
 
-  // Take snapshot and send to server
+  function runCountdown(seconds, onEnd) {
+    let s = seconds;
+    countdownEl.textContent = s;
+    countdownEl.style.display = 'inline-block';
+    countdownEl.setAttribute('aria-hidden', 'false');
+    const iv = setInterval(() => {
+      s -= 1;
+      if (s > 0) {
+        countdownEl.textContent = s;
+      } else {
+        clearInterval(iv);
+        countdownEl.style.display = 'none';
+        countdownEl.setAttribute('aria-hidden','true');
+        if (onEnd) onEnd();
+      }
+    }, 1000);
+  }
+
+  // capture & POST (same flow you verified)
   snapButton.addEventListener('click', () => {
       const context = canvas.getContext('2d');
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      canvas.style.display = 'block';
+      resultDiv.textContent = '';
+      snapButton.disabled = true;
 
-      const dataURL = canvas.toDataURL('image/jpeg');
+      runCountdown(3, () => {
+        // capture
+        canvas.width = video.videoWidth || 640;
+        canvas.height = video.videoHeight || 480;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataURL = canvas.toDataURL('image/jpeg');
 
-      fetch(postUrl, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'X-CSRFToken': csrftoken,
-          },
-          body: JSON.stringify({ image: dataURL })
-      })
-      .then(response => response.json())
-      .then(data => {
-          if (data.match === true) {
-              resultDiv.textContent = '✅ Face matched!';
-              resultDiv.style.color = 'green';
+        fetch(postUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken,
+            },
+            body: JSON.stringify({ image: dataURL })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.match === true) {
+                resultDiv.textContent = '✅ Face matched!';
+                resultDiv.style.color = '#7ee787';
 
-              const startTestForm = document.getElementById('start-test-form');
-              startTestForm.style.display = 'block';
-          } else if (data.match === false) {
-              resultDiv.textContent = '❌ Face did NOT match.';
-              resultDiv.style.color = 'red';
-          } else if (data.error) {
-              resultDiv.textContent = '⚠️ Error: ' + data.error;
-              resultDiv.style.color = 'orange';
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
+                // enable Enter Test button
+                enterTestBtn.disabled = false;
+                enterTestBtn.style.opacity = '1';
+
+                // show retake option
+                retakeButton.style.display = 'inline-block';
+            } else if (data.match === false) {
+                resultDiv.textContent = '❌ Face did NOT match.';
+                resultDiv.style.color = '#ff8a8a';
+                retakeButton.style.display = 'inline-block';
+            } else if (data.error) {
+                resultDiv.textContent = '⚠️ Error: ' + data.error;
+                resultDiv.style.color = 'orange';
+            } else {
+                resultDiv.textContent = '⚠️ Unexpected server response';
+                resultDiv.style.color = 'orange';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.textContent = '⚠️ Network or server error';
+            resultDiv.style.color = 'orange';
+        })
+        .finally(() => {
+            snapButton.disabled = false;
+        });
       });
   });
-</script>
 
+  retakeButton.addEventListener('click', () => {
+      resultDiv.textContent = '';
+      enterTestBtn.disabled = true;
+      enterTestBtn.style.opacity = '0.6';
+      retakeButton.style.display = 'none';
+  });
+</script>
 </body>
 </html>

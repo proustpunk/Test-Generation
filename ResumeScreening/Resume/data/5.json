@@ -1,0 +1,641 @@
+[
+  {
+    "question_text": "What does cybersecurity primarily aim to protect?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "physical buildings",
+    "option_b": "digital systems and data",
+    "option_c": "transport networks",
+    "option_d": "manufacturing machines",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which of the following is a strong password?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "password123",
+    "option_b": "admin",
+    "option_c": "Q9@xL!7p",
+    "option_d": "123456",
+    "correct_answer": "C"
+  },
+  {
+    "question_text": "What is malware?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "hardware failure",
+    "option_b": "malicious software",
+    "option_c": "network cable",
+    "option_d": "security policy",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which type of malware displays unwanted advertisements?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "virus",
+    "option_b": "worm",
+    "option_c": "adware",
+    "option_d": "rootkit",
+    "correct_answer": "C"
+  },
+  {
+    "question_text": "What does phishing attempt to do?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "improve network speed",
+    "option_b": "steal sensitive information",
+    "option_c": "encrypt data",
+    "option_d": "update software",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which protocol is used to securely browse websites?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "http",
+    "option_b": "ftp",
+    "option_c": "https",
+    "option_d": "smtp",
+    "correct_answer": "C"
+  },
+  {
+    "question_text": "What is a firewall used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "data storage",
+    "option_b": "network traffic filtering",
+    "option_c": "file compression",
+    "option_d": "software testing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which attack involves guessing passwords repeatedly?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "sql injection",
+    "option_b": "brute force attack",
+    "option_c": "phishing",
+    "option_d": "spoofing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "What does antivirus software do?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "creates malware",
+    "option_b": "detects and removes malware",
+    "option_c": "monitors employees",
+    "option_d": "improves graphics",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which of the following is an example of personal data?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "ip address",
+    "option_b": "operating system",
+    "option_c": "cpu speed",
+    "option_d": "router model",
+    "correct_answer": "A"
+  },
+
+  {
+    "question_text": "What is two-factor authentication?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "using two passwords",
+    "option_b": "using password and second verification",
+    "option_c": "using two usernames",
+    "option_d": "using two devices only",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which device connects a private network to the internet?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "switch",
+    "option_b": "router",
+    "option_c": "printer",
+    "option_d": "scanner",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "What does encryption do?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "deletes data",
+    "option_b": "compresses data",
+    "option_c": "converts data into unreadable format",
+    "option_d": "copies data",
+    "correct_answer": "C"
+  },
+  {
+    "question_text": "Which malware spreads without user interaction?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "virus",
+    "option_b": "worm",
+    "option_c": "trojan",
+    "option_d": "spyware",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "What is a trojan horse in cybersecurity?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "a legitimate security tool",
+    "option_b": "malware disguised as legitimate software",
+    "option_c": "network cable",
+    "option_d": "encryption method",
+    "correct_answer": "B"
+  },
+
+  {
+    "question_text": "Which organization sets global cybersecurity standards?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "iso",
+    "option_b": "who",
+    "option_c": "unicef",
+    "option_d": "unesco",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "What is spyware designed to do?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "protect privacy",
+    "option_b": "monitor user activity secretly",
+    "option_c": "speed up computer",
+    "option_d": "encrypt files",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "Which of the following is a secure practice?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "sharing passwords",
+    "option_b": "using public wifi for banking",
+    "option_c": "regular software updates",
+    "option_d": "disabling firewall",
+    "correct_answer": "C"
+  },
+  {
+    "question_text": "What does dos attack stand for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "data on system",
+    "option_b": "denial of service",
+    "option_c": "device operating system",
+    "option_d": "domain online security",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "What is the role of a cybersecurity specialist?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "option_a": "design websites",
+    "option_b": "protect systems from cyber threats",
+    "option_c": "manage payroll",
+    "option_d": "create graphics",
+    "correct_answer": "B"
+  },
+  
+  {
+    "question_text": "Explain what cybersecurity means and why it is important in today's digital world.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Cybersecurity refers to the practice of protecting computers, networks, and data from unauthorized access, attacks, or damage. It is important because digital systems store sensitive personal, financial, and organizational information that must be kept secure from cyber threats.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is malware? Give two common examples.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Malware is malicious software designed to harm or exploit computer systems. Common examples include viruses and worms.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Define phishing and explain how it affects users.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Phishing is a cyber attack where attackers trick users into providing sensitive information such as passwords or credit card details by pretending to be a trusted source, usually through emails or fake websites.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is a firewall and why is it used?",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules. It is used to prevent unauthorized access to a network.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain the concept of strong passwords.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A strong password is a combination of letters, numbers, and special characters that is difficult to guess. Strong passwords reduce the risk of unauthorized access.",
+    "reference_vector": null
+  },
+
+  {
+    "question_text": "Write a program that checks whether a password length is at least 8 characters. Print 'secure' if true, otherwise print 'weak'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "password123", "expected_output": "secure" },
+      { "input": "admin", "expected_output": "weak" },
+      { "input": "12345678", "expected_output": "secure" },
+      { "input": "pass", "expected_output": "weak" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks if a given email contains the '@' symbol. Print 'valid' or 'invalid'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "user@example.com", "expected_output": "valid" },
+      { "input": "userexample.com", "expected_output": "invalid" },
+      { "input": "admin@mail", "expected_output": "valid" },
+      { "input": "adminmail.com", "expected_output": "invalid" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks if a given string contains the word 'password'. Print 'unsafe' if it does, otherwise print 'safe'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "my password is secret", "expected_output": "unsafe" },
+      { "input": "securelogin", "expected_output": "safe" },
+      { "input": "password123", "expected_output": "unsafe" },
+      { "input": "hello world", "expected_output": "safe" }
+    ]
+  },
+  {
+    "question_text": "Write a program that counts the number of digits in a given string.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "abc123", "expected_output": "3" },
+      { "input": "no digits", "expected_output": "0" },
+      { "input": "2025secure", "expected_output": "4" },
+      { "input": "", "expected_output": "0" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks whether a given ip address starts with '192'. Print 'private' if true, otherwise print 'public'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "192.168.1.1", "expected_output": "private" },
+      { "input": "10.0.0.1", "expected_output": "public" },
+      { "input": "192.0.2.5", "expected_output": "private" },
+      { "input": "8.8.8.8", "expected_output": "public" }
+    ]
+  },
+
+
+  {
+    "question_text": "Explain what a computer virus is in simple terms.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A computer virus is a type of malicious software that can copy itself and spread from one computer to another, often causing damage or unwanted behavior.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is the purpose of antivirus software?",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Antivirus software is used to detect, block, and remove malicious software from a computer system to keep it secure.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain what personal data means with one example.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Personal data is any information that can identify a person, such as name, email address, or phone number.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is social engineering in cybersecurity?",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Social engineering is a technique where attackers manipulate people into revealing sensitive information instead of hacking systems directly.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Why should software updates be installed regularly?",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Software updates fix security vulnerabilities and bugs, helping protect systems from known cyber attacks.",
+    "reference_vector": null
+  },
+
+  {
+    "question_text": "Write a program that checks whether a given string contains any digit. Print 'yes' or 'no'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "user123", "expected_output": "yes" },
+      { "input": "admin", "expected_output": "no" },
+      { "input": "pass9word", "expected_output": "yes" },
+      { "input": "secure", "expected_output": "no" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks if a password contains at least one uppercase letter. Print 'valid' or 'invalid'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "Password", "expected_output": "valid" },
+      { "input": "password", "expected_output": "invalid" },
+      { "input": "SECURE", "expected_output": "valid" },
+      { "input": "admin123", "expected_output": "invalid" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks if a given url starts with 'https'. Print 'secure' or 'not secure'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "https://example.com", "expected_output": "secure" },
+      { "input": "http://example.com", "expected_output": "not secure" },
+      { "input": "https://secure.site", "expected_output": "secure" },
+      { "input": "ftp://files.com", "expected_output": "not secure" }
+    ]
+  },
+  {
+    "question_text": "Write a program that counts how many times the character '@' appears in a string.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "user@mail.com", "expected_output": "1" },
+      { "input": "@admin@", "expected_output": "2" },
+      { "input": "nomail", "expected_output": "0" },
+      { "input": "test@@mail", "expected_output": "2" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks whether a given filename ends with '.exe'. Print 'dangerous' or 'safe'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "setup.exe", "expected_output": "dangerous" },
+      { "input": "document.pdf", "expected_output": "safe" },
+      { "input": "game.exe", "expected_output": "dangerous" },
+      { "input": "image.png", "expected_output": "safe" }
+    ]
+  },
+
+  {
+    "question_text": "Explain what a secure website means.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A secure website uses encryption to protect data exchanged between the user and the server, usually indicated by https in the url.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is unauthorized access?",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Unauthorized access occurs when someone gains access to a system or data without permission.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain why sharing passwords is unsafe.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Sharing passwords is unsafe because it allows others to access private accounts and sensitive information without control.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is a data breach?",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A data breach happens when sensitive or confidential data is accessed, stolen, or exposed without authorization.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain the role of user awareness in cybersecurity.",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "reference_answer": "User awareness helps prevent cyber attacks by teaching users to recognize threats such as phishing emails and unsafe downloads.",
+    "reference_vector": null
+  },
+
+  {
+    "question_text": "Write a program that replaces all digits in a string with '*'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "user123", "expected_output": "user***" },
+      { "input": "pass2025", "expected_output": "pass****" },
+      { "input": "secure", "expected_output": "secure" },
+      { "input": "a1b2c3", "expected_output": "a*b*c*" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks whether a given string is empty. Print 'empty' or 'not empty'.",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "", "expected_output": "empty" },
+      { "input": "data", "expected_output": "not empty" },
+      { "input": " ", "expected_output": "not empty" },
+      { "input": "secure123", "expected_output": "not empty" }
+    ]
+  },
+
+
+
+  {
+    "question_text": "Explain the difference between symmetric and asymmetric encryption with one example each.",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Symmetric encryption uses the same key for encryption and decryption, such as AES. Asymmetric encryption uses two different keys, a public key and a private key, such as RSA. Symmetric encryption is faster, while asymmetric encryption provides better key management.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is a man-in-the-middle attack and how can it be prevented?",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A man-in-the-middle attack occurs when an attacker secretly intercepts communication between two parties. It can be prevented by using encryption, HTTPS, VPNs, and secure authentication methods.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain what hashing is and why it is used for password storage.",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Hashing converts data into a fixed-length value using a one-way function. It is used for password storage because original passwords cannot be easily recovered, improving security if a database is compromised.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is the difference between authentication and authorization?",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Authentication verifies the identity of a user, while authorization determines what resources or actions the authenticated user is allowed to access.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain what a vpn is and how it improves security.",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "A vpn creates an encrypted tunnel between the user and the internet, protecting data from interception and hiding the user's ip address.",
+    "reference_vector": null
+  },
+
+  {
+    "question_text": "Write a program that checks whether a password contains at least one digit, one lowercase letter, and one uppercase letter. Print 'strong' or 'weak'.",
+    "question_type": "code",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "Password1", "expected_output": "strong" },
+      { "input": "password", "expected_output": "weak" },
+      { "input": "ADMIN123", "expected_output": "weak" },
+      { "input": "Secure9", "expected_output": "strong" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks whether a given ip address belongs to a private range (10.x.x.x or 192.168.x.x). Print 'private' or 'public'.",
+    "question_type": "code",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "10.0.0.5", "expected_output": "private" },
+      { "input": "192.168.1.10", "expected_output": "private" },
+      { "input": "172.16.0.1", "expected_output": "public" },
+      { "input": "8.8.8.8", "expected_output": "public" }
+    ]
+  },
+  {
+    "question_text": "Write a program that detects possible phishing urls by checking if the url contains the '@' symbol. Print 'suspicious' or 'safe'.",
+    "question_type": "code",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "http://example.com", "expected_output": "safe" },
+      { "input": "http://secure@bank.com", "expected_output": "suspicious" },
+      { "input": "https://login.site", "expected_output": "safe" },
+      { "input": "http://user@malicious.com", "expected_output": "suspicious" }
+    ]
+  },
+  {
+    "question_text": "Write a program that masks an email address by hiding all characters before '@' except the first and last character.",
+    "question_type": "code",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "user@example.com", "expected_output": "u**r@example.com" },
+      { "input": "admin@mail.com", "expected_output": "a***n@mail.com" },
+      { "input": "ab@test.com", "expected_output": "a*b@test.com" },
+      { "input": "security@site.org", "expected_output": "s******y@site.org" }
+    ]
+  },
+  {
+    "question_text": "Write a program that checks whether a log message contains the words 'error' or 'failed'. Print 'alert' or 'ok'.",
+    "question_type": "code",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "test_cases": [
+      { "input": "login failed for user", "expected_output": "alert" },
+      { "input": "system error occurred", "expected_output": "alert" },
+      { "input": "login successful", "expected_output": "ok" },
+      { "input": "connection established", "expected_output": "ok" }
+    ]
+  },
+
+  {
+    "question_text": "Explain what intrusion detection systems are used for.",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Intrusion detection systems monitor network or system activities to detect suspicious behavior or potential attacks and alert administrators.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is the purpose of security logs and monitoring?",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Security logs and monitoring help detect unauthorized access, investigate incidents, and maintain accountability by recording system activities.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain the principle of least privilege.",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "The principle of least privilege means giving users only the minimum access rights necessary to perform their tasks, reducing security risks.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "What is ransomware and how does it affect organizations?",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Ransomware is malware that encrypts data and demands payment for decryption. It can disrupt operations, cause data loss, and result in financial damage.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "Explain why backups are important for cybersecurity.",
+    "question_type": "subjective",
+    "difficulty": "medium",
+    "category": "cybersecurity specialist",
+    "reference_answer": "Backups allow data recovery after cyber attacks, system failures, or ransomware incidents, ensuring business continuity.",
+    "reference_vector": null
+  }
+
+]

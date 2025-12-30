@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 import os
+from .ner_save import create_ner_pool
 from .cosine import cosine_similarity,update_cosine
 from .forms import JobSeekerRegistrationForm, JobSeekerLoginForm,JobProviderRegistrationForm,JobProviderLoginForm
 from django.contrib.auth import authenticate, login
@@ -12,7 +13,7 @@ from .authentication import send_verification_email
 
 from django.contrib.auth.decorators import login_required
 from .embeddings import embed_text
-
+from .tasks import send_email_to_seekers_task
 from django.core.mail import send_mail
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
@@ -98,6 +99,11 @@ def jobseeker_register(request):
         form = JobSeekerRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             user,job_seeker = form.save()
+
+            try:
+                create_ner_pool(job_seeker)
+            except Exception as e:
+                print(f"NER extraction failed: {e}")
             send_verification_email(request,user)
             return redirect('loginmain') 
             
@@ -125,7 +131,8 @@ def jobprovider_register(request):
 @login_required
 def PostJob(request): #dashboard
    
-
+    current_site = get_current_site(request)
+    domain = current_site.domain
 
     try:
         user_profile = UserProfile.objects.get(user=request.user)
@@ -141,6 +148,8 @@ def PostJob(request): #dashboard
 
             job_post.user = request.user
             job_post.save() 
+            
+            send_email_to_seekers_task.delay(job_post.id, domain)
             return redirect('jobprovider_dashboard')  
     else:
         form = JobPostForm()  
@@ -166,7 +175,7 @@ def joblist(request): #dashboard
     jobs = Job.objects.all()
     return render(request, 'joblist.html', {'jobs': jobs})
 
-
+from .models import JobApplication
 
 
 @login_required
@@ -180,24 +189,28 @@ def ranking(request, job_id):
             messages.error(request, "Job description not found.")
             return redirect('jobprovider_dashboard')
 
-        data = JobSeekerRegister.objects.filter(job_description=job).order_by('-cosine_similarity_score')
-        
-        for single_data in data:
-            resume_file = single_data.resume
+        applications = JobApplication.objects.filter(job=job).select_related('job_seeker').order_by('-cosine_similarity_score')
 
-            if resume_file and os.path.exists(resume_file.path):
-                with open(resume_file.path, 'r', encoding='utf-8', errors='ignore') as f:
-                    text = f.read()
-                    cleaned_text = clean_text(text)
-                    single_data.is_suspicious = stuffing_check(cleaned_text)
-                    single_data.is_suspicious_ai = is_ai_written_resume(cleaned_text)
+        for single_app in applications:
+            single_data = single_app.job_seeker
+            # Use snapshot instead of live resume
+            cleaned_text = None
+            if single_app.processed_text_snapshot:
+                cleaned_text = " ".join(single_app.processed_text_snapshot)
+            elif single_app.resume_snapshot and os.path.exists(single_app.resume_snapshot.path):
+                with open(single_app.resume_snapshot.path, 'r', encoding='utf-8', errors='ignore') as f:
+                    cleaned_text = clean_text(f.read())
+            
+            if cleaned_text:
+                single_app.is_suspicious = stuffing_check(cleaned_text)
+                single_app.is_suspicious_ai = is_ai_written_resume(cleaned_text)
+                single_app.skill_ner = single_app.skill_ner_snapshot
             else:
-                single_data.is_suspicious = False 
-        return render(request, 'ranking.html', {'data': data, 'job': job})
-    else:
-        messages.error(request, "No job description selected.")
-        return redirect('joblist') 
-    
+                single_app.is_suspicious = False
+                single_app.is_suspicious_ai = False
+
+        return render(request, 'ranking.html', {'data': applications, 'job': job})
+            
 
 
 def job_details(request, job_id):
@@ -219,24 +232,35 @@ def apply_job(request, job_id):
         messages.error(request, "User profile not found.")
         return redirect('loginmain')
 
-    has_applied = JobSeekerRegister.objects.filter(job_description=job, user=request.user).exists()
+    has_applied = JobApplication.objects.filter(
+        job=job, 
+        job_seeker__user=request.user
+    ).exists()
 
-   
-    print(has_applied)
-    if request.method == 'POST' and has_applied==False:  # User confirmed application
+    if request.method == 'POST' and not has_applied:  # User confirmed application
         job_seeker_register = JobSeekerRegister.objects.get(user=request.user)
 
-        job_seeker_register.job_description = job
+        # --- Step: create snapshot ---
+        JobApplication.objects.create(
+            job=job,
+            job_seeker=job_seeker_register,
+            resume_snapshot=job_seeker_register.resume,  # copy file
+            skill_ner_snapshot=job_seeker_register.skill_ner,
+            vector_snapshot=job_seeker_register.vector,
+            processed_text_snapshot=job_seeker_register.processed_text,
+            prediction = job_seeker_register.prediction
+        )
+        # --- increment application count ---
         job.application_count += 1
         job.save()
-        job_seeker_register.save()
-        
+
         messages.success(request, f"Successfully applied for {job.job_title}.")
         update_cosine(job.id)
         return redirect('jobdetails', job_id=job.id)
 
     # Render confirmation page for GET request
-    return render(request, 'jobdetails.html', {'job': job, 'has_applied':has_applied})
+    return render(request, 'jobdetails.html', {'job': job, 'has_applied': has_applied})
+
 
 
 from django.contrib.auth.tokens import default_token_generator
@@ -267,40 +291,28 @@ def verify_email(request, uidb64, token):
 
 
 def send_email_to_seekers(request, job_id):
-
-   #pass in email, name everything of the user
+    
 
     job = get_object_or_404(Job, id=job_id)
 
-    seekers = JobSeekerRegister.objects.filter (job_description=job)
+    applications = JobApplication.objects.filter(job=job)
 
-   
-
-    if not seekers.exists():
-        messages.warning(request, "No seekers have applied for this job yet.")
-        return redirect('ranking', job_id=job_id)
-    
-    for seeker in seekers:
-
-        seeker_email = seeker.user.email
-
-        uid = urlsafe_base64_encode(force_bytes(seeker.user.pk))
-        token = default_token_generator.make_token(seeker.user)
+    for app in applications:
+        seeker_email = app.job_seeker.user.email
+        uid = urlsafe_base64_encode(force_bytes(app.job_seeker.user.pk))
+        token = default_token_generator.make_token(app.job_seeker.user)
 
         current_site = get_current_site(request)
         domain = current_site.domain
         test_link = f"http://{domain}/test-validation/{uid}/{token}/{job.id}"
         send_mail(
-
             subject=f"Test Invitation for {job.job_title}",
-            message=f"Dear {seeker.user.username},\n\nYou have been invited to take a test for the job: {job.job_title}.\n\nBest regards,\n{request.user.username}.{test_link}",
+            message=f"Dear {app.job_seeker.user.username},\n\nYou have been invited to take a test for the job: {job.job_title}.\n\nBest regards,\n{request.user.username}.{test_link}",
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[seeker.user.email]
+            recipient_list=[seeker_email]
         )
-
-    messages.success(request,f"Emails Sent!")
+    messages.success(request,f"Emails Sent!") 
     return redirect('ranking', job_id=job_id)
-
 
 ##############################################
 from io import BytesIO
@@ -356,24 +368,32 @@ def test_validation(request, uidb64, token, job_id):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
         user = get_user_model().objects.get(pk=uid)
-        print (user)
+        print(user)
     except Exception:
         return JsonResponse({'match': False, 'error': 'Invalid user link.'}) if request.method == 'POST' else HttpResponseBadRequest("Invalid link.")
 
     try:
-        target_photo_record = JobSeekerRegister.objects.get(user=user, job_description=job)
-    except JobSeekerRegister.DoesNotExist:
-        return JsonResponse({'match': False, 'error': 'No uploaded photo found for this user and job.'}) if request.method == 'POST' else render(request, 'test_validation.html', {'target_photo': None})
+        job_app = JobApplication.objects.get(
+            job=job,
+            job_seeker__user=user
+        )
+        target_photo_record = job_app.job_seeker
+    except JobApplication.DoesNotExist:
+        return (
+            JsonResponse({'match': False, 'error': 'No uploaded photo found for this user and job.'})
+            if request.method == 'POST'
+            else render(request, 'test_validation.html', {'target_photo': None})
+        )
+
     print("this")
+
     if request.method == 'POST':
         print('posted')
         data = json.loads(request.body)
         img_data_url = data.get('image')
         if not img_data_url:
             return HttpResponseBadRequest('No image data provided.')
-            
-            
-        
+
         try:
             header, encoded = img_data_url.split(',', 1)
             img_bytes = BytesIO(b64decode(encoded))
@@ -384,7 +404,7 @@ def test_validation(request, uidb64, token, job_id):
                 return JsonResponse({'match': False, 'error': 'No face detected in snapshot'})
 
             print("thisn")
-            
+
             target_img = Image.open(target_photo_record.profile_pics.path)
 
             print("called")
@@ -405,12 +425,13 @@ def test_validation(request, uidb64, token, job_id):
             return JsonResponse({'match': False, 'error': str(e)})
 
     else:
-       return render(request, 'test_validation.html', {
-        'target_photo': target_photo_record,
-        'uidb64':       uidb64,
-        'token':        token,
-        'job':          job,
-    })
+        return render(request, 'test_validation.html', {
+            'target_photo': target_photo_record,
+            'uidb64': uidb64,
+            'token': token,
+            'job': job,
+        })
+
 
 
 def start_test(request, uidb64, token, job_id):
@@ -430,11 +451,10 @@ def start_test(request, uidb64, token, job_id):
     candidate_id = candidate.id
 
    #category=job.job_title
-    questions_subjective = Question.objects.filter(category=job.job_title, question_type='subjective', difficulty='intermediate').order_by('?')[:5]
-    questions_objective = Question.objects.filter(category=job.job_title,question_type='objective', difficulty='intermediate').order_by('?')[:8]
-    questions_mcq = Question.objects.filter(category=job.job_title, question_type='mcq', difficulty='intermediate').order_by('?')[:8]
-
-    questions_code = Question.objects.filter(category=job.job_title, question_type='code', difficulty='intermediate').order_by('?')[:4]
+    questions_subjective = Question.objects.filter(category=job.job_title, question_type='subjective', difficulty='intermediate').order_by('?').distinct()[:5]
+    questions_objective = Question.objects.filter(category=job.job_title,question_type='objective', difficulty='intermediate').order_by('?').distinct()[:8]
+    questions_mcq = Question.objects.filter(category=job.job_title, question_type='mcq', difficulty='intermediate').order_by('?').distinct()[:8]
+    questions_code = Question.objects.filter(category=job.job_title, question_type='code', difficulty='intermediate').order_by('?').distinct()[:4]
 
 
     questions = list(questions_subjective) + list(questions_objective) + list(questions_mcq) + list(questions_code)
@@ -452,7 +472,7 @@ import subprocess, uuid, os, json, tempfile
 from .models import Candidate
 from django.contrib.auth.models import User
 
-
+from .utils import CATEGORY_WEIGHTS
 def submit_test(request):
 
     #decode the email id everyting and send it to variable as context to the url of the provider page and show it in container in well managed way with suspicitious activity log
@@ -473,6 +493,8 @@ def submit_test(request):
             candidate.total_score = 0
 
 
+
+
         total_score = 0
         for key,value in request.POST.items():
             if key.startswith('q'):
@@ -480,6 +502,8 @@ def submit_test(request):
 
                 try:
                     question = Question.objects.get(id=qid)
+                    weight = CATEGORY_WEIGHTS[question.category][question.question_type]
+
 
                     answer = Answer.objects.create(
                         user=user,
@@ -496,7 +520,13 @@ def submit_test(request):
                              answer.score += 1  
                             else:
                              answer.score += 0  
-                    
+                    answer.score = answer.score / 8         
+
+                    if question.question_type == "mcq":
+                        answer.score = weight * answer.score 
+
+                    if question.question_type == "objective":
+                        answer.score = weight * answer.score
                     answer.save()
 
                     if question.question_type == "subjective":
@@ -504,6 +534,9 @@ def submit_test(request):
                         ans_emb = embed_text(answer.written_answer)
                         similarity = cosine_similarity(ref_emb,ans_emb)
                         answer.score += round(similarity*10,2) 
+                        answer.score = answer.score / 50
+
+                        answer.score = weight * answer.score
                         answer.save()
 
 
@@ -518,14 +551,25 @@ def submit_test(request):
                         with open(filepath, "w") as f:
                             f.write(value)
 
+
+                        print("FILE EXISTS:", os.path.exists(filepath))
+                        print("FILE CONTENT:")
+                        with open(filepath) as f:
+                            print(f.read())
+
+
                         
                         for case in test_cases:
+                            print(case)
                             input_data = case.get("input", "") + "\n"
+                            print(input_data)
                             expected_output = case.get("expected_output", "")
+                            print(expected_output)
+                            
 
                             try:
                                 result = subprocess.run([
-                                    "docker", "run", "--rm",
+                                    "docker", "run", "--rm", "-i",
                                     "-v", f"{filepath}:/app/code.py",
                                     "python:3.9", "python", "/app/code.py"
                                 ],
@@ -537,12 +581,18 @@ def submit_test(request):
 
                                 output = result.stdout.strip()
 
+                                print(result.stdout)
+                                print("STDERR:", result.stderr)
+                                print("RETURN:", result.returncode)
+                                
+                                print(f"Output: '{output}' | Expected: '{expected_output}' | Match? {output == str(expected_output)}")
+
                                 if output != str(expected_output):
                                     all_passed = False
                                     break
 
-                            except subprocess.TimeoutExpired:
-                                all_passed=False
+                            except Exception as e:
+                                print(e)
                                 break
 
                         if os.path.exists(filepath):
@@ -553,6 +603,10 @@ def submit_test(request):
                             answer.score = 10
                         else:
                             answer.score = 0
+
+
+                        answer.score = answer.score / 40
+                        answer.score = weight * answer.score
                         answer.save()
 
                     candidate.answers.add(answer)
@@ -563,8 +617,14 @@ def submit_test(request):
                 except Question.DoesNotExist:
                     continue
 
-        candidate.total_score = total_score
+        candidate.total_score = total_score * 100
+
+        
         candidate.save()
+
+
+        
+
 
         return redirect('test_submitted', job_id=job.id)
 
@@ -601,3 +661,24 @@ def log_activity(request):
 
 
     return JsonResponse({"status": "ok"})
+
+
+
+@login_required
+def update_resume(request):
+    if request.method == "POST" and request.FILES.get("resume"):
+        try:
+            jobseeker = JobSeekerRegister.objects.get(user=request.user)
+            jobseeker.resume = request.FILES["resume"]
+            jobseeker.save()
+            
+            # Re-run NER
+            create_ner_pool(jobseeker)
+
+            
+
+            messages.success(request, "Resume updated successfully!")
+        except Exception as e:
+            messages.error(request, f"Failed to update resume: {e}")
+
+    return redirect('joblist')

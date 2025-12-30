@@ -1,20 +1,261 @@
 [
     {
-        "question_text": "Explain the concept of immutability in Python and describe why it matters when designing software systems.",
-        "question_type": "subjective",
-        "difficulty": "intermediate",
-        "category": "software developer"
-    },
-    {
-        "question_text": "Implement a function that checks whether a string contains balanced parentheses. Print 'YES' if balanced, otherwise print 'NO'.",
+        "question_text": "Write a Python function to find the maximum element in a list without using the built-in max() function.",
         "question_type": "code",
         "difficulty": "intermediate",
         "category": "software developer",
         "test_cases": [
-            { "input": "(()())", "expected_output": "YES" },
-            { "input": "((())", "expected_output": "NO" },
-            { "input": "())(()", "expected_output": "NO" },
-            { "input": "", "expected_output": "YES" }
+            { "input": "[3, 7, 2, 9, 5]", "expected_output": "9" },
+            { "input": "[-1, -5, -3]", "expected_output": "-1" },
+            { "input": "[10]", "expected_output": "10" }
         ]
+    },
+
+    {
+    "question_text": "If the ratio of boys to girls in a class is 3:2 and there are 30 students, how many girls are there?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "10",
+    "option_b": "12",
+    "option_c": "15",
+    "option_d": "18",
+    "correct_answer": "B"
+},
+{
+    "question_text": "What will be the output of the expression: 3 * (2 + 4) // 3?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "6",
+    "option_b": "5",
+    "option_c": "4",
+    "option_d": "8",
+    "correct_answer": "A"
+},
+
+{
+    "question_text": "Which built-in Python function returns the length of a list?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "size()",
+    "option_b": "count()",
+    "option_c": "length()",
+    "option_d": "len()",
+    "correct_answer": "D"
+},
+{
+    "question_text": "Which keyword is used to handle exceptions in Python?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "catch",
+    "option_b": "error",
+    "option_c": "except",
+    "option_d": "handle",
+    "correct_answer": "C"
+},
+
+
+    {
+        "question_text": "Write a Python program to reverse a string without using slicing or the reversed() function.",
+        "question_type": "code",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "test_cases": [
+            { "input": "hello", "expected_output": "olleh" },
+            { "input": "Python", "expected_output": "nohtyP" },
+            { "input": "", "expected_output": "" }
+        ]
+    },
+    {
+        "question_text": "Write a function to check if a number is prime. Print 'YES' if prime, else 'NO'.",
+        "question_type": "code",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "test_cases": [
+            { "input": "7", "expected_output": "YES" },
+            { "input": "4", "expected_output": "NO" },
+            { "input": "2", "expected_output": "YES" }
+        ]
+    },
+    {
+        "question_text": "Write a Python program that prints the first n Fibonacci numbers.",
+        "question_type": "code",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "test_cases": [
+            { "input": "5", "expected_output": "0 1 1 2 3" },
+            { "input": "1", "expected_output": "0" },
+            { "input": "0", "expected_output": "" }
+        ]
+    },
+    {
+        "question_text": "What is the next number in the series: 2, 6, 12, 20, ?",
+        "question_type": "mcq",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "30",
+        "option_b": "28",
+        "option_c": "26",
+        "option_d": "24",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "A man walks 3 km north, then 4 km east. How far is he from the starting point?",
+        "question_type": "mcq",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "5 km",
+        "option_b": "7 km",
+        "option_c": "1 km",
+        "option_d": "6 km",
+        "correct_answer": "A"
+    },
+    {
+        "question_text": "If 5 machines take 5 minutes to make 5 widgets, how long would 100 machines take to make 100 widgets?",
+        "question_type": "mcq",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "5 minutes",
+        "option_b": "100 minutes",
+        "option_c": "50 minutes",
+        "option_d": "20 minutes",
+        "correct_answer": "A"
+    },
+    {
+        "question_text": "A bag contains 3 red, 4 blue, and 5 green balls. What is the probability of picking a red ball?",
+        "question_type": "mcq",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "1/4",
+        "option_b": "1/3",
+        "option_c": "1/2",
+        "option_d": "1/12",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "A train travels 120 km in 2 hours. What is its speed?",
+        "question_type": "mcq",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "50 km/h",
+        "option_b": "60 km/h",
+        "option_c": "70 km/h",
+        "option_d": "80 km/h",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "If x + 3 = 7, what is the value of x?",
+        "question_type": "mcq",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "4",
+        "option_b": "5",
+        "option_c": "3",
+        "option_d": "10",
+        "correct_answer": "A"
+    },
+    {
+        "question_text": "The sum of angles in a triangle is ____ degrees.",
+        "question_type": "objective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "90",
+        "option_b": "180",
+        "option_c": "270",
+        "option_d": "360",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "Which of the following is not a Python keyword?",
+        "question_type": "objective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "pass",
+        "option_b": "eval",
+        "option_c": "while",
+        "option_d": "if",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "Which data type is used to store True/False values in Python?",
+        "question_type": "objective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "bool",
+        "option_b": "int",
+        "option_c": "str",
+        "option_d": "list",
+        "correct_answer": "A"
+    },
+    {
+        "question_text": "Which operator is used for floor division in Python?",
+        "question_type": "objective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "/",
+        "option_b": "//",
+        "option_c": "%",
+        "option_d": "**",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "Which of the following is not mutable in Python?",
+        "question_type": "objective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "List",
+        "option_b": "Set",
+        "option_c": "Dictionary",
+        "option_d": "Tuple",
+        "correct_answer": "D"
+    },
+    {
+        "question_text": "Which method is used to add an element at the end of a list in Python?",
+        "question_type": "objective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "option_a": "add()",
+        "option_b": "append()",
+        "option_c": "insert()",
+        "option_d": "extend()",
+        "correct_answer": "B"
+    },
+    {
+        "question_text": "Explain the difference between shallow copy and deep copy in Python.",
+        "question_type": "subjective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "reference_answer": "A shallow copy creates a new object but inserts references to the same objects found in the original. Changes to mutable objects in the copy affect the original. A deep copy creates a new object and recursively copies all objects, so the original and copy are completely independent."
+    },
+    {
+        "question_text": "Describe the concept of Big O notation and why it is important in algorithm design.",
+        "question_type": "subjective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "reference_answer": "Big O notation describes the upper bound of the runtime complexity of an algorithm in terms of input size. It is important because it allows comparison of algorithms independent of hardware or implementation, helping to choose efficient algorithms for large datasets."
+    },
+    {
+        "question_text": "What are Python decorators and how are they used?",
+        "question_type": "subjective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "reference_answer": "Decorators are functions that modify the behavior of other functions or methods. They are used with the @ symbol above a function definition. Decorators are useful for logging, access control, caching, and code reuse."
+    },
+    {
+        "question_text": "Explain the concept of recursion and provide an example where recursion is preferred over iteration.",
+        "question_type": "subjective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "reference_answer": "Recursion is a technique where a function calls itself to solve a problem. It is preferred in problems with a natural recursive structure, such as tree traversal, graph search, or computing factorial, as it simplifies code and improves readability."
+    },
+    {
+        "question_text": "What is the Global Interpreter Lock (GIL) in Python and how does it affect multithreading?",
+        "question_type": "subjective",
+        "difficulty": "intermediate",
+        "category": "software developer",
+        "reference_answer": "The Global Interpreter Lock (GIL) is a mutex in CPython that allows only one thread to execute Python bytecode at a time. It simplifies memory management but prevents true parallel execution of threads in CPU-bound programs. Multithreading is useful for I/O-bound tasks but multiprocessing is preferred for CPU-bound tasks."
     }
 ]

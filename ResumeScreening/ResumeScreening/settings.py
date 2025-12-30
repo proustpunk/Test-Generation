@@ -26,8 +26,13 @@ SECRET_KEY = 'django-insecure-kq%!4d*t+^555vyycwh1hwl)%8a*()nhi4j@ti(5k7%02vmgty
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
 
+CELERY_RESULT_BACKEND = 'django-db'
 
+SITE_ID = 1
 
 # Application definition
 import os
@@ -41,7 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Resume'
+    'Resume',
+    'django_celery_results',
+    'django.contrib.sites'
 ]
 
 MIDDLEWARE = [

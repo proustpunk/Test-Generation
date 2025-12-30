@@ -235,6 +235,8 @@ canvas {
 
 <div class="container">
   <div class="left-panel">
+          <p id ="Logs"></p>
+
     {% for question in questions %}
       <div class="question-box" id="question-{{ forloop.counter }}">
         <h2>Question {{ forloop.counter }}</h2>
@@ -242,11 +244,11 @@ canvas {
         <p>{{ question.question_text }}</p>
 
         {% if question.question_type == 'objective' or question.question_type == 'mcq' %}
-          <label><input type="radio" name="q{{ question.id }}" value="option_a"> {{ question.option_a }}</label>
+          <label><input type="radio" name="q{{ question.id }}" value="A"> {{ question.option_a }}</label>
 
-          <label><input type="radio" name="q{{ question.id }}" value="option_b"> {{ question.option_b }}</label>
-          <label><input type="radio" name="q{{ question.id }}" value="option_c"> {{ question.option_c }}</label>
-          <label><input type="radio" name="q{{ question.id }}" value="option_d"> {{ question.option_d }}</label>
+          <label><input type="radio" name="q{{ question.id }}" value="B"> {{ question.option_b }}</label>
+          <label><input type="radio" name="q{{ question.id }}" value="C"> {{ question.option_c }}</label>
+          <label><input type="radio" name="q{{ question.id }}" value="D"> {{ question.option_d }}</label>
         {% elif question.question_type == 'subjective' or question.question_type == 'code' %}
           <textarea name="q{{ question.id }}" rows="5" placeholder="Your answer..."></textarea>
         {% endif %}
@@ -273,12 +275,32 @@ canvas {
     <div class="face-box">
       <video id="video" width="260" height="200" autoplay muted></video>
       <p id="face-status">Detecting...</p>
+      <p id="drift-status"></p>
       <p id="mouth-status"></p>
+      <p id="sound-status"></p>
     </div>
   </div>
 </div>
 
 <script>
+    const statusText = document.getElementById('face-status');
+    const driftStatus = document.getElementById('drift-status');
+    const soundStatus = document.getElementById('sound-status');
+    const logs = document.getElementById('Logs');
+
+
+      const suspiciousActivity = {
+      copyAttempted: false,
+      tabSwitch: false,
+      micDenied: false,
+      lipAudioMismatch: false,
+      devToolsOpen: false,
+      noFaceDetected :false,
+      multiplefacesdetected: false,
+      notFocused: false
+    };
+
+    let video = null;
 
     const candidateId = document.getElementById("candidate_id").value;
 
@@ -341,13 +363,13 @@ updateTimer();
   });
 window.addEventListener('load',()=>{
   
-  const video = document.getElementById('video');
-  const statusText = document.getElementById('face-status');
+  video = document.getElementById('video');
 
 Promise.all([
-faceapi.nets.tinyFaceDetector.loadFromUri("{% static 'models/' %}")
+  faceapi.nets.tinyFaceDetector.loadFromUri("{% static 'models/' %}"),
+  faceapi.nets.faceLandmark68TinyNet.loadFromUri("{% static 'models/' %}")
 ]).then(() => {
-  console.log('Model loaded, starting video...');
+  console.log("Face models loaded");
   startVideo();
 });
 let videothere = false;
@@ -365,7 +387,10 @@ let videothere = false;
 
 
   console.log(videothere);
-
+let counterA = 0;
+let counterB = 0;
+let counterC = 0;
+let counterD = 0;
  video.addEventListener('play', () => {
   const canvas = faceapi.createCanvasFromMedia(video);
   const container = document.querySelector('.face-box');
@@ -378,7 +403,7 @@ let videothere = false;
   canvas.style.position = 'absolute';
   canvas.style.top = video.offsetTop + 'px';
   canvas.style.left = video.offsetLeft + 'px';
-
+  
   setInterval(async () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions());
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
@@ -388,16 +413,87 @@ let videothere = false;
     faceapi.draw.drawDetections(canvas, resizedDetections);
 
     const count = detections.length;
+    
     if (count === 0) {
-      statusText.textContent = 'No face detected';
-    } else if (count === 1) {
-      statusText.textContent = '1 face detected';
-    } else {
-      statusText.textContent = 'Multiple faces detected';
-    }
+  counterA++;
+  counterB = 0;
+  counterC = 0;
+
+  if (counterA >= 3) {
+    statusText.textContent = 'No face detected';
+    suspiciousActivity.noFaceDetected = true;
+    suspiciousActivity.multiplefacesdetected = false;
+    counterA = 0;
+  }
+
+} else if (count === 1) {
+  counterB++;
+  counterA = 0;
+  counterC = 0;
+
+  if (counterB >= 3) {
+    statusText.textContent = '1 face detected';
+    suspiciousActivity.noFaceDetected = false;
+    suspiciousActivity.multiplefacesdetected = false;
+    counterB = 0;
+  }
+
+} else { // count > 1
+  counterC++;
+  counterA = 0;
+  counterB = 0;
+
+  if (counterC >= 5) {  // ← THIS is the key change
+    statusText.textContent = 'Multiple faces detected';
+    suspiciousActivity.multiplefacesdetected = true;
+    counterC = 0;
+  }
+}
+
   }, 2000);
 
- })
+});
+
+ setInterval(async () => {
+  const detection = await faceapi
+    .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions())
+    .withFaceLandmarks(true);
+
+  if (!detection) {
+    suspiciousActivity.notFocused = false;
+    return;
+  }
+
+
+
+  const landmarks = detection.landmarks.positions;
+
+
+  const nose = landmarks[30];      
+  const leftEye = landmarks[36];    
+  const rightEye = landmarks[45];   
+
+
+  const eyeCenterX = (leftEye.x + rightEye.x) / 2;
+
+  const noseOffset = nose.x - eyeCenterX;
+
+
+  const TURN_THRESHOLD = 7;
+
+  suspiciousActivity.notFocused = Math.abs(noseOffset) > TURN_THRESHOLD;
+
+  if(suspiciousActivity.notFocused){
+    counterD++;
+    if(counterD >= 1){
+      driftStatus.textContent = "Focus Drift Detected!";
+      counterD = 0;
+}
+} else{
+  driftStatus.textContent = "";
+}
+
+}, 3000); // every 3 seconds
 });
 
 
@@ -413,13 +509,11 @@ let videothere = false;
 
 
 
-    const suspiciousActivity = {
-      copyAttempted: false,
-      tabSwitch: false,
-      micDenied: false,
-      lipAudioMismatch: false,
-      devToolsOpen: false
-    };
+
+
+
+
+
 
     // Right-click / copy detection
    // document.addEventListener('contextmenu', (e) => {
@@ -427,30 +521,66 @@ let videothere = false;
       //suspiciousActivity.copyAttempted = true;
     //});
 
-    // Tab switching detection
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) suspiciousActivity.tabSwitch = true;
-    });
-
-//document.addEventListener('contextmenu', event => event.preventDefault());
+    //document.addEventListener('contextmenu', event => event.preventDefault());
   //document.addEventListener('keydown', function (e) {
     //if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 'a')) {
       //e.preventDefault();
     //}
   //});
 
+    // Tab switching detection
+    let lastTabSwitchTime = 0;
+const TAB_WARNING_DURATION = 3000; // ms, how long to show warning
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    suspiciousActivity.tabSwitch = true;
+    lastTabSwitchTime = Date.now();
+    Logs.textContent = "Tab Switch Detected!";
+  }
+});
+
+
+setInterval(() => {
+  if (lastTabSwitchTime && Date.now() - lastTabSwitchTime > TAB_WARNING_DURATION) {
+    Logs.textContent = "";
+    lastTabSwitchTime = 0;
+  }
+}, 200);
+
+
+
     // DevTools detection
-    setInterval(() => {
-      const before = performance.now();
-      debugger;
-      const after = performance.now();
-      if (after - before > 100) suspiciousActivity.devToolsOpen = true;
-    }, 1000);
+   let lastDevToolsTime = 0;
+const DEVTOOLS_WARNING_DURATION = 3000; 
+
+setInterval(() => {
+  const before = performance.now();
+  debugger;
+  const after = performance.now();
+  
+  if (after - before > 100) {
+    suspiciousActivity.devToolsOpen = true;
+    lastDevToolsTime = Date.now();
+    Logs.textContent = "Dev Tools opened!";
+  }
+}, 1000);
+
+
+setInterval(() => {
+  if (lastDevToolsTime && Date.now() - lastDevToolsTime > DEVTOOLS_WARNING_DURATION) {
+    Logs.textContent = "";
+    lastDevToolsTime = 0;
+  }
+}, 200);
+
+
+
 
     // Lip Movement Detection (MediaPipe)
     let lipsAreMoving = false;
     let lastLipDistance = 0;
-    const lipMovementThreshold = 0.002; // fine-tuned empirically
+    const lipMovementThreshold = 0.003; // fine-tuned empirically
 
     const faceMesh = new FaceMesh({
       locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`
@@ -497,12 +627,14 @@ let videothere = false;
         const mic = audioContext.createMediaStreamSource(stream);
         const analyser = audioContext.createAnalyser();
         mic.connect(analyser);
+        analyser.fftSize = 512;
         const dataArray = new Uint8Array(analyser.fftSize);
 
         const detectAudio = () => {
           analyser.getByteTimeDomainData(dataArray);
           const sum = dataArray.reduce((a, b) => a + Math.abs(b - 128), 0);
-          soundIsActive = sum > 1000;
+          
+          soundIsActive = sum > 2000;
 
           console.log(soundIsActive);
 
@@ -526,12 +658,12 @@ let videothere = false;
 
 
 
-      suspiciousActivity.lipAudioMismatch = mismatchCounter >= 5; // ~5 seconds of mismatch
+      suspiciousActivity.lipAudioMismatch = mismatchCounter >= 3; // ~5 seconds of mismatch
 
-      if (mismatchCounter >= 5) {
-        mouthStatus.textContent = "External help is detected";
+      if (mismatchCounter >= 2) {
+        soundStatus.textContent = "External help is detected";
       } else {
-        mouthStatus.textContent="";
+        soundStatus.textContent="";
       }
     }, 1000);
 
@@ -566,9 +698,3 @@ let videothere = false;
 
 
 
-
-
-</script>
-
-</body>
-</html>

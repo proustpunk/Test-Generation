@@ -9,10 +9,13 @@ from django.core.exceptions import ValidationError
 
 
 CATEGORY_CHOICES = [
-        ('frontend', 'Frontend'),
-        ('backend', 'Backend'),
         ('datascience', 'Data Science'),
         ('software developer', 'Software Developer'),
+        ('cybersecurity specialist', 'Cybersecurity Specialist'),
+        ('devops engineer', 'Devops engineer'),
+        ('graphics engineer', 'Graphics engineer'),
+        ('machine learning engineer', 'Machine Learning Engineer'),
+        ('robotics engineer', 'Robotics Engineer'),
     ]
 class JobSeekerRegistrationForm(forms.ModelForm):
     username = forms.CharField(max_length=150, required=True)

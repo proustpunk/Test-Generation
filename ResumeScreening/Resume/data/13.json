@@ -1,0 +1,3352 @@
+[
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is a variable used for?",
+    "question_type": "objective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "store data",
+    "option_b": "compile code",
+    "option_c": "design ui",
+    "option_d": "run server",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "which language is used for web development?",
+    "question_type": "mcq",
+    "difficulty": "easy",
+    "category": "software developer",
+    "option_a": "html",
+    "option_b": "sql",
+    "option_c": "bash",
+    "option_d": "yaml",
+    "correct_answer": "A"
+  },
+  {
+    "question_text": "explain what a function is",
+    "question_type": "subjective",
+    "difficulty": "easy",
+    "category": "software developer",
+    "reference_answer": "A function is a reusable block of code that performs a specific task.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that prints 'hello world'",
+    "question_type": "code",
+    "difficulty": "easy",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "",
+        "expected_output": "hello world"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what is the purpose of oop?",
+    "question_type": "objective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "better ui",
+    "option_b": "code reuse and structure",
+    "option_c": "faster internet",
+    "option_d": "database tuning",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which data structure uses lifo?",
+    "question_type": "mcq",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "option_a": "queue",
+    "option_b": "stack",
+    "option_c": "array",
+    "option_d": "tree",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain exception handling",
+    "question_type": "subjective",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "reference_answer": "Exception handling manages runtime errors to prevent program crashes.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that checks if a number is even",
+    "question_type": "code",
+    "difficulty": "intermediate",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "4",
+        "expected_output": "even"
+      },
+      {
+        "input": "5",
+        "expected_output": "odd"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  },
+  {
+    "question_text": "what does time complexity measure?",
+    "question_type": "objective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "memory usage",
+    "option_b": "execution time growth",
+    "option_c": "code length",
+    "option_d": "cpu speed",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "which algorithm has average o(n log n)?",
+    "question_type": "mcq",
+    "difficulty": "hard",
+    "category": "software developer",
+    "option_a": "bubble sort",
+    "option_b": "merge sort",
+    "option_c": "linear search",
+    "option_d": "hashing",
+    "correct_answer": "B"
+  },
+  {
+    "question_text": "explain multithreading and its benefits",
+    "question_type": "subjective",
+    "difficulty": "hard",
+    "category": "software developer",
+    "reference_answer": "Multithreading allows concurrent execution to improve performance and responsiveness.",
+    "reference_vector": null
+  },
+  {
+    "question_text": "write a program that reverses a string",
+    "question_type": "code",
+    "difficulty": "hard",
+    "category": "software developer",
+    "test_cases": [
+      {
+        "input": "abc",
+        "expected_output": "cba"
+      },
+      {
+        "input": "hello",
+        "expected_output": "olleh"
+      }
+    ]
+  }
+]

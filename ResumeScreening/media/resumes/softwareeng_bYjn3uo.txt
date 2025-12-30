@@ -1,0 +1,74 @@
+John Doe  
+Email: johndoe@example.com  
+Phone: (123) 456-7890  
+LinkedIn: linkedin.com/in/johndoe  
+GitHub: github.com/johndoe  
+
+---
+
+**Professional Summary**  
+Detail-oriented Software Engineer with 5+ years of experience in designing, developing, and implementing scalable web and mobile applications. Proficient in Python, JavaScript, and cloud technologies with a strong background in Agile methodologies. Adept at problem-solving and collaborating across teams to deliver high-quality software solutions.
+
+---
+
+**Technical Skills**  
+- Programming Languages: Python, JavaScript (React, Node.js), Java, C++  
+- Frameworks/Technologies: Django, Flask, React, Express.js  
+- Databases: MySQL, PostgreSQL, MongoDB  
+- Tools: Docker, Kubernetes, Git, Jenkins, AWS, Azure  
+- Methodologies: Agile, Scrum, Test-Driven Development (TDD)  
+
+---
+
+**Professional Experience**  
+
+**Software Engineer**  
+ABC Tech Solutions, New York, NY  
+*June 2020 – Present*  
+- Developed and deployed web applications using Django and React, reducing load time by 30%.
+- Led the migration of legacy systems to AWS cloud infrastructure, improving scalability and reducing costs by 20%.
+- Collaborated with cross-functional teams to implement CI/CD pipelines using Jenkins and Docker.
+- Designed RESTful APIs to support mobile applications, resulting in a 25% increase in user engagement.
+
+**Junior Software Engineer**  
+XYZ Innovations, Boston, MA  
+*July 2018 – May 2020*  
+- Assisted in developing internal tools with Python and Flask, improving operational efficiency.
+- Wrote unit and integration tests to improve code reliability and coverage by 40%.
+- Implemented database optimization techniques, reducing query response times by 35%.
+
+---
+
+**Education**  
+**Bachelor of Science in Computer Science**  
+University of Technology, Boston, MA  
+*Graduated: May 2018*  
+
+---
+
+**Certifications**  
+- AWS Certified Solutions Architect – Associate  
+- Certified ScrumMaster (CSM)  
+
+---
+
+**Projects**  
+**Resume Analyzer Web App**  
+- Built a Django-based web app that processes resumes and job descriptions, using NLP techniques to evaluate relevance.
+- Integrated Word2Vec and cosine similarity to improve resume matching accuracy.
+
+**Task Management Tool**  
+- Developed a task management system using React and Node.js, featuring real-time updates and task assignments.
+
+---
+
+**Languages**  
+- English (Fluent)  
+- Spanish (Conversational)  
+
+---
+
+**Professional Affiliations**  
+- Member, Association for Computing Machinery (ACM)  
+- Contributor, Open Source Community
+

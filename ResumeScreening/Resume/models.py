@@ -22,20 +22,18 @@ class JobProviderRegister(models.Model):
 
 
 class Job(models.Model):
-
-    user = models.ForeignKey(User, models.CASCADE,null=True, related_name="job_post")
+    user = models.ForeignKey(User, models.CASCADE, null=True, related_name="job_post")
     job_title = models.CharField(max_length=200)
     job_description_file = models.FileField(upload_to='description/', blank=True, null=True)
     job_requirements = models.TextField()
     salary_range = models.CharField(max_length=100)
     job_location = models.CharField(max_length=200)
     posted_at = models.DateTimeField(auto_now_add=True)
-
+    email_sent = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
     processed_description = models.TextField(blank=True, null=True)
     description_vector = models.JSONField(blank=True, null=True)
-
-    application_count = models.PositiveIntegerField(default=0)  
-
+    application_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.job_title
@@ -53,6 +51,8 @@ class JobSeekerRegister(models.Model):
     vector = models.JSONField(blank=True, null=True)
     prediction = models.CharField(max_length=100, blank=True, null=True)
     cosine_similarity_score = models.TextField(max_length=100, null=False, default=0)
+
+    skill_ner = models.JSONField(blank=True,null=True)
 
 
 
@@ -89,10 +89,13 @@ class Question(models.Model):
     ]
 
     CATEGORY_CHOICES = [
-        ('frontend', 'Frontend'),
-        ('backend', 'Backend'),
-        ('datascience', 'Data Science'),
+        ('data scientist', 'Data Science'),
         ('software developer', 'Software Developer'),
+        ('cybersecurity specialist', 'Cybersecurity Specialist'),
+        ('devops engineer', 'Devops engineer'),
+        ('graphics engineer', 'Graphics engineer'),
+        ('machine learning engineer', 'Machine Learning Engineer'),
+        ('robotics engineer', 'Robotics Engineer'),
         
     ]
 
@@ -100,7 +103,7 @@ class Question(models.Model):
     question_text = models.TextField()
     question_type = models.CharField(max_length=20, choices=QUESTION_TYPES)
     difficulty = models.CharField(max_length=20, choices=DIFFICULTY_LEVEL)
-    category = models.CharField(max_length=20,choices=CATEGORY_CHOICES)
+    category = models.CharField(max_length=30,choices=CATEGORY_CHOICES)
 
     option_a = models.CharField(max_length=255, blank=True, null=True)
     option_b = models.CharField(max_length=255, blank=True, null=True)
@@ -121,17 +124,18 @@ class Question(models.Model):
 #Embedding dim = 384 → small storage (~1.5 KB per vector), fast math.
 
     def save(self, *args, **kwargs):
-        print("save called")
-        
-# Test
-        print(generate_reference("What is the capital of France?"))
-        if not self.reference_answer and self.question_type=='subjective':
-            prompt = f"Question:{self.question_text}\nGenerate a reference answer, about 5 sentence."
-            self.reference_answer = generate_reference(prompt)
-            print("call utils called")
-
-            emb = embed_text(self.reference_answer)  # returns normalized np.array
-            self.reference_vector = emb.tolist()     
+        if self.question_type == 'subjective':
+            print('loaded because subjective')
+            if self.reference_answer and not self.reference_vector:
+                print('no ref answer')
+                emb = embed_text(self.reference_answer)
+                self.reference_vector = emb.tolist()
+            elif not self.reference_answer:
+                print('ref exists but no vector')
+                prompt = f"Question:{self.question_text}\nGenerate a reference answer, about 5 sentence."
+                self.reference_answer = generate_reference(prompt)
+                emb = embed_text(self.reference_answer)
+                self.reference_vector = emb.tolist()
         super().save(*args, **kwargs)
 
     created_at = models.DateTimeField(auto_now_add=True, blank=True,null=True)
@@ -172,3 +176,20 @@ class CandidateLog(models.Model):
 
     def __str__(self):
         return f"Log for Candidate {self.candidate.id} at {self.created_at}"
+    
+
+class JobApplication(models.Model):
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    job_seeker = models.ForeignKey(JobSeekerRegister, on_delete=models.CASCADE)
+    resume_snapshot = models.FileField(upload_to='applied_resumes/')
+    skill_ner_snapshot = models.JSONField(blank=True, null=True)
+    vector_snapshot = models.JSONField(blank=True, null=True)
+    processed_text_snapshot = models.JSONField(blank=True, null=True)
+    applied_at = models.DateTimeField(auto_now_add=True)
+    cosine_similarity_score = models.TextField(max_length=100, null=False, default=0)
+    prediction = models.CharField(max_length=100, blank=True, null=True)
+
+
+
+    def __str__(self):
+        return f"{self.job_seeker.user.username} applied to {self.job.job_title}"

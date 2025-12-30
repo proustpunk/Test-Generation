@@ -147,6 +147,18 @@
 
         <!-- Job Listings Section -->
         <div class="col-lg-9">
+
+            <div class="mb-4 p-3" style="background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h5>Update Your Resume</h5>
+    <form action="{% url 'update_resume' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="resume">Upload New Resume (PDF or TXT):</label>
+            <input type="file" name="resume" id="resume" class="form-control-file" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Update Resume</button>
+    </form>
+</div>
             <h3 class="text-center mb-4">Available Job Listings</h3>
 
             <div class="row">

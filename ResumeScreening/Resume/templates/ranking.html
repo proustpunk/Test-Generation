@@ -1,97 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Matcher</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        .card {
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-header {
-            background-color: #007bff;
-            color: white;
-            border-radius: 10px 10px 0 0;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .table {
-            margin-top: 20px;
-        }
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume Matcher — Ranked Applicants</title>
+
+  <!-- Bootstrap 4 CSS (CDN) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    :root {
+      --glass-bg: rgba(255,255,255,0.55);
+      --accent: #6f42c1;
+      --accent-2: #0d6efd;
+    }
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body{
+      min-height:100vh;
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(120deg, rgba(15,23,42,1) 0%, rgba(10,25,45,1) 50%, rgba(22,18,44,1) 100%);
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(111,66,193,0.07), transparent 10%),
+        radial-gradient(circle at 80% 80%, rgba(13,110,253,0.06), transparent 12%),
+        linear-gradient(120deg, #0b1220 0%, #0e1b2a 50%, #15102b 100%);
+      background-size: 400% 400%;
+      animation: bgShift 18s ease infinite;
+      padding: 30px 16px;
+      color: #fff;
+    }
+    .wrap { max-width:980px; margin:0 auto; }
+    header.appbar { display:flex; align-items:center; justify-content:space-between; gap:12px; color:white; margin-bottom:18px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo { width:44px; height:44px; border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 6px 18px rgba(111,66,193,0.22);
+      display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:18px;
+    }
+    .header-title { font-size:1.1rem; font-weight:700; color:#fff }
+    .header-sub { font-size:0.85rem; color:rgba(255,255,255,0.85); margin-top:-2px; }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border-radius:12px;
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(8px) saturate(120%);
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    .send-btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border:none; color:white; padding:8px 12px; border-radius:8px; box-shadow:0 6px 18px rgba(13,110,253,0.12);
+      font-weight:600; font-size:0.9rem;
+    }
+    .candidate-card {
+      display:block;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:10px; padding:12px; margin-bottom:10px; transition: transform .18s ease, box-shadow .18s ease;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .candidate-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(3,6,23,0.6); }
+    .candidate-row { display:flex; align-items:center; gap:12px; }
+    .rank { min-width:48px; text-align:center; font-weight:700; color:#eef2ff; background:rgba(255,255,255,0.06); border-radius:8px; padding:8px 10px; }
+    .name-btn { background:none; border:none; padding:0; text-align:left; font-size:1rem; font-weight:650; color:white; flex:1; cursor:pointer; }
+    .name-btn:hover { text-decoration:underline; color:#eaf2ff; }
+    .score { min-width:80px; text-align:right; color:#cfe2ff; font-weight:600; }
+    .toggle-arrow { margin-left:8px; color:rgba(255,255,255,0.8); transition: transform .18s ease; }
+
+    .details { overflow:hidden; max-height:0; transition:max-height 0.36s ease, padding 0.24s ease; padding-top:0; padding-bottom:0; margin-top:8px; }
+    .details.open { padding-top:10px; padding-bottom:10px; max-height:600px; }
+
+    .detail-left p, .detail-right p { margin:3px 0; color:rgba(255,255,255,0.92); font-size:0.95rem; }
+    .detail-left strong, .detail-right strong { color:#e8eefc; font-weight:700; }
+
+    .skills-list { list-style:none; padding-left:0; display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 0 0; }
+    .skills-list li { background: rgba(255,255,255,0.06); color:#eaf2ff; padding:6px 10px; border-radius:999px; font-size:0.88rem; border:1px solid rgba(255,255,255,0.03); }
+
+    .badge-pass { background: linear-gradient(90deg,#10b981,#34d399); color:#042014; font-weight:700; border-radius:6px; padding:4px 8px; font-size:0.8rem; }
+    .badge-fail { background: linear-gradient(90deg,#ef4444,#f97316); color:white; font-weight:700; border-radius:6px; padding:4px 8px; font-size:0.8rem; }
+    .badge-ai { background: linear-gradient(90deg,#facc15,#f59e0b); color:#1f1b04; font-weight:700; border-radius:6px; padding:4px 8px; font-size:0.8rem; }
+
+    @media (max-width:520px) { .candidate-row { flex-direction:row; gap:8px; } .score { min-width:60px; } }
+  </style>
 </head>
 <body>
-    
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h2>NCE Co.</h2>
+  <div class="wrap">
+    <header class="appbar">
+      <div class="brand">
+        <div class="logo">NCE</div>
+        <div>
+          <div class="header-title">NCE Co. — Ranked Applicants</div>
+          <div class="header-sub">Click any name to expand candidate details</div>
         </div>
-        <div class="card-body">
-            <h3>Data from Database</h3>
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Name</th>
-                        <th>Prediction</th>
-                        <th>Cosine Similarity Score</th>
-                        <th>Keyword Stuffing Flag</th>
-                        <th>AI generated Flag</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in data %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ item.user }}</td>
-                            <td>{{ item.prediction }}</td>
-                            <td>{{ item.cosine_similarity_score }}</td>
-                           <td>
-  {% if item.is_suspicious %} 
-    <span class="badge badge-danger">Keyword Stuffing Detected</span>
-  {% else %}
-    <span class="badge badge-success">Pass</span>
-  {% endif %}
-</td>
+      </div>
 
-<td>
-  {% if item.is_suspicious_ai %}
-    <span class="badge badge-warning text-dark">Likely AI Generated Resume</span>
-  {% else %}
-    <span class="badge badge-success">Pass</span>
-  {% endif %}
-</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+      <!-- Send email form posts to your existing view -->
+      <div>
+        <form method="post" action="{% url 'send_email_to_seekers' job_id=job.id %}" style="margin:0;">
+          {% csrf_token %}
+          <button type="submit" class="send-btn">Send Email To Applicants</button>
+        </form>
+      </div>
+    </header>
 
-<form method="post" action="{% url 'send_email_to_seekers' job_id=job.id %}">
-    {%csrf_token%}
-    <button type="submit">Send Email To Applicants</button>
-</form>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <main class="panel">
+      <div id="candidates">
+        {% if data %}
+          {% for item in data %}
+            <article class="candidate-card">
+              <div class="candidate-row">
+                <div class="rank">{{ forloop.counter }}</div>
+
+                <button class="name-btn" data-index="{{ forloop.counter0 }}" aria-expanded="false">
+                  {{ item.job_seeker }}
+                  <span class="toggle-arrow" data-index="{{ forloop.counter0 }}">&#9662;</span>
+                </button>
+
+                <div class="score">{{ item.cosine_similarity_score }}</div>
+              </div>
+
+              <div class="details" data-index="{{ forloop.counter0 }}" aria-hidden="true">
+                <div class="row">
+                  <div class="col-md-6 detail-left">
+                    <p><strong>Prediction:</strong> {{ item.prediction }}</p>
+                    <p><strong>Cosine Score:</strong> {{ item.cosine_similarity_score }}</p>
+                    <p><strong>Keyword Stuffing:</strong>
+                      {% if item.is_suspicious %}
+                        <span class="badge-fail">Keyword Stuffing Detected</span>
+                      {% else %}
+                        <span class="badge-pass">Pass</span>
+                      {% endif %}
+                    </p>
+                    <p><strong>AI Flag:</strong>
+                      {% if item.is_suspicious_ai %}
+                        <span class="badge-ai">Likely AI Generated Resume</span>
+                      {% else %}
+                        <span class="badge-pass">Pass</span>
+                      {% endif %}
+                    </p>
+                  </div>
+
+                  <div class="col-md-6 detail-right">
+                    <p><strong>Skills:</strong></p>
+                    <ul class="skills-list">
+                      {% if item.skill_ner %}
+                        {% for s in item.skill_ner %}
+                          <li>{{ s }}</li>
+                        {% endfor %}
+                      {% else %}
+                        <li class="text-muted">No skills detected</li>
+                      {% endif %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        {% else %}
+          <p style="color: rgba(255,255,255,0.9);">No applicants found for this job.</p>
+        {% endif %}
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle details with smooth open/close and arrow rotation
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.name-btn').forEach(function(btn) {
+        btn.addEventListener('click', function () {
+          var idx = btn.getAttribute('data-index');
+          var details = document.querySelector('.details[data-index="'+idx+'"]');
+          var arrow = document.querySelector('.toggle-arrow[data-index="'+idx+'"]');
+          var isOpen = details.classList.contains('open');
+
+          if (isOpen) {
+            details.classList.remove('open');
+            details.setAttribute('aria-hidden','true');
+            btn.setAttribute('aria-expanded','false');
+            if (arrow) { arrow.style.transform = 'rotate(0deg)'; arrow.innerHTML = '&#9662;'; }
+          } else {
+            details.classList.add('open');
+            details.setAttribute('aria-hidden','false');
+            btn.setAttribute('aria-expanded','true');
+            if (arrow) { arrow.style.transform = 'rotate(180deg)'; arrow.innerHTML = '&#9652;'; }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

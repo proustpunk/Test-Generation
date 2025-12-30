@@ -1,4 +1,6 @@
 import os
+
+
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -12,6 +14,9 @@ import pdfplumber
 from gensim.models import Word2Vec
 #from gensim.models.fasttext import FastText
 
+
+
+
 import joblib
 import requests
 from .svm_with_labels import SVMWithLabels
@@ -20,6 +25,56 @@ from .svm_with_labels import SVMWithLabels
 from .models import JobSeekerRegister
 
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+
+
+
+
+CATEGORY_WEIGHTS = {
+    'datascience': {
+        'code': 0.40,
+        'objective': 0.30,
+        'mcq': 0.13,
+        'subjective': 0.17,
+    },
+    'software developer': {
+        'code': 0.50,
+        'objective': 0.30,
+        'mcq': 0.10,
+        'subjective': 0.10,
+    },
+    'cybersecurity specialist': {
+        'code': 0.48,
+        'objective': 0.28,
+        'mcq': 0.14,
+        'subjective': 0.10,
+    },
+    'devops engineer': {
+        'code': 0.42,
+        'objective': 0.30,
+        'mcq': 0.18,
+        'subjective': 0.10,
+    },
+    'graphics engineer': {
+        'code': 0.30,
+        'objective': 0.20,
+        'mcq': 0.20,
+        'subjective': 0.30,
+    },
+    'machine learning engineer': {
+        'code': 0.47,
+        'objective': 0.28,
+        'mcq': 0.10,
+        'subjective': 0.15,
+    },
+    'robotics engineer': {
+        'code': 0.46,
+        'objective': 0.29,
+        'mcq': 0.10,
+        'subjective': 0.15,
+    },
+}
+
 
 
 
@@ -187,7 +242,6 @@ def is_ai_written_resume(text, perplexity_threshold=40):
         return False
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-# Load the model once globally
 tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
 model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
 
