@@ -1,0 +1,41 @@
+Name: John Doe
+Contact: john.doe@email.com | +1234567890
+LinkedIn: linkedin.com/in/johndoe
+
+Summary:
+Software Engineer with 5+ years of experience in full-stack development. Highly skilled in writing efficient code, system design, and managing large-scale software projects. Expertise in modern development technologies and tools, focusing on scalability, performance, and maintainability.
+
+Technical Skills:
+
+Languages: Python, JavaScript (Node.js, React), Java, C++, Bash
+Tools & Frameworks: Docker, Kubernetes, Jenkins, Git, AWS, Terraform
+Databases: MySQL, MongoDB, PostgreSQL
+Version Control: Git, GitLab, GitHub
+Operating Systems: Linux (Ubuntu, CentOS), macOS
+DevOps: CI/CD pipelines, Automation, Infrastructure as Code (IaC)
+Testing Frameworks: Mocha, Jest, PyTest, JUnit
+Professional Experience:
+
+Software Engineer
+XYZ Tech Solutions | June 2020 – Present
+
+Designed and developed microservices-based applications using Node.js and Docker.
+Managed cloud infrastructure on AWS using Terraform and Kubernetes.
+Collaborated in an Agile environment, participated in sprint planning, and developed CI/CD pipelines using Jenkins and GitLab.
+Wrote efficient Bash scripts for automation and deployment.
+Integrated PostgreSQL with web applications for data management.
+Junior Software Engineer
+Tech Innovators Inc. | Jan 2018 – May 2020
+
+Developed backend services in Python and Java.
+Wrote unit tests using PyTest and JUnit for high-quality code coverage.
+Worked with version control systems like Git and participated in code reviews.
+Supported the transition to a microservices architecture and deployed applications using Docker.
+Education:
+Bachelor of Science in Computer Science
+XYZ University | Graduated: 2017
+
+Certifications:
+
+AWS Certified Solutions Architect – Associate
+Docker Certified Associate

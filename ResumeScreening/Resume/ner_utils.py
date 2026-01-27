@@ -13,7 +13,7 @@ dataset_path = os.path.join(BASE_DIR, "newnerA.json")
 data = []
 with open(dataset_path, "r", encoding="utf-8") as f:
     for line in f:
-        item = json.loads(line)  # parse each JSON object
+        item = json.loads(line)  
         data.append(item)
 
 # Prepare TRAIN_DATA
@@ -56,7 +56,7 @@ print(f"Saved fine-tuned model to {output_dir}")
 
 
 
-model_path = "C:/MinorProject/ResumeScreening/ner_modelA"  # adjust path
+model_path = "C:/MinorProject/ResumeScreening/ner_modelA"  
 nlp = spacy.load(model_path)
 
 # Your sample resume text

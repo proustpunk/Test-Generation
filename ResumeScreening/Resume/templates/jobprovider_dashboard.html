@@ -161,6 +161,17 @@
                             <label for="{{ form.job_location.id_for_label }}" class="form-label">Job Location</label>
                             {{ form.job_location }}
                         </div>
+                        <div class="form-group">
+                    <label for="{{ form.deadline.id_for_label }}">deadline</label>
+                    {{ form.deadline }}
+                    {% if form.deadline.errors %}
+                        <div class="text-danger">
+                            {% for error in form.deadline.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
 
                         <button type="submit" class="btn btn-primary btn-block" id="jobPostForm">Post Job</button>
                     </form>

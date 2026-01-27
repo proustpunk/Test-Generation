@@ -20,4 +20,4 @@ def process_uploaded_file(sender, instance, created, **kwargs):
 @receiver(post_save, sender=Job)
 def process_uploaded_file(sender, instance, created, **kwargs):
     if created:  # Ensure this runs only on creation
-        process_file_description(instance)
+        process_file_description(instance) #check

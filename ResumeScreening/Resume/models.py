@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.utils import timezone
 from .embeddings import embed_text
     
 
@@ -34,6 +34,8 @@ class Job(models.Model):
     processed_description = models.TextField(blank=True, null=True)
     description_vector = models.JSONField(blank=True, null=True)
     application_count = models.PositiveIntegerField(default=0)
+
+    deadline = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.job_title

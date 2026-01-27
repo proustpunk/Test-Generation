@@ -104,7 +104,6 @@ def clean_text(text):
     return text
 
 jobseekers = JobSeekerRegister.objects.all()
-
 corpus = []
 for seeker in jobseekers:
     resume_file_path = seeker.resume.path
@@ -240,12 +239,14 @@ def is_ai_written_resume(text, perplexity_threshold=40):
     except Exception as e:
         print(f"Perplexity check error: {e}")
         return False
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
-model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
 
 def generate_reference(question_text):
+
+    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+    model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
 
     prompt =( f"""You are an intelligent, professional candidate answering interview-style subjective questions. 
 Speak as a thoughtful human with professional tone: be concise, clear, and reasoned. 

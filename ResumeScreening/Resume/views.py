@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 import os
+from django.utils import timezone
+
 from .ner_save import create_ner_pool
 from .cosine import cosine_similarity,update_cosine
 from .forms import JobSeekerRegistrationForm, JobSeekerLoginForm,JobProviderRegistrationForm,JobProviderLoginForm
@@ -99,7 +101,6 @@ def jobseeker_register(request):
         form = JobSeekerRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             user,job_seeker = form.save()
-
             try:
                 create_ner_pool(job_seeker)
             except Exception as e:
@@ -144,12 +145,15 @@ def PostJob(request): #dashboard
     if request.method == 'POST':
         form = JobPostForm(request.POST, request.FILES)
         if form.is_valid():
+
+            deadline = form.cleaned_data['deadline']
+            deadline = timezone.make_aware(deadline)
             job_post = form.save(commit=False)
 
             job_post.user = request.user
             job_post.save() 
             
-            send_email_to_seekers_task.delay(job_post.id, domain)
+            #send_email_to_seekers_task.delay(job_post.id, domain)
             return redirect('jobprovider_dashboard')  
     else:
         form = JobPostForm()  
@@ -221,6 +225,8 @@ def job_details(request, job_id):
 
 def apply_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
+    current_site = get_current_site(request)
+    domain = current_site.domain
 
     try:
         user_profile = UserProfile.objects.get(user=request.user)
@@ -252,6 +258,7 @@ def apply_job(request, job_id):
         )
         # --- increment application count ---
         job.application_count += 1
+
         job.save()
 
         messages.success(request, f"Successfully applied for {job.job_title}.")

@@ -131,11 +131,10 @@ class JobProviderRegistrationForm(forms.ModelForm):
  
 
 class JobPostForm(forms.ModelForm):
-      
-        
+  
     class Meta:
         model = Job
-        fields = ['job_title', 'job_requirements', 'salary_range', 'job_location','job_description_file','processed_description','description_vector']
+        fields = ['deadline','job_title', 'job_requirements', 'salary_range', 'job_location','job_description_file','processed_description','description_vector']
 
     job_title = forms.ChoiceField(choices=CATEGORY_CHOICES,widget=forms.Select(attrs={"class": "form-control"}))
     job_requirements = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'List the required qualifications', 'rows': 5}))
@@ -143,3 +142,13 @@ class JobPostForm(forms.ModelForm):
     company_logo = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control-file'}))
     job_location = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter job location'}))
     job_description_file = forms.FileField()
+        
+    deadline = forms.DateTimeField(
+        widget=forms.DateTimeInput(
+            attrs={
+                'type': 'datetime-local',
+                'class': 'form-control'
+            }
+        )
+    )
+

@@ -31,8 +31,13 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
 CELERY_RESULT_BACKEND = 'django-db'
+SITE_DOMAIN = "localhost:8000"
 
-SITE_ID = 1
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+
+
+TIME_ZONE = 'Asia/Kathmandu'
+USE_TZ = True
 
 # Application definition
 import os
@@ -40,6 +45,7 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 INSTALLED_APPS = [
+    'django_celery_beat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Resume',
     'django_celery_results',
-    'django.contrib.sites'
+
 ]
 
 MIDDLEWARE = [

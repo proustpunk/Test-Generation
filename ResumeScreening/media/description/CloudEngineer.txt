@@ -1,0 +1,23 @@
+Job Title: Cloud Engineer
+
+Job Responsibilities:
+
+Design and implement scalable cloud architectures using platforms like AWS, Azure, or GCP.
+
+Automate deployment pipelines using CI/CD tools such as Jenkins or GitHub Actions.
+
+Monitor cloud performance metrics and troubleshoot issues to ensure high availability.
+
+Collaborate with development teams to integrate secure coding practices into applications.
+
+Optimize cloud infrastructure for cost efficiency and performance.
+
+Requirements:
+
+Bachelor’s degree in Computer Science or related field.
+
+3+ years of experience in cloud engineering or a related role.
+
+Proficiency in scripting languages like Python or Bash.
+
+Knowledge of DevOps tools (Docker, Kubernetes).
