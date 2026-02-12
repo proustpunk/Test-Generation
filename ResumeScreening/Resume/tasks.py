@@ -3,18 +3,21 @@ from django.core.mail import send_mail
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
-from .models import JobApplication, Job
+from .models import JobApplication, Job,Candidate
 from django.conf import settings
 from django.utils import timezone
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import get_object_or_404, render, redirect
-
+import pytz
 @shared_task(name="check_job_deadlines")
 def check_job_deadlines():
-    now = timezone.now()
+    now_utc = timezone.now()  # UTC now
+    ktm_tz = pytz.timezone('Asia/Kathmandu')
+    ktm_now = now_utc.astimezone(ktm_tz)
 
+    # Get all active jobs whose deadline has passed in UTC
     jobs = Job.objects.filter(
-        deadline__lte=now,
+        deadline__lte=now_utc,
         email_sent=False,
         active=True
     )
@@ -22,13 +25,18 @@ def check_job_deadlines():
     domain = settings.SITE_DOMAIN
 
     for job in jobs:
-        send_email_to_seekers_task.delay(job.id, domain)
+        # Convert each job deadline to KTM for comparison
+        job_deadline_ktm = job.deadline.astimezone(ktm_tz)
 
-        job.email_sent = True
-        job.active = False
-        job.save()
+        if ktm_now >= job_deadline_ktm:
+            send_email_to_seekers_task.delay(job.id, domain)
+
+            job.email_sent = True
+            job.active = False
+            job.save()
 
     return f"Processed {jobs.count()} expired jobs"
+
 
 
 
@@ -59,3 +67,57 @@ def send_email_to_seekers_task(job_id, domain):
             recipient_list=[seeker_email],
         )
     return f"Emails sent to top {top_count} applicants for job {job_id}"
+
+
+@shared_task(name="check_final_deadlines")
+def check_final_deadlines():
+    now = timezone.now()
+
+    candidates = Candidate.objects.filter(
+        final_deadline_date__lte=now,
+        final_email_sent=False
+    )
+
+    job_ids = candidates.values_list("job_id", flat=True).distinct()
+
+    for job_id in job_ids:
+        send_final_selection_email.delay(job_id)
+
+    return f"Processed {len(job_ids)} jobs for final selection"
+
+
+@shared_task
+def send_final_selection_email(job_id):
+    job = Job.objects.get(id=job_id)
+
+    candidates = Candidate.objects.filter(
+        job=job,
+        final_email_sent=False
+    ).order_by('-total_score')
+
+    if not candidates.exists():
+        return f"No candidates for job {job_id}"
+
+    top_count = max(1, int(len(candidates) * 0.2))
+    selected = candidates[:top_count]
+
+    for candidate in selected:
+        user = candidate.user
+
+        send_mail(
+            subject=f"Final Selection – {job.job_title}",
+            message=(
+                f"Dear {user.username},\n\n"
+                f"You have been selected in the final list for the position: "
+                f"{job.job_title}.\n\n"
+                f"Congratulations.\n"
+            ),
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+        )
+
+    # IMPORTANT: mark all candidates for this job as processed
+    candidates.update(final_email_sent=True)
+
+    return f"Final emails sent for job {job_id}"
+

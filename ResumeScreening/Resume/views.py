@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 import os
 from django.utils import timezone
+import pytz
 
 from .ner_save import create_ner_pool
 from .cosine import cosine_similarity,update_cosine
@@ -146,11 +147,15 @@ def PostJob(request): #dashboard
         form = JobPostForm(request.POST, request.FILES)
         if form.is_valid():
 
-            deadline = form.cleaned_data['deadline']
-            deadline = timezone.make_aware(deadline)
+            dt_aware_utc = form.cleaned_data['deadline'] 
+
+            ktm_tz = pytz.timezone('Asia/Kathmandu')
+            dt_aware_ktm = dt_aware_utc.astimezone(ktm_tz)
+
             job_post = form.save(commit=False)
 
             job_post.user = request.user
+            job_post.deadline = dt_aware_ktm
             job_post.save() 
             
             #send_email_to_seekers_task.delay(job_post.id, domain)
@@ -453,8 +458,9 @@ def start_test(request, uidb64, token, job_id):
     
 
     job = get_object_or_404(Job, id=job_id)
+    final_deadline = job.deadline + timezone.timedelta(days=7)
 
-    candidate = Candidate.objects.create(user=user, job=job)
+    candidate = Candidate.objects.create(user=user, job=job,final_deadline_date=final_deadline)
     candidate_id = candidate.id
 
    #category=job.job_title
@@ -642,13 +648,13 @@ def test_submitted(request,job_id):
     job = Job.objects.get(id=job_id)
     return render(request,'test_submitted.html',{'job': job})
 
-
+###############################################3 ranked and then sent ###################33
 
 def candidates_for_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     candidates = Candidate.objects.filter(job=job)
     return render(request, 'candidates_for_job.html', {'job': job, 'candidates': candidates})
-
+###########################################################################################################
 
 @csrf_exempt
 def log_activity(request):
@@ -689,3 +695,20 @@ def update_resume(request):
             messages.error(request, f"Failed to update resume: {e}")
 
     return redirect('joblist')
+
+
+
+
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .tasks import send_final_selection_email
+
+@login_required
+def trigger_final_email(request, job_id):
+    # optional: check provider owns the job
+    job = get_object_or_404(Job, id=job_id, user=request.user)
+
+    send_final_selection_email.delay(job.id)
+
+    messages.success(request, "Final selection email task triggered.")
+    return redirect('candidates_for_job', job_id=job.id)

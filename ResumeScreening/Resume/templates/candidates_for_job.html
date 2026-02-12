@@ -69,6 +69,28 @@
         </div>
       </div>
 
+      <div style="display:flex; gap:10px;">
+  <a href="{% url 'jobprovider_dashboard' %}"
+     style="color:#fff; text-decoration:none; background:rgba(255,255,255,0.04); padding:8px 12px; border-radius:8px;">
+     Back to Dashboard
+  </a>
+
+  <form method="post" action="{% url 'trigger_final_email' job.id %}">
+    {% csrf_token %}
+    <button type="submit"
+      style="background:linear-gradient(90deg,#198754,#20c997);
+             color:#fff;
+             border:none;
+             padding:8px 14px;
+             border-radius:8px;
+             font-weight:800;
+             cursor:pointer;">
+      Send Final Selection Emails (Test)
+    </button>
+  </form>
+</div>
+
+
       <div id="list" class="list">
         {% if candidates %}
           {% for c in candidates %}

@@ -1,0 +1,30 @@
+Job Title: Software Engineer
+Location: Remote / Hybrid
+Department: Engineering
+
+Responsibilities:
+
+Develop, test, and deploy scalable applications using Node.js, Java, and Python.
+Design and implement microservices architecture and containerized applications using Docker and Kubernetes.
+Work with cloud infrastructure on AWS, utilizing Terraform for infrastructure as code (IaC) and automation.
+Build and maintain CI/CD pipelines using Jenkins or GitLab.
+Collaborate with cross-functional teams to define software requirements and translate them into technical solutions.
+Write clean, maintainable, and efficient Bash scripts for automation and deployment.
+Participate in Agile development cycles and assist in sprint planning and retrospectives.
+Implement data management solutions using relational databases such as PostgreSQL and MySQL.
+Required Skills & Knowledge:
+
+Strong programming skills in Java, Python, and JavaScript (Node.js).
+Proficient in containerization using Docker and container orchestration with Kubernetes.
+Solid understanding of cloud technologies, especially AWS, and experience with Terraform for infrastructure management.
+Experience with continuous integration and deployment using Jenkins or GitLab.
+Proficient in version control using Git, including branching, merging, and pull requests.
+Knowledge of relational databases like MySQL, PostgreSQL, and NoSQL databases like MongoDB.
+Experience in writing efficient Bash scripts for automation and system administration.
+Ability to write clean, tested, and well-documented code in a collaborative environment.
+Experience with Agile methodologies and working in fast-paced, iterative sprints.
+Preferred Qualifications:
+
+Bachelor’s degree in Computer Science or related field.
+Experience in building and maintaining large-scale distributed systems.
+Familiarity with DevOps practices and tools.

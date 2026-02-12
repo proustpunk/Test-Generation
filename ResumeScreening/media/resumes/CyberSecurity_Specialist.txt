@@ -1,0 +1,46 @@
+John Doe
+1234 Cybersecurity Blvd
+Tech City, TX 75001
+Phone: (123) 456-7890
+Email: john.doe@email.com
+LinkedIn: linkedin.com/in/johndoe
+GitHub: github.com/johndoe
+
+Objective:
+Highly skilled Cybersecurity Specialist with 5+ years of experience in network security, threat assessment, and vulnerability management. Proficient in using advanced tools to safeguard critical IT infrastructure and prevent cyber-attacks. Seeking to leverage expertise in security operations and incident response at a forward-thinking organization.
+
+Professional Experience:
+
+Cybersecurity Specialist | XYZ Tech Solutions | January 2020 – Present
+- Conduct penetration testing and vulnerability assessments using tools like Nmap, Metasploit, and Wireshark to identify security risks.
+- Perform real-time network monitoring and analysis using Splunk and Nagios to detect and respond to security threats.
+- Implement and manage firewalls and intrusion detection/prevention systems (IDS/IPS) including Cisco ASA, Palo Alto, and Snort.
+- Administer security controls on web servers, email systems, and databases using OWASP ZAP and Burp Suite.
+- Perform endpoint security management using CrowdStrike and Symantec Endpoint Protection.
+- Respond to and manage security incidents using SIEM tools like LogRhythm and SolarWinds.
+- Conduct security awareness training for employees on best practices for using company systems and avoiding phishing attacks.
+
+Cybersecurity Analyst | SecureIT Co. | June 2017 – December 2019
+- Assisted in the design and implementation of security policies and procedures for data protection and access control.
+- Utilized Kali Linux for penetration testing, scanning, and exploitation in various network environments.
+- Managed SIEM solutions and led incident response efforts using IBM QRadar and Splunk.
+- Developed and maintained encryption strategies using VeraCrypt and BitLocker to secure sensitive data.
+- Performed compliance checks and audits for industry standards including PCI-DSS, GDPR, and HIPAA.
+
+Education:
+Bachelor of Science in Information Security | University of Cybersecurity | Graduated: 2017
+
+Certifications:
+- Certified Information Systems Security Professional (CISSP)
+- Certified Ethical Hacker (CEH)
+- CompTIA Security+
+- Cisco Certified CyberOps Associate
+
+Skills:
+- Penetration Testing: Metasploit, Burp Suite, Kali Linux, OWASP ZAP
+- Network Security: Wireshark, Nmap, Snort, Cisco ASA
+- Security Information and Event Management (SIEM): Splunk, LogRhythm, SolarWinds, IBM QRadar
+- Endpoint Protection: CrowdStrike, Symantec Endpoint Protection
+- Firewall Configuration: Palo Alto, Checkpoint, Fortinet
+- Threat Hunting and Analysis: Splunk, Nagios, Snort
+- Incident Response and Forensics: EnCase, FTK Imager

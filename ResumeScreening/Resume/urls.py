@@ -1,6 +1,6 @@
 from django import views
 from django.urls import path
-from .views import update_resume,log_activity,candidates_for_job,test_submitted,test_validation,submit_test,start_test,send_email_to_seekers,TopJob,apply_job, job_details, ranking,homepage,loginmain,registermain,jobseeker_register,jobseeker_login,jobprovider_register,PostJob,joblist,jobprovider_login, verify_email
+from .views import trigger_final_email,update_resume,log_activity,candidates_for_job,test_submitted,test_validation,submit_test,start_test,send_email_to_seekers,TopJob,apply_job, job_details, ranking,homepage,loginmain,registermain,jobseeker_register,jobseeker_login,jobprovider_register,PostJob,joblist,jobprovider_login, verify_email
 
 urlpatterns =[
 
@@ -31,6 +31,13 @@ urlpatterns =[
 
     path('candidates/<int:job_id>/', candidates_for_job, name='candidates_for_job'),
     path('log-activity/',log_activity,name="log_activity"),
+
+    path(
+    "jobs/<int:job_id>/trigger-final-email/",
+    trigger_final_email,
+    name="trigger_final_email"
+),
+
 
 
 
