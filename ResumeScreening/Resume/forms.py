@@ -9,7 +9,7 @@ from django.core.exceptions import ValidationError
 
 
 CATEGORY_CHOICES = [
-        ('datascience', 'Data Science'),
+        ('data scientist', 'Data Science'),
         ('software developer', 'Software Developer'),
         ('cybersecurity specialist', 'Cybersecurity Specialist'),
         ('devops engineer', 'Devops engineer'),

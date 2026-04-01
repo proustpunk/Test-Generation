@@ -25,7 +25,7 @@ SKILL_LIST = [
     # Web & Visualization Tools
     "react", "vue.js", "angular", "tableau", "powerbi", "d3.js", "plotly",
     "nlp", "flask", "django", "fastapi", "html", "html5", "css", "css3",
-    "javascript", "ajax", "bootstrap", "sass", "less",
+    "javascript", "ajax", "bootstrap", "sass", "less", "photoshop",
 
     # =========================
     # Cybersecurity Skills

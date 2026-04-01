@@ -240,7 +240,6 @@ canvas {
     {% for question in questions %}
       <div class="question-box" id="question-{{ forloop.counter }}">
         <h2>Question {{ forloop.counter }}</h2>
-        <p class="difficulty">Difficulty: {{ question.difficulty|default:'Easy' }}</p>
         <p>{{ question.question_text }}</p>
 
         {% if question.question_type == 'objective' or question.question_type == 'mcq' %}
@@ -487,6 +486,7 @@ let counterD = 0;
     counterD++;
     if(counterD >= 1){
       driftStatus.textContent = "Focus Drift Detected!";
+      suspiciousActivity.notFocused = true;
       counterD = 0;
 }
 } else{
@@ -516,17 +516,29 @@ let counterD = 0;
 
 
     // Right-click / copy detection
-   // document.addEventListener('contextmenu', (e) => {
-     // e.preventDefault();
-      //suspiciousActivity.copyAttempted = true;
-    //});
+ // Right click
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  suspiciousActivity.copyAttempted = true;
+  console.log("Right click detected");
 
-    //document.addEventListener('contextmenu', event => event.preventDefault());
-  //document.addEventListener('keydown', function (e) {
-    //if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 'a')) {
-      //e.preventDefault();
-    //}
-  //});
+  setTimeout(() => {
+    suspiciousActivity.copyAttempted = false;
+  }, 1000);
+});
+
+// Keyboard copy
+document.addEventListener('keydown', function (e) {
+  if ((e.ctrlKey || e.metaKey) && ['c', 'v', 'x', 'a'].includes(e.key)) {
+    e.preventDefault();
+    suspiciousActivity.copyAttempted = true;
+    console.log("Keyboard copy attempt");
+
+    setTimeout(() => {
+      suspiciousActivity.copyAttempted = false;
+    }, 1000);
+  }
+});
 
     // Tab switching detection
     let lastTabSwitchTime = 0;

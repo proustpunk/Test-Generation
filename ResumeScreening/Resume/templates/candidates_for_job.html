@@ -96,12 +96,34 @@
           {% for c in candidates %}
             <article class="candidate" data-name="{{ c.user.username|lower }}" data-email="{{ c.user.email|lower }}">
               <div class="row-main" tabindex="0" role="button">
-                <div class="meta">
-                  <div class="name">{{ c.user.username|capfirst }}</div>
-                  <div class="email">{{ c.user.email }}</div>
-                </div>
-                <div class="score">Score: {{ c.total_score }}</div>
+      
+                  
+  <div class="meta">
+    <div class="name">{{ c.user.username|capfirst }}</div>
+    <div class="email">{{ c.user.email }}</div>
+  </div>
+  <div class="score">Score: {{ c.total_score }}</div>
+  
+  <form method="post" action="{% url 'delete_candidate' c.id %}" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit"
+        style="background:#dc3545; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-weight:700; cursor:pointer;">
+      Disqualify
+    </button>
+  </form>
+
               </div>
+
+              <div class="detail-logs">
+  <div class="q">Suspicious Activity Summary (in seconds)</div>
+
+  <div class="log"><b>Multiple Faces Detected: </b>{{ c.multiple_face_count }}</div>
+  <div class="log"><b>Tab Switch Openend: </b>{{ c.tab_switch_count }}</div>
+  <div class="log"><b>No Face Detected: </b>{{ c.no_face_count }}</div>
+  <div class="log"><b>DevTools Opened:</b> {{ c.devtools_count }}</div>
+  <div class = "log"><b>Copy Attempted: </b>{{c.copy_attempted}}</div>
+  <div class = "log"><b>Focus Drift:</b> {{c.not_focused}}</div>
+</div>
 
               <div class="details" aria-hidden="true">
                 <div class="detail-answers">
@@ -115,16 +137,11 @@
                   {% empty %}
                     <div class="ans muted">No answers recorded.</div>
                   {% endfor %}
+
+                  
                 </div>
 
-                <div class="detail-logs">
-                  {% for logs in c.logs.all %}
-                    <div class="q">Logs</div>
-                    <div class="log">Suspicious: {{ logs.suspicious }}</div>
-                    <div class="log">flags: {{ logs.flags }}</div>
-                  {% empty %}
-                    <div class="log muted">No logs.</div>
-                  {% endfor %}
+                 
                 </div>
               </div>
             </article>

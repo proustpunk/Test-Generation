@@ -163,7 +163,7 @@ class Candidate(models.Model):
     answers = models.ManyToManyField(Answer)
     total_score = models.FloatField(default=0)
     submitted_at = models.DateTimeField(auto_now_add=True)
-
+    test_taken = models.BooleanField(default=False)
     final_deadline_date = models.DateTimeField()
     final_email_sent = models.BooleanField(default=False)
 

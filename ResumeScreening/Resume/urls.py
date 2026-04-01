@@ -1,6 +1,6 @@
 from django import views
 from django.urls import path
-from .views import trigger_final_email,update_resume,log_activity,candidates_for_job,test_submitted,test_validation,submit_test,start_test,send_email_to_seekers,TopJob,apply_job, job_details, ranking,homepage,loginmain,registermain,jobseeker_register,jobseeker_login,jobprovider_register,PostJob,joblist,jobprovider_login, verify_email
+from .views import delete_candidate,trigger_final_email,update_resume,log_activity,candidates_for_job,test_submitted,test_validation,submit_test,start_test,send_email_to_seekers,TopJob,apply_job, job_details, ranking,homepage,loginmain,registermain,jobseeker_register,jobseeker_login,jobprovider_register,PostJob,joblist,jobprovider_login, verify_email
 
 urlpatterns =[
 
@@ -38,6 +38,7 @@ urlpatterns =[
     name="trigger_final_email"
 ),
 
+path('delete-candidate/<int:candidate_id>/', delete_candidate, name='delete_candidate'),
 
 
 

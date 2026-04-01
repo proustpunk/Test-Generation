@@ -460,6 +460,10 @@ def start_test(request, uidb64, token, job_id):
     job = get_object_or_404(Job, id=job_id)
     final_deadline = job.deadline + timezone.timedelta(days=7)
 
+    candidate = Candidate.objects.filter(user=user, job=job, test_taken=True).first()
+    if candidate:
+        return HttpResponse("You have already submitted this test.")
+
     candidate = Candidate.objects.create(user=user, job=job,final_deadline_date=final_deadline)
     candidate_id = candidate.id
 
@@ -471,6 +475,8 @@ def start_test(request, uidb64, token, job_id):
 
 
     questions = list(questions_subjective) + list(questions_objective) + list(questions_mcq) + list(questions_code)
+
+
 
     return render(request, 'test_page.html', {
         'job': job,
@@ -488,6 +494,9 @@ from django.contrib.auth.models import User
 from .utils import CATEGORY_WEIGHTS
 def submit_test(request):
 
+    
+    
+
     #decode the email id everyting and send it to variable as context to the url of the provider page and show it in container in well managed way with suspicitious activity log
     if request.method == "POST":
 
@@ -500,6 +509,9 @@ def submit_test(request):
 
         cid = request.POST.get("candidate_id")
         candidate = Candidate.objects.get(id=cid)
+
+        
+
 
       
         if candidate.total_score is None:
@@ -546,6 +558,8 @@ def submit_test(request):
                         ref_emb = question.reference_vector
                         ans_emb = embed_text(answer.written_answer)
                         similarity = cosine_similarity(ref_emb,ans_emb)
+                        if similarity < 0.1:   # you can tune this (0.05, 0.1, 0.15)
+                            similarity = 0.0
                         answer.score += round(similarity*10,2) 
                         answer.score = answer.score / 50
 
@@ -632,7 +646,8 @@ def submit_test(request):
 
         candidate.total_score = total_score * 100
 
-        
+        candidate.test_taken = True  # mark as submitted
+
         candidate.save()
 
 
@@ -650,10 +665,64 @@ def test_submitted(request,job_id):
 
 ###############################################3 ranked and then sent ###################33
 
+import json
+
 def candidates_for_job(request, job_id):
-    job = get_object_or_404(Job, id=job_id)
-    candidates = Candidate.objects.filter(job=job)
-    return render(request, 'candidates_for_job.html', {'job': job, 'candidates': candidates})
+    job = Job.objects.get(id=job_id)
+    candidates = Candidate.objects.filter(job=job).prefetch_related("logs", "answers")
+
+    for c in candidates:
+        logs = c.logs.all()
+
+        multiple_face_count = 0
+        tab_switch_count = 0
+        no_face_count = 0
+        devtools_count = 0
+        copy_attempted = 0
+        not_focused = 0
+
+        for log in logs:
+            if log.flags:
+                # flags is stored as JSON/dict (or string)
+                flags = log.flags
+
+            
+                # if it's string in DB, convert
+                if isinstance(flags, str):
+                    flags = json.loads(flags)
+
+
+                if flags.get("notFocused") == True:
+                    not_focused += 1
+
+                if flags.get("multiplefacesdetected") == True:
+                    multiple_face_count += 1
+
+                if flags.get("tabSwitch") == True:
+                    tab_switch_count += 1
+
+                if flags.get("noFaceDetected") == True:
+                    no_face_count += 1
+
+                if flags.get("devToolsOpen") == True:
+                    devtools_count += 1
+
+                if flags.get("copyAttempted") == True:
+                    copy_attempted += 1
+
+        # attach dynamic attributes
+        c.multiple_face_count = multiple_face_count
+        c.tab_switch_count = tab_switch_count
+        c.no_face_count = no_face_count
+        c.devtools_count = devtools_count
+        c.copy_attempted = copy_attempted
+        c.not_focused = not_focused
+
+    return render(request, "candidates_for_job.html", {
+        "job": job,
+        "candidates": candidates
+    })
+
 ###########################################################################################################
 
 @csrf_exempt
@@ -712,3 +781,26 @@ def trigger_final_email(request, job_id):
 
     messages.success(request, "Final selection email task triggered.")
     return redirect('candidates_for_job', job_id=job.id)
+
+
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect
+from django.contrib import messages
+from .models import Candidate
+
+@login_required
+def delete_candidate(request, candidate_id):
+    if request.method != 'POST':
+        messages.error(request, "Invalid request.")
+        return redirect('jobprovider_dashboard')
+
+    candidate = get_object_or_404(Candidate, id=candidate_id)
+
+    if candidate.job.user != request.user:
+        messages.error(request, "You are not allowed to delete this candidate.")
+        return redirect('candidates_for_job', job_id=candidate.job.id)
+
+    candidate.delete()
+    messages.success(request, f"{candidate.user.username} has been disqualified and removed.")
+    return redirect('candidates_for_job', job_id=candidate.job.id)
