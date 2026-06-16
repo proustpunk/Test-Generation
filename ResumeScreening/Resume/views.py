@@ -412,6 +412,7 @@ def test_validation(request, uidb64, token, job_id):
             img = Image.open(img_bytes)
 
             snapshot_descriptor = get_face_descriptor(img)
+            print(snapshot_descriptor)
             if snapshot_descriptor is None:
                 return JsonResponse({'match': False, 'error': 'No face detected in snapshot'})
 
@@ -421,6 +422,8 @@ def test_validation(request, uidb64, token, job_id):
 
             print("called")
             target_descriptor = get_face_descriptor(target_img)
+            print(target_descriptor)
+
             if target_descriptor is None:
                 return JsonResponse({'match': False, 'error': 'No face detected in uploaded photo'})
 

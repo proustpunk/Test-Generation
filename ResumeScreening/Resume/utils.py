@@ -215,7 +215,6 @@ def stuffing_check(text):
 
     return is_suspicious
         
-
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
@@ -240,7 +239,7 @@ def is_ai_written_resume(text, perplexity_threshold=40):
         print(f"Perplexity check error: {e}")
         return False
 
-
+#needs langchain 
 def generate_reference(question_text):
 
     from transformers import AutoTokenizer, AutoModelForSeq2SeqLM

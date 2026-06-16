@@ -7,6 +7,14 @@ from .validatee import validate_password
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 
+import os
+
+def validate_resume_file(value):
+    ext = os.path.splitext(value.name)[1]  # gets file extension
+    valid_extensions = ['.pdf', '.txt']    # allowed file types
+    if not ext.lower() in valid_extensions:
+        raise ValidationError(f'Unsupported file extension. Allowed: {", ".join(valid_extensions)}')
+
 
 CATEGORY_CHOICES = [
         ('data scientist', 'Data Science'),
@@ -25,7 +33,7 @@ class JobSeekerRegistrationForm(forms.ModelForm):
         help_text="Password must be at least 8 characters long, include uppercase and lowercase letters, a number, and a special character (!@#$%^&*)."
     )
     email = forms.EmailField(required=True)
-    resume = forms.FileField(required=True)
+    resume = forms.FileField(required=True, validators=[validate_resume_file])
     class Meta:
         model = JobSeekerRegister
         fields = ['resume', 'skills', 'bio', 'processed_text', 'vector', 'prediction','profile_pics']
@@ -141,7 +149,7 @@ class JobPostForm(forms.ModelForm):
     salary_range = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter salary range'}))
     company_logo = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control-file'}))
     job_location = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter job location'}))
-    job_description_file = forms.FileField()
+    job_description_file = forms.FileField(validators=[validate_resume_file])
         
     deadline = forms.DateTimeField(
         widget=forms.DateTimeInput(

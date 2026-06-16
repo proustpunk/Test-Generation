@@ -4,7 +4,7 @@ import json
 import random
 import spacy
 
-# Load SpaCy model
+
 nlp = spacy.load("en_core_web_sm")
 
 BASE_DIR = r"C:\MinorProject\ResumeScreening\Resume"

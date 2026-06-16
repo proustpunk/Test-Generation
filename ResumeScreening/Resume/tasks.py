@@ -116,7 +116,6 @@ def send_final_selection_email(job_id):
             recipient_list=[user.email],
         )
 
-    # IMPORTANT: mark all candidates for this job as processed
     candidates.update(final_email_sent=True)
 
     return f"Final emails sent for job {job_id}"
