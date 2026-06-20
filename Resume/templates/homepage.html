@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeScreener</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#EBF1F5] min-h-screen flex flex-col">
+
+    <!-- HERO -->
+    <header class="bg-[#2D3743] text-white pb-12 rounded-b-[2rem] shadow-lg">
+
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+            <div class="flex items-center space-x-2">
+                <div class="bg-[#29B69A] p-2 rounded-lg text-white font-bold rotate-12">
+                    R
+                </div>
+
+                <span class="text-xl font-bold">
+                    Resume<span class="text-[#F2C14E]">Screener</span>
+                </span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+
+                <a href="{% url 'loginmain' %}"
+                   class="text-sm font-medium text-gray-300 hover:text-white transition">
+                    Login
+                </a>
+
+                <a href="{% url 'register' %}"
+                   class="bg-[#F2C14E] text-[#2D3743] px-5 py-2 rounded-lg text-sm font-bold hover:bg-[#dbad40] transition shadow-md">
+                    Register
+                </a>
+
+            </div>
+
+        </nav>
+
+        <div class="max-w-7xl mx-auto px-6 mt-10 grid lg:grid-cols-12 gap-8 items-center">
+
+            <!-- LEFT -->
+            <div class="lg:col-span-5">
+
+                <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight">
+                    Find Your Next Opportunity
+                </h1>
+
+                <p class="mt-4 text-gray-400 leading-relaxed">
+                    Explore trending jobs, discover new opportunities,
+                    and apply through ResumeScreener.
+                </p>
+
+                <div class="flex gap-4 mt-8">
+
+                    <a href="{% url 'loginmain' %}"
+                       class="bg-[#F2C14E] text-[#2D3743] px-6 py-3 rounded-lg font-bold hover:bg-[#dbad40]">
+                        Login
+                    </a>
+
+                    <a href="{% url 'register' %}"
+                       class="border border-gray-500 px-6 py-3 rounded-lg hover:bg-[#3A4654]">
+                        Register
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="lg:col-span-7 bg-[#242D37] p-6 rounded-2xl border border-[#374454]">
+
+                <div class="flex justify-between items-center mb-6">
+
+                    <h3 class="text-lg font-bold">
+                        Most Applied Jobs
+                    </h3>
+
+                    <span class="text-sm text-gray-400">
+                        Popular Right Now
+                    </span>
+
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+
+                    {% for job in top_jobs %}
+
+                    <div class="bg-white text-gray-800 rounded-xl shadow-md overflow-hidden border-t-4 border-[#29B69A]">
+
+                        <div class="p-5">
+
+                            <div class="w-full h-24 bg-[#E8F7F4] rounded-lg flex items-center justify-center text-[#29B69A] text-3xl mb-4">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+
+                            <h4 class="font-bold text-lg">
+                                {{ job.job_title }}
+                            </h4>
+
+                            <p class="text-sm text-gray-500 mt-2">
+                                {{ job.job_requirements|truncatechars:100 }}
+                            </p>
+
+                            <p class="text-sm mt-3">
+                                <strong>Location:</strong>
+                                {{ job.job_location }}
+                            </p>
+
+                            <p class="text-sm">
+                                <strong>Salary:</strong>
+                                {{ job.salary_range }}
+                            </p>
+
+                            <p class="text-sm">
+                                <strong>Applications:</strong>
+                                {{ job.application_count }}
+                            </p>
+
+                        </div>
+
+                        <div class="p-5 pt-0">
+
+                            <a href="{% url 'jobdetails' job.id %}"
+                               class="block text-center bg-[#F2C14E] text-[#2D3743] py-2 rounded-lg font-bold hover:bg-[#dbad40]">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    {% empty %}
+
+                    <p class="text-white">
+                        No popular jobs available.
+                    </p>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-7xl mx-auto px-6 py-10 flex-grow w-full">
+
+        <div class="flex justify-between items-center mb-8">
+
+            <h2 class="text-2xl font-extrabold text-gray-800">
+                Recently Posted Jobs
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {% for job in top_jobs_date %}
+
+            <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition">
+
+                <div class="flex justify-between items-start">
+
+                    <div>
+
+                        <h4 class="font-bold text-lg text-gray-900">
+                            {{ job.job_title }}
+                        </h4>
+
+                        <p class="text-gray-500 text-sm mt-2">
+                            {{ job.job_requirements|truncatechars:100 }}
+                        </p>
+
+                    </div>
+
+                    <i class="fas fa-fire text-orange-500"></i>
+
+                </div>
+
+                <div class="mt-4 space-y-2 text-sm">
+
+                    <p>
+                        <strong>Location:</strong>
+                        {{ job.job_location }}
+                    </p>
+
+                    <p>
+                        <strong>Salary:</strong>
+                        {{ job.salary_range }}
+                    </p>
+
+                    <p>
+                        <strong>Posted:</strong>
+                        {{ job.posted_at|date:"F j, Y" }}
+                    </p>
+
+                </div>
+
+                <a href="{% url 'jobdetails' job.id %}"
+                   class="block mt-5 text-center bg-[#2D3743] text-white py-2 rounded-lg hover:bg-[#1f2730]">
+                    View Details
+                </a>
+
+            </div>
+
+            {% empty %}
+
+            <p>No recent jobs available.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t py-6 mt-10">
+
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
+
+            © 2024 ResumeScreener. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!-- jobprovider_login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Provider Login — ResumeScreener</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Target Django's raw form render inputs uniformly */
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      font-size: 0.875rem;
+      background-color: #FFFFFF;
+      border: 1px solid #D1D5DB;
+      border-radius: 0.75rem;
+      color: #1F2937;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #29B69A;
+      box-shadow: 0 0 0 3px rgba(41, 182, 154, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-[#EBF1F5] min-h-screen flex flex-col justify-between">
+
+  <!-- Global Top Header Background Frame Accent -->
+  <header class="bg-[#2D3743] text-white pb-32 rounded-b-[2rem] shadow-lg w-full">
+    <nav class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div class="bg-[#29B69A] p-2 rounded-lg text-white font-bold rotate-12 text-center w-9 h-9 flex items-center justify-center">
+          R
+        </div>
+        <span class="text-xl font-bold">
+          Resume<span class="text-[#F2C14E]">Screener</span>
+        </span>
+      </div>
+      <div>
+        <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Recruiter Access</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Login Module Card Block Workspace Component -->
+  <main class="max-w-sm mx-auto px-4 -mt-24 pb-16 w-full flex-grow">
+    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+      
+      <!-- Component Header Frame Information -->
+      <div class="border-b border-gray-100 bg-gray-50/50 px-6 py-5 text-center">
+        <h2 class="text-xl font-extrabold text-gray-800 tracking-tight">Job Provider Login</h2>
+        <p class="text-xs text-gray-400 mt-1">Provide your credentials to access your employer candidate pipeline.</p>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <!-- Error Reporting Diagnostics Message Pipeline Output -->
+        {% if form.errors %}
+        <div class="bg-red-50 border border-dashed border-red-200 rounded-xl p-3 text-xs font-semibold text-red-500 space-y-1">
+          {% for field in form %}
+            {% for error in field.errors %}
+              <p class="flex items-center"><i class="fas fa-circle-exclamation mr-1.5 shrink-0"></i>{{ error }}</p>
+            {% endfor %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Interactive Core Request Pipeline Entry Frame -->
+        <form method="post" class="space-y-4 m-0">
+          {% csrf_token %}
+          
+          <div class="form-group">
+            <label for="username" class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Username</label>
+            {{ form.username }}
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Password</label>
+            {{ form.password }}
+          </div>
+
+          <!-- Processing Execution Trigger Panel -->
+          <div class="pt-2">
+            <button type="submit" class="w-full bg-[#29B69A] hover:bg-[#22967f] text-white py-3 rounded-xl text-xs font-bold transition shadow-sm uppercase tracking-wider flex items-center justify-center space-x-2">
+              <i class="fas fa-right-to-bracket text-xs"></i>
+              <span>Login</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Registration Route Referral Link Intersect Panel -->
+      <div class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 text-center text-xs text-gray-500">
+        <p>Don't have an account? <a href="{% url 'jobprovider_register' %}" class="text-[#29B69A] hover:text-[#22967f] font-bold hover:underline transition">Register here</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer Container Bar Elements Layout Structure -->
+  <footer class="bg-white border-t py-6 w-full">
+    <div class="max-w-5xl mx-auto px-6 text-center text-xs text-gray-500">
+      &copy; 2026 ResumeScreener. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

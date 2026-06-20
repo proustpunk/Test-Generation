@@ -1,0 +1,66 @@
+Experienced DevOps Engineer with a strong background in cloud infrastructure management, automation, CI/CD pipelines, and containerization. Skilled in collaborating with development and operations teams to streamline processes and improve system reliability. Seeking to contribute technical expertise and drive efficiency in a dynamic organization.
+
+Professional Experience
+DevOps Engineer
+ABC Technologies | [Dates of Employment]
+[City, State]
+
+Managed and optimized cloud infrastructure (AWS, GCP) to support scalable web applications.
+Developed and maintained Infrastructure as Code (IaC) using Terraform and CloudFormation.
+Implemented and maintained CI/CD pipelines using Jenkins, GitLab CI, and Travis CI, leading to a 30% improvement in deployment speed.
+Utilized Docker for containerization of microservices and Kubernetes for orchestration, improving deployment consistency.
+Automated server provisioning and configuration management with Ansible, reducing manual intervention and human error by 40%.
+Developed monitoring and alerting solutions using Prometheus, Grafana, and Datadog to ensure system uptime and performance.
+Collaborated with development teams to ensure applications met scalability, reliability, and performance requirements.
+Cloud Engineer
+XYZ Corp. | [Dates of Employment]
+[City, State]
+
+Worked with cloud providers (AWS, Azure) to provision and manage cloud infrastructure for production systems.
+Assisted in building and managing Kubernetes clusters for containerized application deployments.
+Optimized cloud costs by recommending and implementing best practices for resource allocation and scaling.
+Implemented version control systems using Git, ensuring efficient management of infrastructure code and application source code.
+Automated infrastructure provisioning using AWS CloudFormation and Terraform.
+Assisted with security monitoring and audit processes to ensure compliance with industry standards.
+Systems Administrator
+Tech Solutions Ltd. | [Dates of Employment]
+[City, State]
+
+Managed and maintained Linux-based systems, including installation, configuration, and troubleshooting.
+Automated repetitive tasks using Bash scripting and Python, saving 20 hours per week on system maintenance.
+Provided support for networking issues and server performance problems, achieving a 99% uptime for critical services.
+Installed and configured web servers (Apache, Nginx) and databases (MySQL, PostgreSQL) for application hosting.
+Monitored system performance using Nagios and Zabbix, resolving potential issues before they affected production systems.
+Education
+Bachelor of Science in Computer Science
+University of [Your University] | [Year of Graduation]
+
+Certifications
+AWS Certified DevOps Engineer – Professional
+Microsoft Certified: Azure DevOps Engineer Expert
+Certified Kubernetes Administrator (CKA)
+Terraform Associate
+Skills
+Cloud Platforms: AWS, GCP, Azure
+Automation: Terraform, Ansible, CloudFormation
+CI/CD Tools: Jenkins, GitLab CI, Travis CI
+Containers & Orchestration: Docker, Kubernetes
+Version Control: Git, GitHub, GitLab
+Monitoring: Prometheus, Grafana, Datadog, Nagios
+Scripting Languages: Bash, Python, PowerShell
+Operating Systems: Linux (Ubuntu, CentOS), Windows Server
+Networking: TCP/IP, DNS, Load Balancers
+Security: VPN, Firewalls, Encryption, IAM
+Project Management: Jira, Trello
+Projects
+CI/CD Pipeline for E-commerce Application
+Developed a fully automated CI/CD pipeline for an e-commerce platform using Jenkins, Docker, and Kubernetes, leading to faster and more reliable software deployments.
+Integrated automated tests into the pipeline to ensure high-quality code and a 20% reduction in production issues.
+Cloud Infrastructure Optimization
+Automated the scaling of cloud infrastructure using AWS Lambda and Terraform, reducing costs by 15% while maintaining application availability.
+Languages
+English (Fluent)
+[Other Language, if applicable]
+Additional Information
+Regular contributor to DevOps forums and blogs
+Open source contributor: [GitHub Profile]

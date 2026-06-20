@@ -1,0 +1,36 @@
+Profile Summary
+Focus on cloud platforms but include software development-centric responsibilities:
+
+"Software professional experienced in designing and deploying scalable cloud-native applications with a strong background in software architecture and backend development."
+
+Skills
+List overlapping technologies:
+
+Programming: Python, Java, Go
+Cloud: AWS (Lambda, EC2, S3), Azure DevOps
+DevOps: Docker, Kubernetes, Jenkins
+Database: MySQL, MongoDB, PostgreSQL
+Software Development: Agile Methodology, RESTful APIs, Microservices
+Work Experience
+Software Engineer at XYZ Tech (2 years)
+
+Designed and implemented microservices using Python and Flask, deployed on AWS.
+Collaborated with DevOps teams to containerize applications using Docker and orchestrated them with Kubernetes.
+Integrated third-party APIs for real-time data processing in cloud environments.
+Cloud Engineer Intern at CloudTech Solutions (1 year)
+
+Assisted in managing cloud infrastructure on AWS, ensuring cost optimization and security compliance.
+Automated CI/CD pipelines using Jenkins and Terraform.
+Conducted performance testing for cloud-hosted applications.
+Certifications
+Highlight cloud expertise:
+
+AWS Certified Solutions Architect – Associate
+Google Associate Cloud Engineer
+Projects
+Cloud-native Web Application:
+Developed a full-stack application deployed on AWS, with serverless functions handling backend logic and a React frontend.
+
+Microservice-based Payment System:
+Designed a payment gateway with fault-tolerant architecture hosted on GCP.
+

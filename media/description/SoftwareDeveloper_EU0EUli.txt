@@ -1,0 +1,17 @@
+Job Title: Software Developer
+
+Responsibilities:
+- Design and implement efficient software solutions based on user needs.
+- Write clean, testable code using programming languages such as Java, Python, or C++.
+- Debug and troubleshoot existing software to improve functionality.
+- Collaborate with cross-functional teams to gather requirements and develop software architecture.
+- Conduct system testing and validation procedures.
+- Maintain and upgrade software by adding new features or improving performance.
+- Document all aspects of the development process for future reference.
+
+Requirements:
+- Bachelor’s degree in Computer Science, Software Engineering, or a related field.
+- Proven experience in software development and familiarity with Agile methodologies.
+- Proficiency in coding languages like JavaScript, Java, or Python.
+- Knowledge of databases and frameworks such as Hibernate or AngularJS.
+- Strong problem-solving skills and attention to detail.

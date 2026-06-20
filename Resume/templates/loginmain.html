@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Choose Your Role</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-[#EBF1F5] min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="bg-[#2D3743] text-white shadow-lg">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+            <div class="flex items-center space-x-2">
+                <div class="bg-[#29B69A] p-2 rounded-lg text-white font-bold rotate-12">
+                    R
+                </div>
+                <span class="text-xl font-bold">
+                    Resume<span class="text-[#F2C14E]">Screener</span>
+                </span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="{% url 'loginmain' %}"
+                   class="text-sm font-medium text-gray-300 hover:text-white transition">
+                    Login
+                </a>
+                <a href="{% url 'register' %}"
+                   class="bg-[#F2C14E] text-[#2D3743] px-5 py-2 rounded-lg text-sm font-bold hover:bg-[#dbad40] transition shadow-md">
+                    Register
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- HERO BAND -->
+    <div class="bg-[#2D3743] text-white pb-16 pt-10 rounded-b-[2rem] shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight">
+                Choose Your Role
+            </h1>
+            <p class="mt-3 text-gray-400 text-base max-w-md mx-auto">
+                Select how you'd like to continue — as a job seeker or a job provider.
+            </p>
+        </div>
+    </div>
+
+    <!-- CARDS -->
+    <main class="max-w-7xl mx-auto px-6 -mt-8 flex-grow w-full">
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-stretch">
+
+            <!-- Job Seeker Card -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition overflow-hidden w-full sm:w-80 border-t-4 border-t-[#29B69A]">
+                <div class="p-8 flex flex-col items-center text-center">
+
+                    <div class="w-20 h-20 bg-[#E8F7F4] rounded-xl flex items-center justify-center text-[#29B69A] text-4xl mb-5">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+
+                    <h2 class="text-xl font-extrabold text-gray-900">Job Seeker</h2>
+
+                    <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                        Find the perfect job opportunities that match your skills and dreams.
+                    </p>
+
+                    <a href="{% url 'jobseeker_login' %}"
+                       class="mt-6 w-full block text-center bg-[#F2C14E] text-[#2D3743] py-2.5 rounded-lg font-bold hover:bg-[#dbad40] transition text-sm">
+                        Login as Job Seeker
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Job Provider Card -->
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition overflow-hidden w-full sm:w-80 border-t-4 border-t-[#F2C14E]">
+                <div class="p-8 flex flex-col items-center text-center">
+
+                    <div class="w-20 h-20 bg-[#FEF9EC] rounded-xl flex items-center justify-center text-[#F2C14E] text-4xl mb-5">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+
+                    <h2 class="text-xl font-extrabold text-gray-900">Job Provider</h2>
+
+                    <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                        Post job listings and find the best candidates for your company.
+                    </p>
+
+                    <a href="{% url 'jobprovider_login' %}"
+                       class="mt-6 w-full block text-center bg-[#2D3743] text-white py-2.5 rounded-lg font-bold hover:bg-[#1f2730] transition text-sm">
+                        Login as Job Provider
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t py-6 mt-10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
+            © 2024 ResumeScreener. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

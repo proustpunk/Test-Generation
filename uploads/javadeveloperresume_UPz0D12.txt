@@ -1,0 +1,68 @@
+John Doe
+johndoe@email.com | (555) 123-4567 | LinkedIn Profile | GitHub Profile
+
+PROFESSIONAL SUMMARY
+Results-oriented Java Developer with over 5 years of experience designing, implementing, and maintaining robust, scalable software applications. Proficient in Java, Spring Boot, and microservices architectures. Experienced in Agile methodologies and passionate about writing clean, efficient, and maintainable code. Adept at collaborating with cross-functional teams to deliver high-quality solutions on time and within budget.
+
+TECHNICAL SKILLS
+Languages: Java, SQL, JavaScript, HTML5, CSS3
+Frameworks & Libraries: Spring Boot, Hibernate, Spring MVC, JUnit, Apache Kafka
+Databases: MySQL, PostgreSQL, MongoDB
+Tools: Git, Maven, Jenkins, Docker, Kubernetes, Apache Kafka, IntelliJ IDEA
+Methodologies: Agile/Scrum, Test-Driven Development (TDD), Continuous Integration/Continuous Deployment (CI/CD)
+Cloud: AWS, Azure
+Other: RESTful APIs, SOAP Web Services, Microservices, Kafka, JPA, Git, JIRA, Jira Agile, SOAP UI
+PROFESSIONAL EXPERIENCE
+Java Developer
+ABC Technologies | New York, NY
+June 2021 – Present
+
+Developed and maintained several microservices-based applications using Spring Boot, allowing seamless integration with other systems.
+Implemented RESTful APIs to handle business logic and data exchange between client and server-side systems, ensuring high-performance and scalability.
+Worked in an Agile team and actively participated in sprint planning, daily standups, and retrospectives to optimize project delivery timelines.
+Utilized JUnit and Mockito for unit and integration testing to ensure the delivery of high-quality code.
+Enhanced application performance by refactoring legacy code and implementing caching strategies with Redis, reducing response time by 25%.
+Deployed applications to AWS cloud, using EC2, S3, and Lambda, which improved system scalability and cost-efficiency.
+Java Developer
+XYZ Corp. | Chicago, IL
+July 2018 – May 2021
+
+Designed and implemented core backend functionality for a large-scale e-commerce platform using Java, Spring, and Hibernate.
+Created and optimized SQL queries for relational databases, improving application performance by 30%.
+Collaborated with front-end developers to integrate user interfaces with backend services, ensuring a seamless and responsive user experience.
+Led the migration of monolithic architecture to a microservices-based architecture, improving modularity and deployment efficiency.
+Worked with Apache Kafka to manage event-driven data flow between microservices, ensuring real-time updates for users.
+Utilized Docker containers for developing and deploying applications in a consistent, reproducible environment.
+Junior Java Developer
+Tech Innovators Inc. | San Francisco, CA
+August 2016 – June 2018
+
+Assisted in the development and maintenance of Java-based applications for internal business processes and client solutions.
+Worked with senior developers to create custom Java classes and libraries to support business functionality.
+Wrote SQL queries and stored procedures for database operations and data migration tasks.
+Participated in code reviews and contributed to improving code quality and team productivity.
+Created detailed technical documentation for internal tools and APIs, enabling better collaboration and ease of use.
+EDUCATION
+Bachelor of Science in Computer Science
+University of California, Berkeley
+Graduated: May 2016
+
+CERTIFICATIONS
+Oracle Certified Professional, Java SE 8 Programmer (2017)
+AWS Certified Solutions Architect – Associate (2022)
+Certified Scrum Developer (CSD) (2020)
+PROJECTS
+Inventory Management System
+Technologies: Java, Spring Boot, MySQL, Docker
+
+Developed a full-stack inventory management system for a retail client, allowing them to track stock levels, process orders, and manage suppliers.
+Implemented features such as barcode scanning and real-time stock updates, improving operational efficiency.
+Real-time Messaging Application
+Technologies: Java, Spring Boot, WebSockets, MongoDB
+
+Designed a real-time messaging application where users could send and receive messages instantly in a chat interface.
+Utilized WebSockets for two-way communication and MongoDB for fast data retrieval and storage.
+ADDITIONAL INFORMATION
+Fluent in English and Spanish
+Strong problem-solving skills and ability to learn new technologies quickly
+Actively contribute to open-source Java projects on GitHub

@@ -1,0 +1,712 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test for {{ job.job_title }}</title>
+
+  <!-- Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f6fa;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      height: 60px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .user-info {
+      display: flex;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .timer {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .submit {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100% - 60px);
+      box-sizing: border-box;
+    }
+
+    .left-panel {
+      flex-grow: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+.right-panel {
+  width: 280px;
+  height: calc(100vh - 60px); /* 60px header height */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  border-left: 1px solid #ccc;
+  background-color: #fafafa;
+}
+
+  .face-box {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+    .question-box {
+      background: white;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .question-box h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .question-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .difficulty {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .question-box label {
+      display: block;
+      margin: 8px 0;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .question-box input[type="radio"] {
+      margin-right: 8px;
+      transform: scale(1.2);
+    }
+
+    .question-box label:hover {
+      background-color: #f0f4ff;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      transition: border 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      background-color: #f9fbff;
+    }
+
+    .question-status {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .question-status button {
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: 1px solid #ccc;
+      background-color: white;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s, color 0.3s;
+      min-width: 40px;
+      text-align: center;
+    }
+
+    .question-status button.current {
+      border: 2px solid #007bff;
+      font-weight: 900;
+      background-color: #e0f0ff;
+      color: #007bff;
+    }
+
+  
+
+ .face-box video {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 16px;
+      margin: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+  <form method="POST" action="{% url 'submit_test' %}">
+    {% csrf_token %}
+
+  <input type="hidden" name="uidb64" value="{{ uidb64 }}">
+  <input type="hidden" name="job_id" value="{{ job.id }}">
+  <input type="hidden" name="token" value="{{ token }}">
+  <input type="hidden" name="candidate_id" id="candidate_id" value="{{ candidate_id }}">
+
+<header>
+  <div class="user-info">
+    <div>{{ user.first_name }} {{ user.last_name }}</div>
+    <div>{{ job.job_title }}</div>
+  </div>
+  <div class="timer" id="timer">59:02</div>
+
+    <button type="submit" class="submit">Submit Test</button>
+ 
+</header>
+
+<div class="container">
+  <div class="left-panel">
+          <p id ="Logs"></p>
+
+    {% for question in questions %}
+      <div class="question-box" id="question-{{ forloop.counter }}">
+        <h2>Question {{ forloop.counter }}</h2>
+        <p>{{ question.question_text }}</p>
+
+        {% if question.question_type == 'objective' or question.question_type == 'mcq' %}
+          <label><input type="radio" name="q{{ question.id }}" value="A"> {{ question.option_a }}</label>
+
+          <label><input type="radio" name="q{{ question.id }}" value="B"> {{ question.option_b }}</label>
+          <label><input type="radio" name="q{{ question.id }}" value="C"> {{ question.option_c }}</label>
+          <label><input type="radio" name="q{{ question.id }}" value="D"> {{ question.option_d }}</label>
+        {% elif question.question_type == 'subjective' or question.question_type == 'code' %}
+          <textarea name="q{{ question.id }}" rows="5" placeholder="Your answer..."></textarea>
+        {% endif %}
+      </div>
+    {% endfor %}
+     </form>
+
+    <div class="nav-buttons">
+      <button type="button" onclick="prevQuestion()">Previous</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="question-status" id="question-status">
+      {% for question in questions %}
+        <button type="button"
+          onclick="showQuestion('{{ forloop.counter }}')"
+          id="status-btn-{{ forloop.counter }}"
+        >Q{{ forloop.counter }}</button>
+      {% endfor %}
+    </div>
+
+    <div class="face-box">
+      <video id="video" width="260" height="200" autoplay muted></video>
+      <p id="face-status">Detecting...</p>
+      <p id="drift-status"></p>
+      <p id="mouth-status"></p>
+      <p id="sound-status"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+    const statusText = document.getElementById('face-status');
+    const driftStatus = document.getElementById('drift-status');
+    const soundStatus = document.getElementById('sound-status');
+    const logs = document.getElementById('Logs');
+
+
+      const suspiciousActivity = {
+      copyAttempted: false,
+      tabSwitch: false,
+      micDenied: false,
+      lipAudioMismatch: false,
+      devToolsOpen: false,
+      noFaceDetected :false,
+      multiplefacesdetected: false,
+      notFocused: false
+    };
+
+    let video = null;
+
+    const candidateId = document.getElementById("candidate_id").value;
+
+
+    const mouthStatus = document.getElementById('mouth-status');
+
+
+  let totalSeconds = 59 * 60 + 2; // 59:02 in seconds
+
+function updateTimer() {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  const timer = document.getElementById('timer');
+  timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  if (totalSeconds > 0) {
+    totalSeconds--;
+    setTimeout(updateTimer, 1000);
+  } else {
+   //autosubmit
+  }
+}
+
+updateTimer();
+
+  let current = 1;
+  const total = {{ questions|length }};
+
+  function showQuestion(n) {
+    n = parseInt(n);
+    if (n < 1 || n > total) return;
+
+    document.querySelectorAll('.question-box').forEach((el, i) => {
+      el.style.display = (i + 1 === n) ? 'block' : 'none';
+    });
+
+    updateCurrentStatus(n);
+    current = n;
+  }
+
+  function updateCurrentStatus(n) {
+    for (let i = 1; i <= total; i++) {
+      const btn = document.getElementById(`status-btn-${i}`);
+      if (btn) {
+        btn.classList.toggle('current', i === n);
+      }
+    }
+  }
+
+  function prevQuestion() {
+    if (current > 1) showQuestion(current - 1);
+  }
+
+  function nextQuestion() {
+    if (current < total) showQuestion(current + 1);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    showQuestion(1);
+
+  });
+window.addEventListener('load',()=>{
+  
+  video = document.getElementById('video');
+
+Promise.all([
+  faceapi.nets.tinyFaceDetector.loadFromUri("{% static 'models/' %}"),
+  faceapi.nets.faceLandmark68TinyNet.loadFromUri("{% static 'models/' %}")
+]).then(() => {
+  console.log("Face models loaded");
+  startVideo();
+});
+let videothere = false;
+  function startVideo() {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        videothere = true;
+        video.srcObject = stream;
+      })
+      .catch(() => {
+        videothere=false;
+        statusText.textContent = 'Camera access denied';
+      });
+  }
+
+
+  console.log(videothere);
+let counterA = 0;
+let counterB = 0;
+let counterC = 0;
+let counterD = 0;
+ video.addEventListener('play', () => {
+  const canvas = faceapi.createCanvasFromMedia(video);
+  const container = document.querySelector('.face-box');
+
+  container.appendChild(canvas);
+
+  const displaySize = { width: video.videoWidth, height: video.videoHeight };
+  faceapi.matchDimensions(canvas, displaySize);
+
+  canvas.style.position = 'absolute';
+  canvas.style.top = video.offsetTop + 'px';
+  canvas.style.left = video.offsetLeft + 'px';
+  
+  setInterval(async () => {
+    const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions());
+    const resizedDetections = faceapi.resizeResults(detections, displaySize);
+
+  
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+    faceapi.draw.drawDetections(canvas, resizedDetections);
+
+    const count = detections.length;
+    
+    if (count === 0) {
+  counterA++;
+  counterB = 0;
+  counterC = 0;
+
+  if (counterA >= 3) {
+    statusText.textContent = 'No face detected';
+    suspiciousActivity.noFaceDetected = true;
+    suspiciousActivity.multiplefacesdetected = false;
+    counterA = 0;
+  }
+
+} else if (count === 1) {
+  counterB++;
+  counterA = 0;
+  counterC = 0;
+
+  if (counterB >= 3) {
+    statusText.textContent = '1 face detected';
+    suspiciousActivity.noFaceDetected = false;
+    suspiciousActivity.multiplefacesdetected = false;
+    counterB = 0;
+  }
+
+} else { // count > 1
+  counterC++;
+  counterA = 0;
+  counterB = 0;
+
+  if (counterC >= 5) {  // ← THIS is the key change
+    statusText.textContent = 'Multiple faces detected';
+    suspiciousActivity.multiplefacesdetected = true;
+    counterC = 0;
+  }
+}
+
+  }, 2000);
+
+});
+
+ setInterval(async () => {
+  const detection = await faceapi
+    .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions())
+    .withFaceLandmarks(true);
+
+  if (!detection) {
+    suspiciousActivity.notFocused = false;
+    return;
+  }
+
+
+
+  const landmarks = detection.landmarks.positions;
+
+
+  const nose = landmarks[30];      
+  const leftEye = landmarks[36];    
+  const rightEye = landmarks[45];   
+
+
+  const eyeCenterX = (leftEye.x + rightEye.x) / 2;
+
+  const noseOffset = nose.x - eyeCenterX;
+
+
+  const TURN_THRESHOLD = 7;
+
+  suspiciousActivity.notFocused = Math.abs(noseOffset) > TURN_THRESHOLD;
+
+  if(suspiciousActivity.notFocused){
+    counterD++;
+    if(counterD >= 1){
+      driftStatus.textContent = "Focus Drift Detected!";
+      suspiciousActivity.notFocused = true;
+      counterD = 0;
+}
+} else{
+  driftStatus.textContent = "";
+}
+
+}, 3000); // every 3 seconds
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Right-click / copy detection
+ // Right click
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  suspiciousActivity.copyAttempted = true;
+  console.log("Right click detected");
+
+  setTimeout(() => {
+    suspiciousActivity.copyAttempted = false;
+  }, 1000);
+});
+
+// Keyboard copy
+document.addEventListener('keydown', function (e) {
+  if ((e.ctrlKey || e.metaKey) && ['c', 'v', 'x', 'a'].includes(e.key)) {
+    e.preventDefault();
+    suspiciousActivity.copyAttempted = true;
+    console.log("Keyboard copy attempt");
+
+    setTimeout(() => {
+      suspiciousActivity.copyAttempted = false;
+    }, 1000);
+  }
+});
+
+    // Tab switching detection
+    let lastTabSwitchTime = 0;
+const TAB_WARNING_DURATION = 3000; // ms, how long to show warning
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    suspiciousActivity.tabSwitch = true;
+    lastTabSwitchTime = Date.now();
+    Logs.textContent = "Tab Switch Detected!";
+  }
+});
+
+
+setInterval(() => {
+  if (lastTabSwitchTime && Date.now() - lastTabSwitchTime > TAB_WARNING_DURATION) {
+    Logs.textContent = "";
+    lastTabSwitchTime = 0;
+  }
+}, 200);
+
+
+
+    // DevTools detection
+   let lastDevToolsTime = 0;
+const DEVTOOLS_WARNING_DURATION = 3000; 
+
+setInterval(() => {
+  const before = performance.now();
+  debugger;
+  const after = performance.now();
+  
+  if (after - before > 100) {
+    suspiciousActivity.devToolsOpen = true;
+    lastDevToolsTime = Date.now();
+    Logs.textContent = "Dev Tools opened!";
+  }
+}, 1000);
+
+
+setInterval(() => {
+  if (lastDevToolsTime && Date.now() - lastDevToolsTime > DEVTOOLS_WARNING_DURATION) {
+    Logs.textContent = "";
+    lastDevToolsTime = 0;
+  }
+}, 200);
+
+
+
+
+    // Lip Movement Detection (MediaPipe)
+    let lipsAreMoving = false;
+    let lastLipDistance = 0;
+    const lipMovementThreshold = 0.003; // fine-tuned empirically
+
+    const faceMesh = new FaceMesh({
+      locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`
+    });
+
+    faceMesh.setOptions({
+      maxNumFaces: 1,
+      refineLandmarks: true,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5
+    });
+
+    faceMesh.onResults((results) => {
+      if (!results.multiFaceLandmarks[0]) return;
+      const landmarks = results.multiFaceLandmarks[0];
+      const upperLip = landmarks[13];
+      const lowerLip = landmarks[14];
+
+      const distance = Math.abs(upperLip.y - lowerLip.y);
+      lipsAreMoving = Math.abs(distance - lastLipDistance) > lipMovementThreshold;
+      lastLipDistance = distance;
+
+      console.log(lipsAreMoving)
+
+
+    });
+
+
+    const videoElement = document.querySelector('video');
+    const camera = new Camera(videoElement, {
+      onFrame: async () => await faceMesh.send({ image: videoElement }),
+      width: 640,
+      height: 480
+    });
+    camera.start();
+
+    // Audio Detection
+    let soundIsActive = false;
+    let mismatchCounter = 0;
+
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then((stream) => {
+        const audioContext = new AudioContext();
+        const mic = audioContext.createMediaStreamSource(stream);
+        const analyser = audioContext.createAnalyser();
+        mic.connect(analyser);
+        analyser.fftSize = 512;
+        const dataArray = new Uint8Array(analyser.fftSize);
+
+        const detectAudio = () => {
+          analyser.getByteTimeDomainData(dataArray);
+          const sum = dataArray.reduce((a, b) => a + Math.abs(b - 128), 0);
+          
+          soundIsActive = sum > 2000;
+
+          console.log(soundIsActive);
+
+          requestAnimationFrame(detectAudio);
+        };
+        detectAudio();
+      })
+      .catch(() => {
+        suspiciousActivity.micDenied = true;
+      });
+
+    // Lip-Audio Mismatch Detection Logic
+    setInterval(() => {
+      const mismatch = (soundIsActive && !lipsAreMoving) || (!soundIsActive && lipsAreMoving);
+      if (mismatch) {
+        mismatchCounter++;
+      
+      } else {
+        mismatchCounter = 0;
+      }
+
+
+
+      suspiciousActivity.lipAudioMismatch = mismatchCounter >= 3; // ~5 seconds of mismatch
+
+      if (mismatchCounter >= 2) {
+        soundStatus.textContent = "External help is detected";
+      } else {
+        soundStatus.textContent="";
+      }
+    }, 1000);
+
+  
+    setInterval(() => { //<!--Runs log activity url which is just dummy url that runs a view for log. stops after some time. use sendBeacon for last ones-->
+  const isSuspicious = Object.values(suspiciousActivity).some(flag => flag === true);
+  fetch('/log-activity/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      candidate_id: candidateId,
+      suspicious: isSuspicious,
+      flags: suspiciousActivity  // send full flags object here
+    })
+  });
+  console.log("Suspicious:", isSuspicious, "Details:", suspiciousActivity);
+}, 1000); // every 10 seconds
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+

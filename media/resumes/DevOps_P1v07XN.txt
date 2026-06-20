@@ -1,0 +1,45 @@
+Name: John Doe
+Contact Information: johndoe@example.com | (123) 456-7890 | LinkedIn: linkedin.com/in/johndoe
+
+Objective:
+To secure a position as a DevOps Engineer where I can apply my expertise in automation, continuous integration, and infrastructure management to drive efficiency and scalability.
+
+Skills:
+- Proficient in configuration management tools like Ansible, Chef, and Puppet
+- Strong experience with CI/CD pipelines using Jenkins, GitLab CI, and CircleCI
+- Extensive knowledge of containerization and orchestration technologies, including Docker and Kubernetes
+- Experience with cloud platforms such as AWS, Azure, and Google Cloud
+- Scripting skills in Bash, Python, and Groovy
+- Familiar with infrastructure as code (IaC) tools like Terraform and CloudFormation
+- Version control using Git and GitHub/GitLab
+- Expertise in monitoring tools such as Prometheus, Grafana, Nagios, and ELK Stack
+- Proficient in Linux/Unix system administration and troubleshooting
+- Knowledge of networking, firewalls, VPN, and load balancing
+- Strong understanding of security best practices in DevOps and CI/CD pipelines
+- Familiarity with databases like MySQL, PostgreSQL, and NoSQL databases
+
+Experience:
+
+DevOps Engineer | ABC Tech Solutions | Jan 2022 – Present
+- Designed and maintained CI/CD pipelines using Jenkins for automated builds, tests, and deployments
+- Developed infrastructure as code using Terraform to manage cloud resources on AWS
+- Implemented Docker containers and orchestrated them using Kubernetes for scalable application deployment
+- Automated server provisioning and configuration management using Ansible
+- Monitored system health and application performance using Prometheus and Grafana
+- Worked with cross-functional teams to ensure smooth deployment and integration of applications
+- Optimized cloud infrastructure cost and performance using AWS services like EC2, S3, and RDS
+
+Systems Administrator | XYZ Corp | Jun 2020 – Dec 2021
+- Managed Linux-based servers and automated routine maintenance tasks using Bash scripting
+- Assisted in cloud migration projects, deploying workloads in AWS using CloudFormation and EC2
+- Implemented and maintained Git-based version control for multiple projects
+- Provided ongoing support for production environments, troubleshooting system issues
+- Installed, configured, and maintained monitoring tools such as Nagios and ELK Stack
+
+Education:
+Bachelor of Science in Computer Science | University of Example | 2020
+
+Certifications:
+- AWS Certified Solutions Architect – Associate
+- Certified Kubernetes Administrator (CKA)
+- HashiCorp Certified: Terraform Associate

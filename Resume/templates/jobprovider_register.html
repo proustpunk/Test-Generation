@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Provider Registration — ResumeScreener</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Automated Class Aggregators to visually normalize Django's native form fields */
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #4B5563;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"],
+    .form-group textarea {
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      font-size: 0.875rem;
+      background-color: #FFFFFF;
+      border: 1px solid #D1D5DB;
+      border-radius: 0.75rem;
+      color: #1F2937;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #29B69A;
+      box-shadow: 0 0 0 3px rgba(41, 182, 154, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#EBF1F5] min-h-screen flex flex-col justify-between">
+
+  <!-- Global Header Accent Frame -->
+  <header class="bg-[#2D3743] text-white pb-32 rounded-b-[2rem] shadow-lg w-full">
+    <nav class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div class="bg-[#29B69A] p-2 rounded-lg text-white font-bold rotate-12 text-center w-9 h-9 flex items-center justify-center">
+          R
+        </div>
+        <span class="text-xl font-bold">
+          Resume<span class="text-[#F2C14E]">Screener</span>
+        </span>
+      </div>
+      <div>
+        <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Recruiter Gateway</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Registration Card Module Block Container -->
+  <main class="max-w-md mx-auto px-4 -mt-24 pb-16 w-full flex-grow">
+    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+      
+      <!-- Card Sub-Header Bar Title Segment -->
+      <div class="border-b border-gray-100 bg-gray-50/50 px-6 py-5 text-center">
+        <h2 class="text-xl font-extrabold text-gray-800 tracking-tight">Recruiter Registration</h2>
+        <p class="text-xs text-gray-400 mt-1">Set up your provider workspace profile to begin analyzing candidates.</p>
+      </div>
+
+      <!-- Main HTML Submission Pipeline Form Block -->
+      <form method="POST" enctype="multipart/form-data" class="p-6 space-y-4 m-0">
+        {% csrf_token %}
+        
+        <!-- Input Wrapper Segment: Company Name -->
+        <div class="form-group">
+          <label for="id_company_name">Company Name</label>
+          {{ form.company_name }}
+          {% if form.company_name.errors %}
+            <div class="text-xs font-bold text-red-500 mt-1.5 space-y-0.5">
+              {% for error in form.company_name.errors %}
+                <p class="flex items-center"><i class="fas fa-circle-exclamation mr-1"></i>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Input Wrapper Segment: Username Access Tag -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          {{ form.username }}
+          {% if form.username.errors %}
+            <div class="text-xs font-bold text-red-500 mt-1.5 space-y-0.5">
+              {% for error in form.username.errors %}
+                <p class="flex items-center"><i class="fas fa-circle-exclamation mr-1"></i>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Input Wrapper Segment: Passphrase Key -->
+        <div class="form-group">
+          <label for="id_password">Password</label>
+          {{ form.password }}
+          {% if form.password.errors %}
+            <div class="text-xs font-bold text-red-500 mt-1.5 space-y-0.5">
+              {% for error in form.password.errors %}
+                <p class="flex items-center"><i class="fas fa-circle-exclamation mr-1"></i>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Input Wrapper Segment: Corporate Profile Background -->
+        <div class="form-group">
+          <label for="id_company_description">Company Description</label>
+          {{ form.company_description }}
+          {% if form.company_description.errors %}
+            <div class="text-xs font-bold text-red-500 mt-1.5 space-y-0.5">
+              {% for error in form.company_description.errors %}
+                <p class="flex items-center"><i class="fas fa-circle-exclamation mr-1"></i>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Input Wrapper Segment: Short Bio Summary -->
+        <div class="form-group">
+          <label for="id_bio">Short Bio</label>
+          {{ form.bio }}
+          {% if form.bio.errors %}
+            <div class="text-xs font-bold text-red-500 mt-1.5 space-y-0.5">
+              {% for error in form.bio.errors %}
+                <p class="flex items-center"><i class="fas fa-circle-exclamation mr-1"></i>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Active Trigger Execution Button Deck -->
+        <div class="pt-2">
+          <button type="submit" class="w-full bg-[#29B69A] hover:bg-[#22967f] text-white py-3 rounded-xl text-xs font-bold transition shadow-sm uppercase tracking-wider flex items-center justify-center space-x-2">
+            <i class="fas fa-building-user text-xs"></i>
+            <span>Register Provider</span>
+          </button>
+        </div>
+      </form>
+      
+    </div>
+  </main>
+
+  <!-- Global Footer Container Bar -->
+  <footer class="bg-white border-t py-6 w-full">
+    <div class="max-w-5xl mx-auto px-6 text-center text-xs text-gray-500">
+      &copy; 2026 ResumeScreener. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

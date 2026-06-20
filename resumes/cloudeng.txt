@@ -1,0 +1,47 @@
+Jane Smith
+Cloud Engineer | jane.smith@example.com | (555) 789-1234 | LinkedIn: linkedin.com/in/janesmith | GitHub: github.com/janesmith
+
+Professional Summary
+Experienced Cloud Engineer with expertise in designing and managing scalable, secure, and cost-effective cloud infrastructure. Skilled in automating workflows, optimizing performance, and ensuring compliance with industry standards. Proficient in AWS, Azure, and Kubernetes, with a strong foundation in DevOps practices and infrastructure-as-code (IaC).
+
+Technical Skills
+Cloud Platforms: AWS (EC2, S3, Lambda, RDS), Microsoft Azure, Google Cloud
+Programming: Python, JavaScript, Bash, PowerShell
+DevOps: Docker, Kubernetes, Terraform, Jenkins, Git
+Networking: VPC, VPN, DNS, IAM, Load Balancers
+Database: PostgreSQL, MongoDB, DynamoDB
+Monitoring: CloudWatch, Datadog, Prometheus
+Professional Experience
+Cloud Engineer
+Innovative Cloud Solutions, New York, NY
+January 2021 – Present
+
+Designed and implemented multi-cloud infrastructure solutions, ensuring scalability and availability for global clients.
+Automated resource provisioning using Terraform, reducing deployment time by 50%.
+Configured CI/CD pipelines using Jenkins and GitHub Actions to streamline application deployments.
+Deployed Kubernetes clusters to orchestrate containerized applications, achieving 30% faster scaling.
+Reduced cloud costs by 25% through resource optimization and regular audits.
+Junior Cloud Engineer
+SkyTech Systems, Boston, MA
+June 2018 – December 2020
+
+Assisted in migrating on-premises systems to AWS cloud, improving operational efficiency.
+Wrote Python scripts for automating routine cloud management tasks.
+Monitored and maintained cloud systems to ensure optimal performance and uptime.
+Implemented IAM policies to enhance security and control access to cloud resources.
+Education
+Bachelor of Science in Computer Science
+University of Texas at Austin | May 2018
+
+Certifications
+AWS Certified Solutions Architect – Associate
+Microsoft Certified: Azure Administrator Associate
+Certified Kubernetes Administrator (CKA)
+Projects
+Serverless Data Pipeline: Built a serverless pipeline using AWS Lambda, S3, and DynamoDB for real-time data processing.
+Cloud Cost Optimization Tool: Developed a tool to analyze and optimize cloud resource usage, reducing overall costs by 20%.
+CI/CD for Microservices: Deployed a CI/CD pipeline for a microservices architecture using Docker, Kubernetes, and Jenkins.
+Interests
+Cloud-native application development
+Open-source projects in DevOps
+Writing blogs on cloud security practices

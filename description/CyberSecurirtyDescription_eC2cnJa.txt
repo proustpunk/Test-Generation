@@ -1,0 +1,34 @@
+Job Title: Cybersecurity Specialist
+
+Location: Tech City, TX
+
+Job Type: Full-Time
+
+Job Description:
+We are seeking a skilled and proactive Cybersecurity Specialist to join our team. The ideal candidate will have hands-on experience with a wide range of security tools and technologies. The role requires a deep understanding of network security, penetration testing, incident response, and vulnerability management. You will be responsible for identifying security risks, protecting our infrastructure, and managing security incidents.
+
+Responsibilities:
+- Conduct penetration testing using Metasploit, Kali Linux, and OWASP ZAP to identify and exploit vulnerabilities in web applications and network infrastructure.
+- Perform network traffic analysis with Wireshark and Nmap to detect and mitigate potential threats.
+- Configure, deploy, and monitor IDS/IPS systems such as Snort and Palo Alto firewalls to protect critical systems from unauthorized access.
+- Implement endpoint security using tools like CrowdStrike and Symantec Endpoint Protection to protect against malware and ransomware.
+- Monitor security events using Splunk, LogRhythm, and SolarWinds to detect anomalies and respond to potential incidents.
+- Work closely with the IT team to integrate security controls in both cloud and on-premise environments.
+- Respond to security incidents and conduct root cause analysis using tools like EnCase and FTK Imager.
+- Stay current with the latest security trends, threats, and vulnerabilities, ensuring compliance with regulatory frameworks such as GDPR, HIPAA, and PCI-DSS.
+
+Required Skills and Experience:
+- Proficiency with security tools such as Metasploit, Burp Suite, Kali Linux, OWASP ZAP for penetration testing.
+- Hands-on experience with network traffic analyzers like Wireshark and Nmap for network reconnaissance.
+- Experience with SIEM tools including Splunk, LogRhythm, and IBM QRadar.
+- Strong knowledge of firewalls, VPNs, and network security protocols with hands-on experience using Cisco ASA, Palo Alto, and Fortinet.
+- Familiarity with endpoint protection tools such as CrowdStrike, Symantec Endpoint Protection.
+- Strong understanding of threat hunting using tools like Nagios and Splunk.
+- Ability to perform incident response, forensics, and remediation using EnCase and FTK Imager.
+- Experience with securing cloud-based environments, containerized applications, and managing data encryption.
+
+Education & Certifications:
+- Bachelor’s degree in Information Security, Computer Science, or related field.
+- Industry certifications such as CISSP, CEH, CompTIA Security+, or Cisco CyberOps are highly preferred.
+
+We value individuals who are proactive, detail-oriented, and passionate about security. Join our team to help protect sensitive data and ensure the integrity of our IT infrastructure.
