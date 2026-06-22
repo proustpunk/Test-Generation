@@ -165,4 +165,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dazaiosamuuu36@gmail.com'
-EMAIL_HOST_PASSWORD = 'bxrx fifv oijd zlcn'
+EMAIL_HOST_PASSWORD = ''
