@@ -1,0 +1,107 @@
+Job Title: Django Developer
+About Us
+TechVault Solutions is a fast-growing fintech company based in Austin, Texas, building next-generation payment processing and financial analytics platforms. We serve over 500 enterprise clients across North America and process $2B+ in annual transactions. We're a team of 45 passionate engineers who believe in clean code, continuous deployment, and collaborative problem-solving.
+
+Position Overview
+We are seeking an experienced Django Developer to join our core engineering team. You will be responsible for architecting, building, and maintaining our flagship payment processing platform that handles millions of transactions daily. This role requires a deep understanding of Django, strong database design skills, and experience building secure, scalable APIs. You'll work closely with frontend developers, product managers, and our DevOps team to deliver high-impact features.
+
+Location: Remote (US-based) with quarterly team meetups
+Reports to: Engineering Manager
+Employment Type: Full-time
+Salary Range: $110,000 – $140,000/year + equity + benefits
+
+Key Responsibilities
+Backend Development: Design, build, and maintain scalable web applications using Django and Python, implementing models, views, and middleware components.
+
+API Development: Architect and implement RESTful APIs using Django REST Framework to power our web frontend, mobile apps, and external partner integrations.
+
+Database Architecture: Design and optimize PostgreSQL database schemas, write complex SQL queries, implement indexes, and manage migrations using Django ORM.
+
+Security Implementation: Implement authentication using JWT, role-based access control, and Django's built-in security features (CSRF, XSS protection, SQL injection prevention).
+
+Performance Optimization: Identify and resolve performance bottlenecks through caching strategies (Redis), query optimization, and code profiling.
+
+Testing Strategy: Write comprehensive unit and integration tests using PyTest, maintain test coverage above 85%, and implement CI/CD integration.
+
+Code Reviews: Participate in peer code reviews to maintain code quality standards and mentor junior developers.
+
+Asynchronous Processing: Implement background task processing using Celery and Redis for email notifications, report generation, and data processing pipelines.
+
+API Documentation: Document all APIs using OpenAPI/Swagger specifications and maintain developer documentation.
+
+Qualifications
+Required Skills
+Python & Django: 4+ years of professional experience with Python and Django (Django 3.x/4.x), including ORM, class-based views, middleware, and custom management commands.
+
+RESTful APIs: Strong experience with Django REST Framework (serializers, viewsets, authentication, permission classes).
+
+Database Skills: Deep experience with PostgreSQL, including query optimization, indexing strategies, and transactional integrity.
+
+Testing: Experience writing unit, integration, and functional tests using PyTest or Django's test framework.
+
+Version Control: Strong Git proficiency, including branching strategies (GitFlow or trunk-based development).
+
+Authentication: Experience implementing JWT authentication, OAuth2, or session-based auth in Django.
+
+Security: Understanding of web application security best practices and vulnerabilities.
+
+Linux/CLI: Comfortable working in Linux environments and using command-line tools.
+
+Nice-to-Have Skills
+Cloud Platforms: Experience with AWS (EC2, RDS, S3) or Azure/GCP.
+
+Containerization: Docker and Docker Compose experience.
+
+Message Queues: Experience with Celery, Redis, RabbitMQ, or SQS.
+
+Performance Monitoring: Experience with monitoring tools like Sentry, New Relic, or DataDog.
+
+CI/CD: Familiarity with GitHub Actions, GitLab CI, or Jenkins.
+
+GraphQL: Experience with Graphene or other GraphQL implementations.
+
+Big Data: Experience working with large datasets (1M+ records).
+
+What Success Looks Like in This Role
+First Month: You'll complete onboarding, set up your development environment, deploy a feature to production with guidance, and pair with team members to understand our architecture and business domain.
+
+Third Month: You'll deliver 3-4 significant features independently, contribute to architectural decisions, and participate in on-call rotation (with support).
+
+Sixth Month: You'll drive end-to-end feature development, mentor interns or junior developers, and propose improvements to our CI/CD pipeline and testing strategy.
+
+One Year: You'll lead technical design discussions, optimize our database performance, and contribute to our technical roadmap for the next year.
+
+Why Join TechVault Solutions?
+Impact: Your code will process billions of dollars in financial transactions annually.
+
+Modern Stack: Django 4.2, Python 3.11, PostgreSQL 15, Redis 7, Docker, Kubernetes, AWS.
+
+Engineering Culture: We do weekly tech talks, quarterly hackathons, and continuous learning stipends.
+
+Work-Life Balance: 4-day work week, flexible hours, and generous PTO (25 days/year).
+
+Growth: Clear promotion path to Senior Developer, Staff Engineer, or Engineering Manager.
+
+Benefits: Comprehensive health insurance (medical, dental, vision), 401(k) with 4% match, home office stipend ($1000/year), and stock options.
+
+How to Apply
+Please submit your resume along with a cover letter explaining:
+
+Your experience with Django and Python (include specific projects or contributions).
+
+Your approach to designing a REST API for high-traffic applications.
+
+A link to your GitHub, personal portfolio, or any open-source contributions.
+
+We are committed to building a diverse and inclusive team. We welcome applications from all backgrounds and identities.
+
+Interview Process
+Initial Screen (30 min): Conversation with our recruiter about your experience and interests.
+
+Technical Screen (60 min): Live coding session with a Senior Django Developer (Django models, REST API, database queries).
+
+System Design Interview (90 min): Design a scalable microservice architecture with our Engineering Manager.
+
+Team Interview (60 min): Meet the team and discuss engineering culture, collaboration, and problem-solving approaches.
+
+Offer: We'll make an offer within 3-5 business days.

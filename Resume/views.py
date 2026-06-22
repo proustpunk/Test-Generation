@@ -166,6 +166,7 @@ def PostJob(request): #dashboard
             
             job_post.user = request.user
             job_post.deadline = dt_aware_ktm
+            job_post.experience = form.cleaned_data['experience']
             #job_post.job_title = jobtitleclassify(job_title)  
              
             
@@ -428,8 +429,8 @@ def test_validation(request, uidb64, token, job_id):
         with transaction.atomic():
             job_app = JobApplication.objects.select_for_update().get(job=job, job_seeker__user=user)
 
-            if job_app.test_link_clicked:
-                return HttpResponse("Link already used")
+            #if job_app.test_link_clicked:
+                #return HttpResponse("Link already used")
 
             job_app.test_link_clicked = True
             job_app.save()
@@ -517,6 +518,7 @@ def start_test(request, uidb64, token, job_id):
     category_mapper = jobtitleclassify(job.job_title)
     print(category_mapper)
     difficulty_mapper = experiencemapper(job.experience)
+    print(job.experience)
     print(difficulty_mapper)
    #category=job.job_title
     questions_subjective = Question.objects.filter(category=category_mapper, question_type='subjective', difficulty=difficulty_mapper).order_by('?').distinct()[:5]

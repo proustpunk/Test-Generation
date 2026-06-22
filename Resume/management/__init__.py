@@ -5,7 +5,7 @@ import os
 
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
-        filepath = "Resume/data/test.json"
+        filepath = "Resume/data/1.json"
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
 

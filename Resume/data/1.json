@@ -1,2281 +1,263 @@
 [
   {
-    "question_text": "What is the primary purpose of graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "to decorate randomly",
-    "option_b": "to communicate visually",
-    "option_c": "to write code",
-    "option_d": "to store data",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why color theory is important in graphics design.",
+    "question_text": "Explain the purpose of database indexing and how it improves query performance. What are the trade-offs of using indexes?",
     "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Color theory is important because it helps engineers choose color combinations that are visually appealing and effective in communication. It influences emotions, improves readability, and ensures consistency across designs. Understanding color harmony, contrast, and psychology allows engineers to create meaningful and engaging visuals.",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which tool is commonly used for photo editing?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "illustrator",
-    "option_b": "photoshop",
-    "option_c": "figma",
-    "option_d": "xd",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks if image format is 'png'. Print 'transparent' or 'not transparent'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "png", "expected_output": "transparent" },
-      { "input": "jpg", "expected_output": "not transparent" }
-    ]
-  },
-
-  {
-    "question_text": "What does typography mainly deal with?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "images",
-    "option_b": "fonts and text",
-    "option_c": "videos",
-    "option_d": "servers",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain the role of white space in design.",
+    "question_text": "What is the difference between JWT and session-based authentication? When would you choose one over the other?",
     "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "White space, also known as negative space, is the empty area between design elements. It improves readability, enhances focus, and creates a clean and organized layout. Proper use of white space helps guide the viewer’s attention and prevents designs from appearing cluttered or overwhelming.",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which format is best for vector graphicss?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "jpg",
-    "option_b": "png",
-    "option_c": "svg",
-    "option_d": "bmp",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks if font size is greater than 16. Print 'large' or 'small'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "20", "expected_output": "large" },
-      { "input": "12", "expected_output": "small" }
-    ]
-  },
-
-  {
-    "question_text": "What is contrast used for in design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "reduce quality",
-    "option_b": "highlight elements",
-    "option_c": "increase file size",
-    "option_d": "slow loading",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain visual hierarchy in detail.",
+    "question_text": "Describe the N+1 query problem in ORMs. How can it be identified and what strategies can be used to solve it?",
     "question_type": "subjective",
     "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Visual hierarchy is the arrangement of elements in a way that guides the viewer’s attention from most important to least important. engineers use size, color, contrast, alignment, and spacing to create this order. It ensures that users can quickly understand the message and navigate the design effectively.",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which principle ensures balance in design?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "alignment",
-    "option_b": "balance",
-    "option_c": "contrast",
-    "option_d": "proximity",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks if resolution is above 300 dpi. Print 'print quality' or 'screen quality'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "350", "expected_output": "print quality" },
-      { "input": "150", "expected_output": "screen quality" }
-    ]
-  },
-
-  {
-    "question_text": "What is branding in graphics design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "random colors",
-    "option_b": "creating identity",
-    "option_c": "coding websites",
-    "option_d": "editing videos",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain the importance of consistency in design systems.",
+    "question_text": "What are database transactions and why are they important? Explain the ACID properties and their significance in backend applications.",
     "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Consistency in design systems ensures that all elements across different platforms maintain a uniform look and feel. It improves usability, builds brand recognition, and reduces confusion for users. Consistent design helps users predict interactions and creates a more professional and cohesive experience.",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which color model is used for print?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "rgb",
-    "option_b": "cmyk",
-    "option_c": "hex",
-    "option_d": "hsl",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks color brightness. Print 'dark' if value < 50 else 'bright'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "30", "expected_output": "dark" },
-      { "input": "80", "expected_output": "bright" }
-    ]
-  },
-  {
-    "question_text": "What is alignment in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "random placement",
-    "option_b": "arranging elements in a line or structure",
-    "option_c": "color selection",
-    "option_d": "image editing",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why alignment improves design quality.",
+    "question_text": "Explain the difference between unit testing and integration testing in backend development. When should each be used and what are their respective benefits?",
     "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Alignment improves design quality by creating order and structure within a layout. It ensures that elements are visually connected, making the design easier to read and understand. Proper alignment reduces clutter, enhances professionalism, and helps guide the viewer’s eye across the design in a logical manner.",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which tool is commonly used for UI design?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "figma",
-    "option_b": "excel",
-    "option_c": "word",
-    "option_d": "notepad",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks if file type is 'svg'. Print 'vector' or 'raster'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "svg", "expected_output": "vector" },
-      { "input": "jpg", "expected_output": "raster" }
-    ]
-  },
-
-  {
-    "question_text": "What is proximity in design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "spacing elements based on relation",
-    "option_b": "using colors",
-    "option_c": "writing code",
-    "option_d": "adding animation",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Explain how proximity improves readability.",
+    "question_text": "You are building a REST API endpoint that returns a list of users. The endpoint should support pagination, filtering by name, and sorting by creation date. What URL design would you use and what query parameters would you accept?",
     "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Proximity improves readability by grouping related elements together and separating unrelated ones. This helps users quickly understand relationships between different parts of the design. It reduces confusion and clutter, making the layout more organized and visually appealing.",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which format supports transparency?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "jpg",
-    "option_b": "png",
-    "option_c": "bmp",
-    "option_d": "tiff",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks spacing value. Print 'tight' if < 5 else 'normal'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "3", "expected_output": "tight" },
-      { "input": "10", "expected_output": "normal" }
-    ]
-  },
-
-  {
-    "question_text": "What is grid system used for?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random layout",
-    "option_b": "structured layout design",
-    "option_c": "animation",
-    "option_d": "video editing",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain the importance of grid systems in modern design.",
+    "question_text": "Design a simple API endpoint for user registration that validates email format, checks password strength, and prevents duplicate email registration. What HTTP method and status codes would you use?",
     "question_type": "subjective",
     "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Grid systems provide a structured framework for placing elements in a design. They help maintain alignment, consistency, and balance across layouts. Grids are especially important in responsive and UI design, where they ensure designs adapt well across different screen sizes while maintaining visual harmony.",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
+    "test_cases": null,
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which principle focuses on repeating elements?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "contrast",
-    "option_b": "repetition",
-    "option_c": "alignment",
-    "option_d": "balance",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks grid columns. Print 'complex' if > 12 else 'simple'.",
+    "question_text": "Implement a function that paginates a list of items with a page size of 10. The function should accept a page number parameter and return the appropriate slice of the list, along with total count and next/previous page indicators.",
     "question_type": "code",
     "difficulty": "intermediate",
-    "category": "graphics engineer",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
     "test_cases": [
-      { "input": "16", "expected_output": "complex" },
-      { "input": "8", "expected_output": "simple" }
-    ]
-  },
-
-  {
-    "question_text": "What is UX design mainly focused on?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "coding",
-    "option_b": "user experience",
-    "option_c": "server setup",
-    "option_d": "data storage",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how usability impacts design success.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Usability directly impacts design success by determining how easily users can interact with a product. A highly usable design reduces frustration, increases engagement, and improves overall satisfaction. engineers must focus on intuitive navigation, accessibility, and clear feedback to ensure a seamless user experience.",
+      {
+        "input": "items=list(range(1, 101)), page=1, page_size=10",
+        "expected": "{\"items\": [1,2,3,4,5,6,7,8,9,10], \"total\": 100, \"page\": 1, \"total_pages\": 10, \"has_prev\": false, \"has_next\": true}"
+      },
+      {
+        "input": "items=list(range(1, 101)), page=5, page_size=10",
+        "expected": "{\"items\": [41,42,43,44,45,46,47,48,49,50], \"total\": 100, \"page\": 5, \"total_pages\": 10, \"has_prev\": true, \"has_next\": true}"
+      },
+      {
+        "input": "items=list(range(1, 101)), page=10, page_size=10",
+        "expected": "{\"items\": [91,92,93,94,95,96,97,98,99,100], \"total\": 100, \"page\": 10, \"total_pages\": 10, \"has_prev\": true, \"has_next\": false}"
+      },
+      {
+        "input": "items=list(range(1, 25)), page=3, page_size=10",
+        "expected": "{\"items\": [21,22,23,24], \"total\": 24, \"page\": 3, \"total_pages\": 3, \"has_prev\": true, \"has_next\": false}"
+      }
+    ],
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which design method involves creating low-fidelity sketches?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "prototyping",
-    "option_b": "wireframing",
-    "option_c": "rendering",
-    "option_d": "animation",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks usability score. Print 'good' if > 70 else 'improve'.",
+    "question_text": "Write a Python function that validates if a string is a properly formatted email address. The function should check for presence of '@' symbol, a domain name with at least one dot, and no invalid characters.",
     "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
     "test_cases": [
-      { "input": "80", "expected_output": "good" },
-      { "input": "50", "expected_output": "improve" }
-    ]
-  },
-
-  {
-    "question_text": "What is raster graphicss?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "pixel-based images",
-    "option_b": "vector-based",
-    "option_c": "3d models",
-    "option_d": "animations",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Explain difference between raster and vector graphicss.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Raster graphicss are made up of pixels and lose quality when scaled, while vector graphicss are based on mathematical paths and can be scaled infinitely without losing quality. Raster images are suitable for photos, whereas vector graphicss are ideal for logos and illustrations.",
+      {
+        "input": "\"user@example.com\"",
+        "expected": "True"
+      },
+      {
+        "input": "\"invalid-email\"",
+        "expected": "False"
+      },
+      {
+        "input": "\"user@example\"",
+        "expected": "False"
+      },
+      {
+        "input": "\"user.name@domain.co.uk\"",
+        "expected": "True"
+      },
+      {
+        "input": "\"user@.com\"",
+        "expected": "False"
+      }
+    ],
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which file is best for logos?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "jpg",
-    "option_b": "png",
-    "option_c": "svg",
-    "option_d": "gif",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks pixel size. Print 'high detail' if > 2000 else 'low detail'.",
+    "question_text": "Write a function that implements a rate limiter. The function should accept a user ID and timestamp, and return True if the request is allowed (less than 100 requests per minute) and False if rate limited.",
     "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
     "test_cases": [
-      { "input": "3000", "expected_output": "high detail" },
-      { "input": "800", "expected_output": "low detail" }
-    ]
-  },
-  {
-    "question_text": "What is the purpose of a logo in branding?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "to decorate randomly",
-    "option_b": "to represent brand identity",
-    "option_c": "to store data",
-    "option_d": "to write code",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why simplicity is important in logo design.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Simplicity in logo design ensures that the logo is easily recognizable, memorable, and versatile across different mediums. A simple logo works well in various sizes and formats, making it effective for branding across digital and print platforms. It also helps communicate the brand message clearly without unnecessary complexity.",
+      {
+        "input": "user_id=\"user1\", requests=95, time_window=60",
+        "expected": "True"
+      },
+      {
+        "input": "user_id=\"user1\", requests=100, time_window=60",
+        "expected": "True"
+      },
+      {
+        "input": "user_id=\"user1\", requests=101, time_window=60",
+        "expected": "False"
+      },
+      {
+        "input": "user_id=\"user2\", requests=50, time_window=60",
+        "expected": "True"
+      }
+    ],
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which color is often associated with trust?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "red",
-    "option_b": "blue",
-    "option_c": "yellow",
-    "option_d": "orange",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks if logo size is less than 100. Print 'small logo' or 'large logo'.",
+    "question_text": "Create a Python function that computes the JWT expiration time. The function should accept an issued_at timestamp and a duration in seconds, returning the expiration timestamp. Handle edge cases like negative durations.",
     "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
     "test_cases": [
-      { "input": "80", "expected_output": "small logo" },
-      { "input": "150", "expected_output": "large logo" }
-    ]
-  },
-
-  {
-    "question_text": "What is kerning in typography?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "space between lines",
-    "option_b": "space between letters",
-    "option_c": "font size",
-    "option_d": "font color",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how typography affects user perception.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Typography affects user perception by influencing readability, tone, and emotional response. Different fonts convey different meanings, such as professionalism, creativity, or playfulness. Proper typography improves clarity, enhances branding, and ensures that the message is effectively communicated to the audience.",
+      {
+        "input": "issued_at=1609459200, duration=3600",
+        "expected": "1609462800"
+      },
+      {
+        "input": "issued_at=1609459200, duration=86400",
+        "expected": "1609545600"
+      },
+      {
+        "input": "issued_at=1609459200, duration=0",
+        "expected": "1609459200"
+      },
+      {
+        "input": "issued_at=1609459200, duration=-3600",
+        "expected": "1609455600"
+      }
+    ],
+    "reference_answer": null,
     "reference_vector": null
   },
   {
-    "question_text": "Which font type is best for readability?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "decorative",
-    "option_b": "script",
-    "option_c": "sans-serif",
-    "option_d": "handwritten",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks line spacing. Print 'readable' if > 1.5 else 'crowded'.",
+    "question_text": "Write a Python function that validates a password against the following rules: at least 8 characters, contains at least one uppercase letter, one lowercase letter, one digit, and one special character (@, #, $, %, &, *). Return True if valid, False otherwise.",
     "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
+    "difficulty": "intermediate",
+    "category": "Backend Development",
+    "option_a": null,
+    "option_b": null,
+    "option_c": null,
+    "option_d": null,
+    "correct_answer": null,
     "test_cases": [
-      { "input": "2", "expected_output": "readable" },
-      { "input": "1", "expected_output": "crowded" }
-    ]
-  },
-
-  {
-    "question_text": "What is responsive design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "fixed layout",
-    "option_b": "design adapting to screens",
-    "option_c": "video editing",
-    "option_d": "database management",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why responsive design is critical in modern UI.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Responsive design ensures that interfaces adapt seamlessly across different devices such as desktops, tablets, and mobile phones. It improves user experience, accessibility, and usability by maintaining consistency and functionality regardless of screen size. This is essential in modern design due to the wide variety of devices used by users.",
+      {
+        "input": "\"Password@123\"",
+        "expected": "True"
+      },
+      {
+        "input": "\"password\"",
+        "expected": "False"
+      },
+      {
+        "input": "\"PASSWORD@123\"",
+        "expected": "False"
+      },
+      {
+        "input": "\"Pass@1\"",
+        "expected": "False"
+      },
+      {
+        "input": "\"Valid$Pass123\"",
+        "expected": "True"
+      }
+    ],
+    "reference_answer": null,
     "reference_vector": null
-  },
-  {
-    "question_text": "Which unit is commonly used in responsive design?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "px",
-    "option_b": "em",
-    "option_c": "cm",
-    "option_d": "inch",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks screen width. Print 'mobile' if < 600 else 'desktop'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "500", "expected_output": "mobile" },
-      { "input": "1200", "expected_output": "desktop" }
-    ]
-  },
-
-  {
-    "question_text": "What is accessibility in design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "visual effects",
-    "option_b": "design usable by all users",
-    "option_c": "coding feature",
-    "option_d": "animation style",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how accessibility improves inclusivity.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Accessibility improves inclusivity by ensuring that designs can be used by people with different abilities, including those with visual, auditory, or motor impairments. This involves proper contrast, readable fonts, keyboard navigation, and alternative text for images. Accessible design makes digital products usable for a wider audience and promotes equal access.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which guideline improves accessibility?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "low contrast",
-    "option_b": "clear typography",
-    "option_c": "small text",
-    "option_d": "random layout",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks contrast ratio. Print 'accessible' if > 4 else 'not accessible'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "5", "expected_output": "accessible" },
-      { "input": "2", "expected_output": "not accessible" }
-    ]
-  },
-  {
-    "question_text": "What is mockup in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "final product",
-    "option_b": "visual preview of design",
-    "option_c": "code file",
-    "option_d": "database",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain the purpose of mockups in design workflow.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Mockups are used to present how a design will look in real-world applications before final production. They help clients visualize the outcome, allow engineers to test ideas, and identify improvements early. Mockups reduce errors and improve communication between engineers and stakeholders.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which tool is used for prototyping?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "figma",
-    "option_b": "excel",
-    "option_c": "paint",
-    "option_d": "notepad",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks if prototype stage is 'low'. Print 'wireframe' or 'high fidelity'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "low", "expected_output": "wireframe" },
-      { "input": "high", "expected_output": "high fidelity" }
-    ]
-  },
-
-  {
-    "question_text": "What is a design system?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random styles",
-    "option_b": "collection of reusable components",
-    "option_c": "animation library",
-    "option_d": "database system",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why design systems improve scalability.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Design systems improve scalability by providing a consistent set of reusable components and guidelines. This allows teams to build products faster, maintain consistency across platforms, and reduce redundancy. It also ensures that design updates can be applied efficiently across all parts of a product.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which element is part of a design system?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "color palette",
-    "option_b": "server logs",
-    "option_c": "database schema",
-    "option_d": "network config",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks component reuse count. Print 'efficient' if > 5 else 'inefficient'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "8", "expected_output": "efficient" },
-      { "input": "2", "expected_output": "inefficient" }
-    ]
-  },
-
-  {
-    "question_text": "What is design thinking?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "coding method",
-    "option_b": "problem-solving approach",
-    "option_c": "animation tool",
-    "option_d": "database design",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain the stages of design thinking.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Design thinking involves stages such as empathize, define, ideate, prototype, and test. It focuses on understanding user needs, defining problems clearly, generating creative solutions, building prototypes, and testing them. This iterative approach ensures user-centered and innovative design solutions.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which stage involves generating ideas?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "define",
-    "option_b": "ideate",
-    "option_c": "test",
-    "option_d": "deploy",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks idea count. Print 'creative' if > 10 else 'limited'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "15", "expected_output": "creative" },
-      { "input": "5", "expected_output": "limited" }
-    ]
-  },
-
-  {
-    "question_text": "What is file export in design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "deleting file",
-    "option_b": "saving in different formats",
-    "option_c": "coding",
-    "option_d": "printing",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why exporting in correct format is important.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Exporting in the correct format ensures that designs maintain quality, compatibility, and functionality across different platforms. For example, PNG supports transparency, JPEG is good for photos, and SVG is ideal for scalable graphicss. Choosing the right format prevents loss of quality and improves usability.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which format is best for web images?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "png",
-    "option_b": "psd",
-    "option_c": "ai",
-    "option_d": "raw",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks file size. Print 'optimize' if > 500 else 'ok'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "700", "expected_output": "optimize" },
-      { "input": "200", "expected_output": "ok" }
-    ]
-  },
-  {
-    "question_text": "What is the purpose of a mood board in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "final product",
-    "option_b": "visual inspiration collection",
-    "option_c": "code repository",
-    "option_d": "data storage",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how mood boards help in the design process.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Mood boards help engineers gather visual inspiration, define style direction, and communicate ideas clearly to clients or teams. They include colors, typography, images, and textures that represent the overall feel of a project. This ensures alignment before actual design work begins, reducing revisions later.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which element defines spacing between lines of text?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "kerning",
-    "option_b": "leading",
-    "option_c": "tracking",
-    "option_d": "baseline",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks opacity value. Print 'transparent' if < 50 else 'solid'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "30", "expected_output": "transparent" },
-      { "input": "80", "expected_output": "solid" }
-    ]
-  },
-
-  {
-    "question_text": "What is the purpose of a style guide?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random design",
-    "option_b": "maintain consistency",
-    "option_c": "store files",
-    "option_d": "edit videos",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how style guides improve team collaboration.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Style guides provide clear rules for colors, typography, layout, and branding elements. This ensures that all engineers and developers follow the same standards, reducing inconsistencies. It improves collaboration by making design decisions predictable and scalable across teams.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which color scheme uses colors opposite on the color wheel?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "analogous",
-    "option_b": "monochromatic",
-    "option_c": "complementary",
-    "option_d": "triadic",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks grid spacing. Print 'balanced' if value between 8 and 16 else 'unbalanced'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "12", "expected_output": "balanced" },
-      { "input": "20", "expected_output": "unbalanced" }
-    ]
-  },
-
-  {
-    "question_text": "What is cognitive load in UI design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "visual decoration",
-    "option_b": "mental effort required",
-    "option_c": "file size",
-    "option_d": "animation speed",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how reducing cognitive load improves user experience.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Reducing cognitive load helps users process information quickly and efficiently. By simplifying layouts, using clear labels, and minimizing unnecessary elements, engineers make interfaces easier to understand. This leads to better usability, faster decision-making, and improved overall user satisfaction.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which design principle focuses on grouping related elements?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "contrast",
-    "option_b": "proximity",
-    "option_c": "balance",
-    "option_d": "alignment",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks animation duration. Print 'smooth' if < 300ms else 'slow'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "200", "expected_output": "smooth" },
-      { "input": "500", "expected_output": "slow" }
-    ]
-  },
-  {
-    "question_text": "What is the role of icons in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "store data",
-    "option_b": "represent actions visually",
-    "option_c": "write text",
-    "option_d": "increase file size",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how icons improve usability in interfaces.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Icons improve usability by providing quick visual cues that help users understand actions without relying on text. They reduce reading effort, enhance navigation speed, and create a more intuitive interface. When designed consistently, icons make interactions smoother and more user-friendly.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which format is best for animations?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "jpg",
-    "option_b": "gif",
-    "option_c": "svg",
-    "option_d": "pdf",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks icon size. Print 'small icon' if < 24 else 'large icon'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "16", "expected_output": "small icon" },
-      { "input": "32", "expected_output": "large icon" }
-    ]
-  },
-
-  {
-    "question_text": "What is a wireframe used for?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "final design",
-    "option_b": "layout structure planning",
-    "option_c": "animation",
-    "option_d": "printing",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why wireframing is important before designing.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Wireframing allows engineers to plan the structure and layout of a design before focusing on visual details. It helps identify usability issues early, organize content effectively, and ensure proper user flow. This reduces redesign effort later and improves efficiency in the design process.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which color scheme uses one color with variations?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "complementary",
-    "option_b": "monochromatic",
-    "option_c": "triadic",
-    "option_d": "analogous",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks padding value. Print 'comfortable' if >= 12 else 'tight'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "16", "expected_output": "comfortable" },
-      { "input": "6", "expected_output": "tight" }
-    ]
-  },
-
-  {
-    "question_text": "What is affordance in design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "color selection",
-    "option_b": "visual hint of interaction",
-    "option_c": "file format",
-    "option_d": "animation style",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how affordance improves interaction design.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Affordance provides visual clues that indicate how users can interact with elements, such as buttons appearing clickable. This reduces confusion and improves usability by guiding users naturally. Clear affordances make interfaces intuitive and reduce the need for instructions.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which principle helps guide user attention first?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "hierarchy",
-    "option_b": "alignment",
-    "option_c": "repetition",
-    "option_d": "grid",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks interaction time. Print 'fast' if < 1 second else 'slow'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "0.5", "expected_output": "fast" },
-      { "input": "2", "expected_output": "slow" }
-    ]
-  },
-  {
-    "question_text": "What is the purpose of a favicon?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "main logo",
-    "option_b": "small browser icon",
-    "option_c": "background image",
-    "option_d": "animation",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why favicons are important for branding.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Favicons are small icons displayed in browser tabs that help users quickly identify a website. They reinforce brand identity and improve recognition, especially when multiple tabs are open. A well-designed favicon enhances professionalism and user experience.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which file format is commonly used for favicons?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "ico",
-    "option_b": "mp4",
-    "option_c": "txt",
-    "option_d": "doc",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks icon resolution. Print 'clear' if >= 64 else 'blur'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "128", "expected_output": "clear" },
-      { "input": "32", "expected_output": "blur" }
-    ]
-  },
-
-  {
-    "question_text": "What is visual consistency?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random styles",
-    "option_b": "uniform design elements",
-    "option_c": "animation",
-    "option_d": "coding",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how visual consistency impacts user trust.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Visual consistency ensures that elements such as colors, typography, and layout remain uniform across a design. This creates a predictable and reliable experience for users, which builds trust and credibility. Inconsistent design can confuse users and reduce confidence in a product.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which principle ensures elements look related?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "contrast",
-    "option_b": "repetition",
-    "option_c": "alignment",
-    "option_d": "balance",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks margin size. Print 'spacious' if > 20 else 'compact'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "30", "expected_output": "spacious" },
-      { "input": "10", "expected_output": "compact" }
-    ]
-  },
-
-  {
-    "question_text": "What is heuristic evaluation in design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "color testing",
-    "option_b": "usability inspection method",
-    "option_c": "animation design",
-    "option_d": "file export",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how heuristic evaluation helps improve usability.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Heuristic evaluation involves reviewing a design against established usability principles to identify issues. It helps detect problems early without extensive user testing. This method improves usability by ensuring that designs follow best practices such as consistency, feedback, and error prevention.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which heuristic focuses on system feedback?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "visibility of system status",
-    "option_b": "aesthetic design",
-    "option_c": "minimalism",
-    "option_d": "animation",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks feedback delay. Print 'responsive' if < 0.3 else 'laggy'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "0.2", "expected_output": "responsive" },
-      { "input": "0.8", "expected_output": "laggy" }
-    ]
-  },
-  {
-    "question_text": "What is the purpose of a thumbnail in design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "full image",
-    "option_b": "small preview image",
-    "option_c": "text file",
-    "option_d": "animation",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why thumbnails are important in digital platforms.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Thumbnails act as visual previews that attract users’ attention and encourage interaction. They help users quickly understand content and decide whether to engage with it. Well-designed thumbnails improve click-through rates and enhance user experience on digital platforms.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which color is commonly used to grab attention?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "blue",
-    "option_b": "red",
-    "option_c": "gray",
-    "option_d": "white",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks thumbnail size. Print 'optimized' if < 200 else 'heavy'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "150", "expected_output": "optimized" },
-      { "input": "300", "expected_output": "heavy" }
-    ]
-  },
-
-  {
-    "question_text": "What is hierarchy in UI design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random layout",
-    "option_b": "order of importance",
-    "option_c": "animation",
-    "option_d": "file storage",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how visual hierarchy guides user behavior.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Visual hierarchy organizes elements so that users notice the most important information first. engineers use size, color, spacing, and contrast to direct attention. This helps users navigate content efficiently and understand the message without confusion.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which technique highlights important elements?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "contrast",
-    "option_b": "alignment",
-    "option_c": "grid",
-    "option_d": "repetition",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks font weight. Print 'bold' if >= 600 else 'normal'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "700", "expected_output": "bold" },
-      { "input": "400", "expected_output": "normal" }
-    ]
-  },
-
-  {
-    "question_text": "What is microinteraction in design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "large animation",
-    "option_b": "small interactive feedback",
-    "option_c": "file format",
-    "option_d": "color scheme",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how microinteractions enhance user experience.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Microinteractions provide small, meaningful feedback during user actions, such as button clicks or notifications. They improve usability by confirming actions, guiding users, and making interactions feel responsive. These subtle details enhance engagement and create a more polished experience.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which feature improves interaction feedback?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "hover effects",
-    "option_b": "static text",
-    "option_c": "plain layout",
-    "option_d": "no animation",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks animation delay. Print 'instant' if < 100 else 'delayed'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "80", "expected_output": "instant" },
-      { "input": "200", "expected_output": "delayed" }
-    ]
-  },
-  {
-    "question_text": "What is the purpose of a thumbnail in design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "full image",
-    "option_b": "small preview image",
-    "option_c": "text file",
-    "option_d": "animation",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why thumbnails are important in digital platforms.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Thumbnails act as visual previews that attract users’ attention and encourage interaction. They help users quickly understand content and decide whether to engage with it. Well-designed thumbnails improve click-through rates and enhance user experience on digital platforms.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which color is commonly used to grab attention?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "blue",
-    "option_b": "red",
-    "option_c": "gray",
-    "option_d": "white",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks thumbnail size. Print 'optimized' if < 200 else 'heavy'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "150", "expected_output": "optimized" },
-      { "input": "300", "expected_output": "heavy" }
-    ]
-  },
-
-  {
-    "question_text": "What is hierarchy in UI design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random layout",
-    "option_b": "order of importance",
-    "option_c": "animation",
-    "option_d": "file storage",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how visual hierarchy guides user behavior.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Visual hierarchy organizes elements so that users notice the most important information first. engineers use size, color, spacing, and contrast to direct attention. This helps users navigate content efficiently and understand the message without confusion.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which technique highlights important elements?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "contrast",
-    "option_b": "alignment",
-    "option_c": "grid",
-    "option_d": "repetition",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks font weight. Print 'bold' if >= 600 else 'normal'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "700", "expected_output": "bold" },
-      { "input": "400", "expected_output": "normal" }
-    ]
-  },
-
-  {
-    "question_text": "What is microinteraction in design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "large animation",
-    "option_b": "small interactive feedback",
-    "option_c": "file format",
-    "option_d": "color scheme",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how microinteractions enhance user experience.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Microinteractions provide small, meaningful feedback during user actions, such as button clicks or notifications. They improve usability by confirming actions, guiding users, and making interactions feel responsive. These subtle details enhance engagement and create a more polished experience.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which feature improves interaction feedback?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "hover effects",
-    "option_b": "static text",
-    "option_c": "plain layout",
-    "option_d": "no animation",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks animation delay. Print 'instant' if < 100 else 'delayed'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "80", "expected_output": "instant" },
-      { "input": "200", "expected_output": "delayed" }
-    ]
-  },
-  {
-    "question_text": "What is a color palette in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "single color",
-    "option_b": "collection of selected colors",
-    "option_c": "image format",
-    "option_d": "font style",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why choosing a proper color palette is important.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "A proper color palette ensures visual harmony and consistency across designs. It helps convey emotions, strengthens brand identity, and improves readability. Carefully selected colors guide user attention and create a cohesive visual experience.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which color combination is easy on the eyes?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "high contrast neon",
-    "option_b": "complementary balance",
-    "option_c": "random colors",
-    "option_d": "all bright colors",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks hex code length. Print 'valid' if length is 7 else 'invalid'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "#FFFFFF", "expected_output": "valid" },
-      { "input": "#FFF", "expected_output": "invalid" }
-    ]
-  },
-
-  {
-    "question_text": "What is consistency in UI components?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random design",
-    "option_b": "uniform behavior and style",
-    "option_c": "animation speed",
-    "option_d": "file size",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how consistent UI components improve usability.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Consistent UI components make interfaces predictable and easier to use. When buttons, icons, and layouts behave similarly, users learn quickly and navigate with confidence. This reduces errors, improves efficiency, and creates a seamless user experience across the application.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which principle ensures predictability?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "consistency",
-    "option_b": "contrast",
-    "option_c": "balance",
-    "option_d": "spacing",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks button size. Print 'touch friendly' if >= 48 else 'small'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "50", "expected_output": "touch friendly" },
-      { "input": "30", "expected_output": "small" }
-    ]
-  },
-
-  {
-    "question_text": "What is information architecture?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "color selection",
-    "option_b": "organizing content structure",
-    "option_c": "animation design",
-    "option_d": "file export",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how information architecture affects user navigation.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Information architecture organizes content in a logical and structured way, making it easier for users to find what they need. Clear navigation, proper categorization, and intuitive labeling reduce confusion and improve efficiency. Good information architecture enhances usability and overall user satisfaction.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which method helps organize content logically?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "random placement",
-    "option_b": "card sorting",
-    "option_c": "animation",
-    "option_d": "color grading",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks navigation depth. Print 'complex' if > 3 else 'simple'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "5", "expected_output": "complex" },
-      { "input": "2", "expected_output": "simple" }
-    ]
-  },
-  {
-    "question_text": "What is a hero section in web design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "footer area",
-    "option_b": "top prominent section",
-    "option_c": "sidebar",
-    "option_d": "popup",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why the hero section is important for first impressions.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "The hero section is the first visual area users see, making it crucial for capturing attention and communicating the main message quickly. It sets the tone, highlights key value propositions, and encourages users to engage further with the content or take action.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which element is commonly included in a hero section?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "call to action",
-    "option_b": "database table",
-    "option_c": "server log",
-    "option_d": "code editor",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks hero height. Print 'full screen' if >= 100 else 'partial'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "100", "expected_output": "full screen" },
-      { "input": "60", "expected_output": "partial" }
-    ]
-  },
-
-  {
-    "question_text": "What is whitespace used for in layout design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "fill space",
-    "option_b": "improve clarity and focus",
-    "option_c": "add noise",
-    "option_d": "reduce size",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how whitespace improves visual balance.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Whitespace helps separate elements, making designs more readable and organized. It prevents overcrowding and allows important elements to stand out. Proper use of whitespace creates a balanced layout and improves user focus on key content.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which principle reduces clutter in design?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "whitespace",
-    "option_b": "contrast",
-    "option_c": "animation",
-    "option_d": "color mixing",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks spacing ratio. Print 'balanced' if between 1 and 2 else 'imbalanced'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "1.5", "expected_output": "balanced" },
-      { "input": "3", "expected_output": "imbalanced" }
-    ]
-  },
-
-  {
-    "question_text": "What is progressive disclosure in UX design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "show all content",
-    "option_b": "reveal information gradually",
-    "option_c": "hide interface",
-    "option_d": "remove features",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how progressive disclosure enhances usability.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Progressive disclosure reduces complexity by showing only essential information initially and revealing additional details when needed. This prevents overwhelming users, simplifies interactions, and allows users to focus on tasks step by step, improving usability and efficiency.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which technique helps reduce complexity?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "progressive disclosure",
-    "option_b": "random layout",
-    "option_c": "heavy animation",
-    "option_d": "bright colors",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks content layers. Print 'simple' if <= 2 else 'complex'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "2", "expected_output": "simple" },
-      { "input": "4", "expected_output": "complex" }
-    ]
-  },
-  {
-    "question_text": "What does DPI stand for in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "dots per inch",
-    "option_b": "design pixel index",
-    "option_c": "digital print input",
-    "option_d": "display per image",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Explain why resolution is important in image quality.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Resolution determines the clarity and detail of an image. Higher resolution means more pixels, resulting in sharper visuals, especially for printing. Low resolution images appear blurry or pixelated, reducing design quality and professionalism.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which file type is editable in Photoshop?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "psd",
-    "option_b": "mp3",
-    "option_c": "exe",
-    "option_d": "csv",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks dpi value. Print 'print ready' if >= 300 else 'not print ready'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "300", "expected_output": "print ready" },
-      { "input": "150", "expected_output": "not print ready" }
-    ]
-  },
-
-  {
-    "question_text": "What is cropping in image editing?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "adding text",
-    "option_b": "cutting unwanted parts",
-    "option_c": "changing color",
-    "option_d": "rotating image",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how cropping improves composition.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Cropping removes unnecessary elements and focuses attention on the main subject. It helps improve composition by aligning visuals better, reducing distractions, and enhancing the overall balance and clarity of the design.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which tool is used to cut parts of an image?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "crop tool",
-    "option_b": "brush tool",
-    "option_c": "text tool",
-    "option_d": "zoom tool",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks crop size. Print 'valid crop' if >= 100 else 'too small'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "120", "expected_output": "valid crop" },
-      { "input": "50", "expected_output": "too small" }
-    ]
-  },
-
-  {
-    "question_text": "What is brightness in image editing?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "sharpness",
-    "option_b": "lightness of image",
-    "option_c": "color type",
-    "option_d": "file size",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how adjusting brightness affects images.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Adjusting brightness changes how light or dark an image appears. Increasing brightness makes images more visible, while decreasing it creates darker tones. Proper brightness adjustment ensures clarity and enhances visual appeal without losing details.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which setting makes an image darker?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "increase brightness",
-    "option_b": "decrease brightness",
-    "option_c": "increase contrast",
-    "option_d": "add saturation",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks brightness value. Print 'bright' if > 70 else 'dim'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "80", "expected_output": "bright" },
-      { "input": "40", "expected_output": "dim" }
-    ]
-  },
-  {
-    "question_text": "What is contrast in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "same colors",
-    "option_b": "difference between elements",
-    "option_c": "file size",
-    "option_d": "image format",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how contrast improves visibility in design.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Contrast improves visibility by making elements stand out from each other. High contrast between text and background increases readability, while contrast in size or color helps highlight important elements. It ensures that users can easily distinguish different parts of a design.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which color pair has high contrast?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "white and black",
-    "option_b": "blue and green",
-    "option_c": "yellow and orange",
-    "option_d": "gray and light gray",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks contrast value. Print 'high contrast' if > 70 else 'low contrast'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "80", "expected_output": "high contrast" },
-      { "input": "40", "expected_output": "low contrast" }
-    ]
-  },
-
-  {
-    "question_text": "What is alignment in graphics design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "random placement",
-    "option_b": "arranging elements in order",
-    "option_c": "color mixing",
-    "option_d": "animation",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why alignment creates a clean layout.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Alignment creates a clean layout by organizing elements in a structured way. It ensures visual connection between elements, reduces clutter, and improves readability. Proper alignment makes the design look professional and easier to understand.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which alignment is commonly used for text?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "center",
-    "option_b": "left",
-    "option_c": "right",
-    "option_d": "all of these",
-    "correct_answer": "D"
-  },
-  {
-    "question_text": "Write a program that checks alignment type. Print 'standard' if 'left' else 'custom'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "left", "expected_output": "standard" },
-      { "input": "center", "expected_output": "custom" }
-    ]
-  },
-
-  {
-    "question_text": "What is opacity in design?",
-    "question_type": "objective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "image size",
-    "option_b": "transparency level",
-    "option_c": "color type",
-    "option_d": "font style",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how opacity affects visual layering.",
-    "question_type": "subjective",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "reference_answer": "Opacity controls how transparent or solid an element appears. Lower opacity allows background elements to show through, creating layering effects. engineers use opacity to add depth, highlight elements, and create visual hierarchy.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "What does 100% opacity mean?",
-    "question_type": "mcq",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "option_a": "fully transparent",
-    "option_b": "fully visible",
-    "option_c": "partially hidden",
-    "option_d": "blurred",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks opacity value. Print 'visible' if = 100 else 'transparent'.",
-    "question_type": "code",
-    "difficulty": "basic",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "100", "expected_output": "visible" },
-      { "input": "60", "expected_output": "transparent" }
-    ]
-  },
-  {
-    "question_text": "What is a grid layout in design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "random placement",
-    "option_b": "structured layout using columns and rows",
-    "option_c": "color pattern",
-    "option_d": "animation style",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how grid layouts improve consistency in design.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Grid layouts provide a structured framework that helps align elements consistently across a design. They ensure proper spacing, balance, and visual harmony. By following a grid system, engineers can create organized layouts that are easier to read and maintain across different screens.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which grid type is commonly used in web design?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "baseline grid",
-    "option_b": "column grid",
-    "option_c": "manuscript grid",
-    "option_d": "modular grid",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks column count. Print 'wide layout' if > 12 else 'standard layout'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "16", "expected_output": "wide layout" },
-      { "input": "8", "expected_output": "standard layout" }
-    ]
-  },
-
-  {
-    "question_text": "What is aspect ratio in design?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "color balance",
-    "option_b": "width to height proportion",
-    "option_c": "font spacing",
-    "option_d": "image format",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain why maintaining aspect ratio is important.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Maintaining aspect ratio ensures that images and elements do not appear stretched or distorted. It preserves the original proportions, keeping visuals natural and professional. This is especially important when resizing images across different devices and layouts.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which ratio is commonly used for widescreen design?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "1:1",
-    "option_b": "4:3",
-    "option_c": "16:9",
-    "option_d": "3:2",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks aspect ratio width/height. Print 'landscape' if ratio > 1 else 'portrait'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "1.5", "expected_output": "landscape" },
-      { "input": "0.8", "expected_output": "portrait" }
-    ]
-  },
-
-  {
-    "question_text": "What is saturation in color editing?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "brightness level",
-    "option_b": "color intensity",
-    "option_c": "image size",
-    "option_d": "file format",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how saturation affects visual mood.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Saturation controls the intensity of colors in an image. High saturation creates vibrant and energetic visuals, while low saturation produces muted and calm tones. engineers adjust saturation to match the emotional tone and purpose of the design.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "What happens when saturation is reduced completely?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "image becomes brighter",
-    "option_b": "image becomes grayscale",
-    "option_c": "image becomes sharper",
-    "option_d": "image becomes larger",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks saturation value. Print 'vivid' if > 60 else 'muted'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "80", "expected_output": "vivid" },
-      { "input": "30", "expected_output": "muted" }
-    ]
-  },
-  {
-    "question_text": "What is kerning in typography?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "space between lines",
-    "option_b": "space between individual letters",
-    "option_c": "font size",
-    "option_d": "text color",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how kerning affects text readability.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Kerning adjusts the spacing between individual letters to create visually balanced text. Proper kerning improves readability and prevents awkward gaps or overlaps. Poor kerning can make text difficult to read and appear unprofessional.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which adjustment improves spacing between specific letter pairs?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "leading",
-    "option_b": "tracking",
-    "option_c": "kerning",
-    "option_d": "baseline shift",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks kerning value. Print 'tight' if < 0 else 'loose'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "-5", "expected_output": "tight" },
-      { "input": "10", "expected_output": "loose" }
-    ]
-  },
-
-  {
-    "question_text": "What is tracking in typography?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "space between lines",
-    "option_b": "overall spacing between letters",
-    "option_c": "text alignment",
-    "option_d": "font weight",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how tracking influences text appearance.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Tracking adjusts the uniform spacing across all letters in a word or paragraph. Increasing tracking creates a more open and airy feel, while decreasing it makes text compact. Proper tracking improves readability and visual balance in typography.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which adjustment changes spacing for all letters uniformly?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "kerning",
-    "option_b": "tracking",
-    "option_c": "leading",
-    "option_d": "contrast",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks tracking value. Print 'expanded' if > 20 else 'normal'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "30", "expected_output": "expanded" },
-      { "input": "10", "expected_output": "normal" }
-    ]
-  },
-
-  {
-    "question_text": "What is leading in typography?",
-    "question_type": "objective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "space between lines",
-    "option_b": "space between letters",
-    "option_c": "font size",
-    "option_d": "text color",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Explain how leading affects readability of paragraphs.",
-    "question_type": "subjective",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "reference_answer": "Leading controls the vertical space between lines of text. Proper leading improves readability by preventing lines from appearing too cramped or too spaced out. It ensures comfortable reading and helps maintain a clean layout.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which spacing adjustment affects vertical distance between lines?",
-    "question_type": "mcq",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "option_a": "kerning",
-    "option_b": "tracking",
-    "option_c": "leading",
-    "option_d": "alignment",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks leading value. Print 'readable' if >= 1.5 else 'cramped'.",
-    "question_type": "code",
-    "difficulty": "intermediate",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "1.8", "expected_output": "readable" },
-      { "input": "1.2", "expected_output": "cramped" }
-    ]
-  },
-  {
-    "question_text": "What is visual rhythm in graphics design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "random spacing",
-    "option_b": "repetition creating movement",
-    "option_c": "color mixing",
-    "option_d": "file compression",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how visual rhythm influences user perception.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Visual rhythm is created through repetition, spacing, and variation of elements, guiding the viewer’s eye across a design. It creates flow and structure, making content more engaging and easier to follow. Proper rhythm enhances readability and ensures a smooth visual experience.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which technique helps create rhythm in design?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "random placement",
-    "option_b": "repetition",
-    "option_c": "file resizing",
-    "option_d": "compression",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Write a program that checks repetition count. Print 'rhythmic' if > 3 else 'static'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "5", "expected_output": "rhythmic" },
-      { "input": "2", "expected_output": "static" }
-    ]
-  },
-
-  {
-    "question_text": "What is gestalt principle in design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "color rule",
-    "option_b": "perception-based grouping",
-    "option_c": "file format",
-    "option_d": "animation style",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how gestalt principles help users interpret designs.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Gestalt principles explain how humans naturally perceive visual elements as groups rather than separate parts. Concepts like proximity, similarity, and closure help users quickly understand relationships and structure. Applying these principles improves clarity, usability, and overall visual communication.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which gestalt principle groups elements based on closeness?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "similarity",
-    "option_b": "closure",
-    "option_c": "proximity",
-    "option_d": "continuity",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks group distance. Print 'grouped' if < 10 else 'separate'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "5", "expected_output": "grouped" },
-      { "input": "20", "expected_output": "separate" }
-    ]
-  },
-
-  {
-    "question_text": "What is color harmony in advanced design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "random colors",
-    "option_b": "balanced color combinations",
-    "option_c": "file compression",
-    "option_d": "animation timing",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how color harmony affects brand perception.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Color harmony ensures that colors work well together, creating a visually pleasing composition. It influences emotional response, strengthens brand identity, and improves user experience. Poor color harmony can make designs feel chaotic, while good harmony enhances clarity and professionalism.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which harmony uses three evenly spaced colors?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "analogous",
-    "option_b": "monochromatic",
-    "option_c": "triadic",
-    "option_d": "complementary",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks color count. Print 'harmonic' if = 3 else 'non-harmonic'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "3", "expected_output": "harmonic" },
-      { "input": "5", "expected_output": "non-harmonic" }
-    ]
-  },
-  {
-    "question_text": "What is visual weight in graphics design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "file size",
-    "option_b": "perceived importance of elements",
-    "option_c": "color format",
-    "option_d": "animation speed",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how visual weight affects composition balance.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Visual weight refers to how much attention an element draws based on size, color, contrast, and position. engineers balance visual weight to create stable compositions. Uneven weight can make a design feel unbalanced, while proper distribution improves harmony and user focus.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which element increases visual weight the most?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "small size",
-    "option_b": "low contrast",
-    "option_c": "bright color",
-    "option_d": "thin lines",
-    "correct_answer": "C"
-  },
-  {
-    "question_text": "Write a program that checks element size. Print 'heavy' if > 500 else 'light'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "800", "expected_output": "heavy" },
-      { "input": "200", "expected_output": "light" }
-    ]
-  },
-
-  {
-    "question_text": "What is modular design in graphics systems?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "random layout",
-    "option_b": "design using reusable blocks",
-    "option_c": "color blending",
-    "option_d": "file conversion",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how modular design improves scalability.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Modular design breaks layouts into reusable components, allowing engineers to build flexible and scalable systems. It improves efficiency, ensures consistency, and makes updates easier. This approach is widely used in UI systems where components are reused across different screens.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which approach focuses on reusable components?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "modular design",
-    "option_b": "random design",
-    "option_c": "free layout",
-    "option_d": "fixed layout",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks module count. Print 'scalable' if > 4 else 'limited'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "6", "expected_output": "scalable" },
-      { "input": "2", "expected_output": "limited" }
-    ]
-  },
-
-  {
-    "question_text": "What is depth in visual design?",
-    "question_type": "objective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "flat color",
-    "option_b": "sense of layering and distance",
-    "option_c": "file resolution",
-    "option_d": "text size",
-    "correct_answer": "B"
-  },
-  {
-    "question_text": "Explain how depth enhances visual hierarchy.",
-    "question_type": "subjective",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "reference_answer": "Depth creates a sense of layering using shadows, gradients, and perspective. It helps distinguish foreground and background elements, guiding user attention. By adding depth, engineers improve hierarchy and make interfaces more visually engaging.",
-    "reference_vector": null
-  },
-  {
-    "question_text": "Which technique creates depth?",
-    "question_type": "mcq",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "option_a": "drop shadow",
-    "option_b": "flat color",
-    "option_c": "plain text",
-    "option_d": "no spacing",
-    "correct_answer": "A"
-  },
-  {
-    "question_text": "Write a program that checks shadow value. Print 'deep' if > 10 else 'flat'.",
-    "question_type": "code",
-    "difficulty": "hard",
-    "category": "graphics engineer",
-    "test_cases": [
-      { "input": "15", "expected_output": "deep" },
-      { "input": "5", "expected_output": "flat" }
-    ]
   }
-  ]
+]

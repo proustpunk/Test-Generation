@@ -345,14 +345,55 @@ def is_ai_written_resume(text, perplexity_threshold=40):
         return False
 
 #needs langchain 
+# def generate_reference(question_text):
+
+#     from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+#     tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+#     modelgpt = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
+
+#     prompt =( f"""You are an intelligent, professional candidate answering interview-style subjective questions. 
+# Speak as a thoughtful human with professional tone: be concise, clear, and reasoned. 
+# Include relevant technical terms naturally (do not force jargon). Do not repeat the question. 
+# Give a short plan or rationale and a final one-sentence takeaway.
+
+# Example 1:
+# Q: What would you do if you were the CEO of a mid-size tech startup facing slowing growth?
+# A: I would start by diagnosing the slowdown through customer feedback and product analytics to identify the weakest retention and acquisition points. I would convene leadership to prioritize product improvements that directly address those friction points and reallocate marketing budget toward channels with proven ROI. I would invest in a small, cross-functional squad to ship one high-impact experiment within 60 days and measure lift with A/B tests. I would also focus on talent retention by clarifying goals and supporting managers to remove blockers. Takeaway: prioritize measurable experiments that improve customer retention while aligning the team around clear, short-term targets.
+
+# Example 2:
+# Q: How do you approach learning a new programming language when starting a project?
+# A: I identify the language’s idioms and standard libraries relevant to the problem, then scaffold a small prototype that exercises the language’s strengths. I read the official style guide and implement unit tests as I build to surface pitfalls early. I allocate time for one focused refactor after the prototype to adopt best practices and improve maintainability. I also consult one or two high-quality open-source examples to learn idiomatic patterns. Takeaway: learn by building a focused, test-backed prototype and refactor with idioms in mind.
+
+# Now answer the question below following the same voice, structure, and constraints:
+
+# Question: {question_text}
+# """
+# )
+
+    
+#     inputs = tokenizer(prompt, return_tensors="pt")
+    
+#     output_ids = modelgpt.generate(
+#         **inputs,
+#         max_new_tokens=200,
+#         temperature=0.0,  # controls randomness
+#         do_sample=False,   # enables variability
+#         top_p=0.9         # nucleus sampling
+#     )
+    
+#     return tokenizer.decode(output_ids[0], skip_special_tokens=True)
+
+
+from groq import Groq
+from django.conf import settings
+
+client = Groq(api_key=settings.GROQ_API_KEY)
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
+
 def generate_reference(question_text):
 
-    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-
-    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
-    modelgpt = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
-
-    prompt =( f"""You are an intelligent, professional candidate answering interview-style subjective questions. 
+    prompt = f"""You are an intelligent, professional candidate answering interview-style subjective questions. 
 Speak as a thoughtful human with professional tone: be concise, clear, and reasoned. 
 Include relevant technical terms naturally (do not force jargon). Do not repeat the question. 
 Give a short plan or rationale and a final one-sentence takeaway.
@@ -363,23 +404,18 @@ A: I would start by diagnosing the slowdown through customer feedback and produc
 
 Example 2:
 Q: How do you approach learning a new programming language when starting a project?
-A: I identify the language’s idioms and standard libraries relevant to the problem, then scaffold a small prototype that exercises the language’s strengths. I read the official style guide and implement unit tests as I build to surface pitfalls early. I allocate time for one focused refactor after the prototype to adopt best practices and improve maintainability. I also consult one or two high-quality open-source examples to learn idiomatic patterns. Takeaway: learn by building a focused, test-backed prototype and refactor with idioms in mind.
+A: I identify the language's idioms and standard libraries relevant to the problem, then scaffold a small prototype that exercises the language's strengths. I read the official style guide and implement unit tests as I build to surface pitfalls early. I allocate time for one focused refactor after the prototype to adopt best practices and improve maintainability. I also consult one or two high-quality open-source examples to learn idiomatic patterns. Takeaway: learn by building a focused, test-backed prototype and refactor with idioms in mind.
 
 Now answer the question below following the same voice, structure, and constraints:
 
 Question: {question_text}
 """
-)
 
-    
-    inputs = tokenizer(prompt, return_tensors="pt")
-    
-    output_ids = modelgpt.generate(
-        **inputs,
-        max_new_tokens=200,
-        temperature=0.0,  # controls randomness
-        do_sample=False,   # enables variability
-        top_p=0.9         # nucleus sampling
+    response = client.chat.completions.create(
+        model=GROQ_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.0,
+        max_tokens=200,
     )
-    
-    return tokenizer.decode(output_ids[0], skip_special_tokens=True)
+
+    return response.choices[0].message.content.strip()

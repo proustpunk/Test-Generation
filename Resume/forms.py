@@ -142,11 +142,11 @@ class JobPostForm(forms.ModelForm):
   
     class Meta:
         model = Job
-        fields = ['deadline','job_title', 'job_requirements', 'salary_range', 'job_location','job_description_file','processed_description','description_vector']
+        fields = ['experience','deadline','job_title', 'job_requirements', 'salary_range', 'job_location','job_description_file','processed_description','description_vector']
 
     job_title = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter job title'}))
     job_requirements = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'List the required qualifications', 'rows': 5}))
-    experience = forms.IntegerField()
+    experience = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter years of experience'}))
 
     salary_range = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter salary range'}))
     company_logo = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control-file'}))

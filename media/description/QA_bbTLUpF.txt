@@ -1,0 +1,105 @@
+QA Engineer (Manual & Automation)
+About the Role
+NielsenIQ is seeking a QA Engineer to ensure all software delivered to clients is stable, high-quality, and bug-free. You'll work within the R&D team, validating product functionality across environments, identifying and reporting defects, and improving overall release quality. If you're passionate about testing, quality ownership, and collaboration, we'd love to meet you.
+
+Responsibilities
+Manual Testing
+
+Review and analyze system requirements, acceptance criteria, and technical documentation
+
+Collaborate with QA Engineers, Developers, and Product Owners to define effective test strategies and test plans
+
+Execute manual functional, regression, and exploratory testing across multiple environments
+
+Maintain and execute test cases in Zephyr, ensuring proper traceability to user stories in Jira
+
+Perform sanity and smoke testing post-deployment and ensure timely validation of releases
+
+Verify API responses and integrations using tools like Postman
+
+Identify, log, and retest defects with clear steps to reproduce, screenshots, and evidence
+
+Participate actively in Agile ceremonies (grooming, sprint planning, daily stand-ups, retrospectives)
+
+Automation Testing
+
+Develop, maintain, and execute automated test scripts for web applications
+
+Work with modern automation frameworks and tools such as Cypress and Playwright
+
+Convert high-value manual test cases into reliable automated tests
+
+Ensure automation covers critical user flows, regression scenarios, and cross-browser validations
+
+Review automation results, analyze failures, and improve test stability and coverage
+
+Integrate automated tests into CI/CD pipelines where applicable
+
+Continuously improve automation frameworks, test structure, and coding standards
+
+Qualifications
+3 to 10 years of proven experience in manual testing as a QA Engineer or similar role
+
+Experience testing production-level products in an Agile environment
+
+Master's/Bachelor's degree in Computer Science, Engineering, or a related field
+
+Solid understanding of QA methodologies, defect life cycle, and Agile frameworks
+
+Ability to write and execute SQL queries to validate data accuracy
+
+Strong skills in test documentation, troubleshooting, and bug reporting
+
+Excellent attention to detail and analytical mindset
+
+Strong communication, collaboration, and organizational skills
+
+Good to Have:
+
+Understanding of BDD concepts and test case design using Given–When–Then
+
+Hands-on experience with Cypress and/or Playwright
+
+Experience with Jira, Zephyr Scale, and Confluence for test and documentation management
+
+Hands-on exposure to Postman, Jenkins, or other CI/CD tools
+
+Understanding of test levels: smoke, sanity, regression, and exploratory testing
+
+Knowledge of test data management and environment validation processes
+
+Soft Skills:
+
+High sense of ownership and accountability for deliverables
+
+Ability to work under tight timelines while maintaining quality
+
+Strong problem-solving attitude and curiosity to explore edge cases
+
+Effective communicator with cross-functional teams across geographies
+
+Benefits
+Flexible working environment
+
+Volunteer time off
+
+LinkedIn Learning access
+
+Employee Assistance Program (EAP)
+
+Why This Is a Good QA Job Description
+Element	What It Shows
+Both manual and automation	The role requires hybrid skills, which is realistic for most QA positions
+Specific tools mentioned	Cypress, Playwright, Postman, Jira, Zephyr - these are common in real postings 
+CI/CD integration	Shows automation is part of the delivery pipeline, not isolated
+Agile/Scrum participation	Reflects the collaborative nature of QA work
+SQL/data validation	Real-world QA often involves backend/data testing 
+Clear experience range	3-10 years shows they're open to mid-level candidates
+Defect lifecycle management	Covers the full testing process 
+How This Maps to Your Categories
+Category	Relevant Keywords from JD
+QA / Test Engineering	Manual testing, automation, regression, exploratory testing, test plans, test cases, defect tracking, Agile
+Backend Development	SQL, API testing (Postman), data validation
+DevOps / Cloud Engineering	CI/CD pipelines, Jenkins, cloud environments
+Mobile Development	Cross-browser and device testing
+Cybersecurity	Security testing (mentioned in preferred qualifications) 
